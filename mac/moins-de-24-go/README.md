@@ -31,6 +31,8 @@ Ollama est le **moteur** : le logiciel qui fait tourner l’IA sur ton ordinate
 
 Pourquoi la version 0.40.14 et pas la toute dernière ? C’est avec elle que l’atelier a été préparé. Une version plus récente existe : elle n’a pas été essayée pour l’atelier.
 
+**Dépôt officiel GitHub :** [github.com/ollama/ollama](https://github.com/ollama/ollama)
+
 ## 2. Télécharger le modèle
 
 Le modèle, c’est ce que l’IA a appris, rangé dans un fichier. Tu ne télécharges pas Internet : tu télécharges des réglages. Dans ce dossier :
@@ -86,6 +88,8 @@ Pour savoir lequel prendre : menu Pomme, puis « À propos de ce Mac », lign
 Avant d’ouvrir le fichier, vérifie son empreinte comme pour Ollama, dans le Terminal : `shasum -a 256 ~/Downloads/Handy_0.10.0_aarch64.dmg`, avec le nom de ton fichier. Si elle diffère de la colonne SHA-256, ne l’ouvre pas : retélécharge-le depuis le lien du tableau.
 
 Au premier lancement, Handy demande l’accès au micro et à l’accessibilité, puis télécharge son modèle de transcription. Lance-le une fois à la maison : ce téléchargement sera déjà fait le jour J.
+
+**Dépôt officiel GitHub :** [github.com/cjpais/Handy](https://github.com/cjpais/Handy)
 
 ---
 

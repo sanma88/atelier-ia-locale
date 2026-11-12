@@ -38,6 +38,8 @@ La mention `OLLAMA_VERSION=0.40.14` demande au script la version de l’atelier.
 
 Pourquoi la version 0.40.14 et pas la toute dernière ? C’est avec elle que l’atelier a été préparé. Une version plus récente existe : elle n’a pas été essayée pour l’atelier.
 
+**Dépôt officiel GitHub :** [github.com/ollama/ollama](https://github.com/ollama/ollama)
+
 ## 2. Télécharger le modèle
 
 Le modèle, c’est ce que l’IA a appris, rangé dans un fichier. Tu ne télécharges pas Internet : tu télécharges des réglages. Dans ce dossier :
@@ -102,6 +104,8 @@ Pour savoir lequel prendre : tape `uname -m` dans le terminal. `x86_64` corresp
    - ARM64 : `sudo apt install ./Handy_0.10.0_arm64.deb`
 
 Au premier lancement, Handy télécharge son modèle de transcription. Lance-le une fois à la maison : ce téléchargement sera déjà fait le jour J.
+
+**Dépôt officiel GitHub :** [github.com/cjpais/Handy](https://github.com/cjpais/Handy)
 
 ---
 
