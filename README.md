@@ -33,6 +33,17 @@ Pour la lire :
 
 Si la valeur affichée tombe juste sous un palier, 15,8 Go pour une machine de 16 Go par exemple, prends le palier de la valeur ronde : une partie de la mémoire est réservée par le système.
 
+### Et si ton PC a une carte graphique ? (Windows et Linux)
+
+La mémoire d’une carte graphique, la VRAM, est bien plus rapide que la mémoire vive de l’ordinateur. Si ton modèle tient dedans, il répond nettement plus vite.
+
+- **Windows :** ouvre le Gestionnaire des tâches (`Ctrl + Maj + Échap`), onglet **Performances**, puis **GPU**, et lis la **mémoire GPU dédiée**. La « mémoire GPU partagée » n’est que de la mémoire vive de l’ordinateur prêtée à la carte : elle ne va pas plus vite. Si la mémoire dédiée est faible ou absente, ta carte partage la mémoire de l’ordinateur : choisis ton dossier d’après la mémoire vive.
+- **Linux, carte NVIDIA :** la commande `nvidia-smi` affiche la mémoire de la carte.
+- **Repères :** environ 4 Go de mémoire dédiée pour Ministral 3, 8 Go pour Ornith 9B, 24 Go pour Qwen3.8 27B. Ollama exploite les cartes NVIDIA récentes et certaines Radeon récentes. Sinon, il calcule avec le processeur, plus lentement.
+- **Sans carte graphique,** garde de la marge : Windows et tes programmes ouverts occupent déjà une bonne part de la mémoire vive. Un modèle trop lourd peut ralentir fortement ton ordinateur, voire le bloquer.
+
+Sur Mac, la mémoire est unifiée : la mémoire vive sert aussi à la puce graphique. Lis seulement la mémoire vive.
+
 ## Les neuf dossiers
 
 | Système | Moins de 24 Go | De 24 à 36 Go | 36 Go et plus |
