@@ -105,6 +105,11 @@ Pour savoir lequel prendre : tape `uname -m` dans le terminal. `x86_64` corresp
 
 Au premier lancement, Handy télécharge son modèle de transcription. Lance-le une fois à la maison : ce téléchargement sera déjà fait le jour J.
 
+Au moment de choisir le modèle de transcription dans Handy, prends **Parakeet** (environ 706 Mo) : nous l'avons essayé en français, sans Wi-Fi. À partir de 24 Go, **Voxtral** donne un résultat proche, pour une taille bien plus grande.
+
+> **Attention**
+> Handy garde tes derniers enregistrements audio sur ton ordinateur. Laisse aussi le « post-traitement » désactivé : il peut envoyer ton texte à un service en ligne.
+
 **Dépôt officiel GitHub :** [github.com/cjpais/Handy](https://github.com/cjpais/Handy)
 
 ---
