@@ -76,7 +76,7 @@ Rien de ce qui suit n’est nécessaire pour participer à l’atelier.
 
 ### Dictée vocale (bonus) : Handy
 
-Handy transforme ta voix en texte, sur ton ordinateur. Ce n’est pas une application de conversation : il écrit ce que tu dictes, il ne te répond pas. Version 0.10.0. Il n’a pas encore été testé par l’équipe de l’atelier.
+Handy transforme ta voix en texte, sur ton ordinateur. Ce n’est pas une application de conversation : il écrit ce que tu dictes, il ne te répond pas. Version 0.10.0, essayée sur Mac, hors ligne, en français. Relis ce qu’il écrit : lors de notre essai, il a déformé des noms propres.
 
 | Ton Mac | Fichier | Taille | SHA-256 |
 |---|---|---|---|

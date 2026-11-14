@@ -10,6 +10,8 @@ Le jour de l’atelier, une douzaine de personnes voudront télécharger les mê
 
 Avant l’atelier, ce dépôt n’est pas un cours : c’est une liste de courses. Il ne contient aucun logiciel ni aucun modèle, seulement les liens officiels pour les télécharger et les commandes pour les installer. Tout s’explique le jour J, et ce dépôt sera aussi le support de l’atelier.
 
+Le jour J, tu recevras sur place le lien vers la page que nous suivrons ensemble.
+
 Deux mots reviennent partout :
 
 - le **moteur**, c’est Ollama : le logiciel qui fait tourner une IA sur ton ordinateur. Avec les modèles de ce dépôt, tes questions et ses réponses sont calculées et gardées sur ton ordinateur : Internet sert au téléchargement ;
