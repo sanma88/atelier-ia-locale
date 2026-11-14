@@ -6,6 +6,8 @@ Trois étapes : installer le moteur, télécharger le modèle, vérifier que to
 
 Ces paliers sont nos repères, testés pour l’instant sur une seule machine. En dessous de 16 Go de mémoire vive, viens quand même : on travaillera en binôme.
 
+Ce parcours a été préparé sur Mac et n’a pas encore été essayé sous Linux. Si un écran ou un message diffère de ce qui est décrit ici, note-le et viens quand même : tu nous aideras à l’améliorer.
+
 > **Astuce**
 > Ton PC a une carte graphique ? Sa mémoire dédiée est bien plus rapide que la mémoire vive. Vérifie combien elle en a avant de choisir ton dossier : [comment faire](../../README.md#et-si-ton-pc-a-une-carte-graphique-windows-et-linux).
 

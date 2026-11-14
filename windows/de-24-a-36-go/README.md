@@ -4,6 +4,8 @@ Tu es au bon endroit si ton ordinateur tourne sous Windows et qu’il a au moins
 
 Trois étapes : installer le moteur, télécharger les modèles, vérifier que tout répond. Ce n’est pas un examen d’entrée : si ça bloque, viens quand même, on règle ça ensemble sur place.
 
+Ce parcours a été préparé sur Mac et n’a pas encore été essayé sous Windows. Si un écran ou un message diffère de ce qui est décrit ici, note-le et viens quand même : tu nous aideras à l’améliorer.
+
 > **Astuce**
 > Ton PC a une carte graphique ? Sa mémoire dédiée est bien plus rapide que la mémoire vive. Vérifie combien elle en a avant de choisir ton dossier : [comment faire](../../README.md#et-si-ton-pc-a-une-carte-graphique-windows-et-linux).
 
