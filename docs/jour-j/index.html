@@ -181,17 +181,11 @@ Avec Mariano Sanfilippo et Vincent Daron</p>
 <p><img src="../assets/ollama-app-nouvelle-conversation.png" alt="Conversation vide dans Ollama sur Mac : la flèche désigne le bouton en forme de crayon en haut à gauche ; le champ « Send a message » affiche ministral-3:3b en bas à droite." decoding="async"></p>
 <p>Choisis le modèle téléchargé sur ton ordinateur. Un modèle cloud enverrait ton texte sur Internet.</p>
 <p>Le mot « cloud » indique que le modèle tourne chez un fournisseur en ligne, qui reçoit ton texte. Le contenu du menu déplié n’a pas été observé pendant l’essai.</p>
-<details>
-<summary>Linux ou terminal : lance Ministral</summary>
-<p>Exécute cette commande :</p>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 3" aria-describedby="code-3-status" data-copy="code-3">Copier</button><span id="code-3-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 3"><code id="code-3">ollama run ministral-3:3b
-</code></pre></div>
-</details>
 <h3 id="envoie-ton-premier-message">Envoie ton premier message</h3>
 <ol>
-<li>Dans l’application, clique dans <strong>« Send a message »</strong> et saisis ce message. Dans le terminal, saisis-le après le repère <code>&gt;&gt;&gt;</code> :</li>
+<li>Dans l’application, clique dans <strong>« Send a message »</strong> et saisis ce message :</li>
 </ol>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 4" aria-describedby="code-4-status" data-copy="code-4">Copier</button><span id="code-4-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 4"><code id="code-4">Bonjour.
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 3" aria-describedby="code-3-status" data-copy="code-3">Copier</button><span id="code-3-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 3"><code id="code-3">Bonjour.
 </code></pre></div>
 <ol start="2">
 <li>Envoie le message.</li>
@@ -216,35 +210,15 @@ Avec Mariano Sanfilippo et Vincent Daron</p>
 </aside>
 <h3 id="temps-1--vérifie-la-fidélité">Temps 1 : vérifie la fidélité</h3>
 <ol>
-<li>Dans l’application, clique sur le bouton en forme de crayon en haut à gauche pour ouvrir une conversation vide. Vérifie que <code>ministral-3:3b</code> est affiché en bas à droite du champ « Send a message ». Pour le terminal, suis le volet ci-dessous.</li>
+<li>Dans l’application, clique sur le bouton en forme de crayon en haut à gauche pour ouvrir une conversation vide. Vérifie que <code>ministral-3:3b</code> est affiché en bas à droite du champ « Send a message ».</li>
 <li>Copie le <a href="#bloc-complet">bloc complet ci-dessous</a>.</li>
 <li>Colle-le dans la zone de message.</li>
 <li>Envoie la demande.</li>
 </ol>
-<p><a id="dans-le-terminal"></a></p>
-<details>
-<summary>Linux ou terminal : envoie un bloc sur plusieurs lignes</summary>
-<ol>
-<li>Attends le repère <code>&gt;&gt;&gt;</code>.</li>
-<li>Pour ouvrir un nouvel échange, colle cette commande, puis appuie sur Entrée :</li>
-</ol>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 5" aria-describedby="code-5-status" data-copy="code-5">Copier</button><span id="code-5-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 5"><code id="code-5">/clear
-</code></pre></div>
-<ol start="3">
-<li>Colle ces trois guillemets droits, puis appuie sur Entrée :</li>
-</ol>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 6" aria-describedby="code-6-status" data-copy="code-6">Copier</button><span id="code-6-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 6"><code id="code-6">&quot;&quot;&quot;
-</code></pre></div>
-<ol start="4">
-<li>Colle le <a href="#bloc-complet">bloc complet</a>.</li>
-<li>Sur une nouvelle ligne, colle à nouveau les trois guillemets, puis appuie sur Entrée pour envoyer l’ensemble.</li>
-</ol>
-<p>Pour corriger la réponse dans la même conversation, entoure à nouveau ta demande de trois guillemets. Garde l’échange en cours : cette fois, ne tape pas <code>/clear</code>.</p>
-</details>
 <p><a id="bloc-complet"></a></p>
 <h3 id="copie-la-consigne-et-le-mail">Copie la consigne et le mail</h3>
 <p>Utilise le bouton de copie du bloc pour prendre tout le texte, y compris les lignes qui dépassent à droite.</p>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 7" aria-describedby="code-7-status" data-copy="code-7">Copier</button><span id="code-7-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 7"><code id="code-7">Raccourcis les formulations de ce mail fictif sans supprimer d'information.
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 4" aria-describedby="code-4-status" data-copy="code-4">Copier</button><span id="code-4-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 4"><code id="code-4">Raccourcis les formulations de ce mail fictif sans supprimer d'information.
 Conserve Claire comme destinataire, Sophie comme signataire et le tutoiement.
 Le dossier concerne Gérard.
 Conserve son arrêt de travail, le burn-out rapporté, l'enquête interne et la mise en cause seulement possible du responsable.
@@ -296,19 +270,19 @@ Ressources humaines
 </ol>
 <p>Fais une seule correction. Relis la nouvelle réponse, puis passe à la suite, même s’il reste un écart. Une correction peut en faire apparaître un autre : observe-le, puis poursuis l’exercice.</p>
 <h3 id="si-une-information-rapportée-devient-une-affirmation">Si une information rapportée devient une affirmation</h3>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 8" aria-describedby="code-8-status" data-copy="code-8">Copier</button><span id="code-8-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 8"><code id="code-8">Tu as remplacé une information rapportée par une affirmation.
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 5" aria-describedby="code-5-status" data-copy="code-5">Copier</button><span id="code-5-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 5"><code id="code-5">Tu as remplacé une information rapportée par une affirmation.
 Dans le mail d’origine, Sophie écrit : « J’ai appris qu’il s’agit d’un burn-out. »
 Conserve ce caractère rapporté.
 Reprends le mail complet sans ajouter de fait.
 </code></pre></div>
 <h3 id="si-le-lien-entre-le-dossier-les-numéros-et-la-demande-change">Si le lien entre le dossier, les numéros et la demande change</h3>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 9" aria-describedby="code-9-status" data-copy="code-9">Copier</button><span id="code-9-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 9"><code id="code-9">Les deux numéros servent à compléter le dossier d’incapacité de Gérard auprès de l’assurance.
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 6" aria-describedby="code-6-status" data-copy="code-6">Copier</button><span id="code-6-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 6"><code id="code-6">Les deux numéros servent à compléter le dossier d’incapacité de Gérard auprès de l’assurance.
 Garde aussi la phrase sur l’enquête interne et celle sur le responsable de Gérard.
 Claire doit toujours recevoir une demande de confirmation.
 Corrige ce passage et reprends le mail complet sans ajouter de fait.
 </code></pre></div>
 <h3 id="si-le-modèle-ajoute-une-information">Si le modèle ajoute une information</h3>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 10" aria-describedby="code-10-status" data-copy="code-10">Copier</button><span id="code-10-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 10"><code id="code-10">Tu as ajouté cette information : [recopie l’ajout].
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 7" aria-describedby="code-7-status" data-copy="code-7">Copier</button><span id="code-7-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 7"><code id="code-7">Tu as ajouté cette information : [recopie l’ajout].
 Le mail d’origine ne la contient pas.
 Retire-la et reprends le mail complet sans ajouter de fait.
 </code></pre></div>
@@ -316,32 +290,32 @@ Retire-la et reprends le mail complet sans ajouter de fait.
 <summary>Autres corrections : oubli, destinataire, dossier, incertitude ou numéro</summary>
 <h3 id="si-une-information-a-disparu">Si une information a disparu</h3>
 <p>Recopie le passage manquant du mail d’origine à la place du texte entre crochets.</p>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 11" aria-describedby="code-11-status" data-copy="code-11">Copier</button><span id="code-11-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 11"><code id="code-11">Tu as supprimé cette information : [recopie le passage du mail d’origine].
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 8" aria-describedby="code-8-status" data-copy="code-8">Copier</button><span id="code-8-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 8"><code id="code-8">Tu as supprimé cette information : [recopie le passage du mail d’origine].
 Rétablis-la sans en changer le sens.
 Reprends le mail complet sans ajouter de fait.
 </code></pre></div>
 <h3 id="si-le-dossier-devient-celui-de-sophie">Si le dossier devient celui de Sophie</h3>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 12" aria-describedby="code-12-status" data-copy="code-12">Copier</button><span id="code-12-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 12"><code id="code-12">Le dossier d’incapacité concerne Gérard.
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 9" aria-describedby="code-9-status" data-copy="code-9">Copier</button><span id="code-9-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 9"><code id="code-9">Le dossier d’incapacité concerne Gérard.
 Sophie prépare ce dossier auprès de l’assurance.
 Corrige toute formulation qui attribue ce dossier à Sophie.
 Reprends le mail complet en restant fidèle au texte d’origine.
 </code></pre></div>
 <h3 id="si-claire-ou-sophie-disparaissent-ou-si-le-tutoiement-change">Si Claire ou Sophie disparaissent, ou si le tutoiement change</h3>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 13" aria-describedby="code-13-status" data-copy="code-13">Copier</button><span id="code-13-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 13"><code id="code-13">Le mail est écrit par Sophie à sa collègue Claire.
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 10" aria-describedby="code-10-status" data-copy="code-10">Copier</button><span id="code-10-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 10"><code id="code-10">Le mail est écrit par Sophie à sa collègue Claire.
 Conserve le prénom de Claire dans la salutation.
 Conserve le tutoiement.
 Signe le mail avec Sophie, puis Ressources humaines.
 Reprends le mail complet sans ajouter de fait.
 </code></pre></div>
 <h3 id="si-la-mise-en-cause-devient-certaine-ou-ambiguë">Si la mise en cause devient certaine ou ambiguë</h3>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 14" aria-describedby="code-14-status" data-copy="code-14">Copier</button><span id="code-14-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 14"><code id="code-14">Dans le mail d’origine, le responsable de Gérard pourrait être mis en cause.
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 11" aria-describedby="code-11-status" data-copy="code-11">Copier</button><span id="code-11-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 11"><code id="code-11">Dans le mail d’origine, le responsable de Gérard pourrait être mis en cause.
 Garde cette incertitude.
 Retire toute affirmation qui le présente comme responsable du burn-out ou déjà mis en cause.
 Reprends le mail complet sans ajouter de fait.
 </code></pre></div>
 <h3 id="si-la-demande-change-ou-si-un-numéro-change">Si la demande change ou si un numéro change</h3>
 <p>Les numéros étaient exacts dans les trois essais. Ce contrôle reste nécessaire pour ta propre réponse.</p>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 15" aria-describedby="code-15-status" data-copy="code-15">Copier</button><span id="code-15-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 15"><code id="code-15">Conserve la demande de confirmation des deux numéros.
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 12" aria-describedby="code-12-status" data-copy="code-12">Copier</button><span id="code-12-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 12"><code id="code-12">Conserve la demande de confirmation des deux numéros.
 Recopie exactement :
 POL-000000
 00.00.00-000.00
@@ -364,8 +338,7 @@ Reprends le mail complet sans ajouter de fait.
 <li>Copie le bloc entier ci-dessous. Il contient la nouvelle consigne et le mail d’origine.</li>
 <li>Envoie la demande.</li>
 </ol>
-<p>Dans le terminal, reprends le <a href="#dans-le-terminal">parcours de saisie multiligne</a>, en commençant par <code>/clear</code>.</p>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 16" aria-describedby="code-16-status" data-copy="code-16">Copier</button><span id="code-16-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 16"><code id="code-16">Réécris ce mail fictif pour que Sophie demande seulement à Claire de confirmer les deux numéros du dossier de Gérard.
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 13" aria-describedby="code-13-status" data-copy="code-13">Copier</button><span id="code-13-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 13"><code id="code-13">Réécris ce mail fictif pour que Sophie demande seulement à Claire de confirmer les deux numéros du dossier de Gérard.
 Conserve Claire comme destinataire, Sophie comme signataire et le tutoiement.
 Recopie exactement le numéro de police POL-000000 et le numéro de registre national 00.00.00-000.00.
 Retire les informations sur l’arrêt de travail, le burn-out, l’incapacité, l’enquête interne et le responsable de Gérard.
@@ -409,7 +382,6 @@ Ressources humaines
 <li>Envoie la demande.</li>
 <li>Attends la nouvelle réponse.</li>
 </ol>
-<p>Dans le terminal, reprends le <a href="#dans-le-terminal">parcours de saisie multiligne</a>, en commençant par <code>/clear</code>.</p>
 <p><strong>C’est réussi si une nouvelle réponse arrive avec les connexions coupées.</strong></p>
 <p>Cette observation montre que ton ordinateur peut réaliser ce traitement hors ligne. Les réglages des applications restent à examiner lorsque la connexion revient.</p>
 <p>Garde les connexions coupées pour Handy si son modèle est déjà téléchargé.</p>
@@ -455,7 +427,7 @@ Ressources humaines
 <li>Active la dictée avec le raccourci affiché.</li>
 <li>Prononce cette phrase :</li>
 </ol>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 17" aria-describedby="code-17-status" data-copy="code-17">Copier</button><span id="code-17-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 17"><code id="code-17">Bonjour, je participe à l’atelier de HELMo et je découvre la dictée sur mon ordinateur.
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 14" aria-describedby="code-14-status" data-copy="code-14">Copier</button><span id="code-14-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 14"><code id="code-14">Bonjour, je participe à l’atelier de HELMo et je découvre la dictée sur mon ordinateur.
 </code></pre></div>
 <ol start="8">
 <li>Termine la dictée.</li>
@@ -480,11 +452,10 @@ Ressources humaines
 <li>Dans l’application Ollama, ouvre une conversation vide avec le bouton en forme de crayon en haut à gauche, puis vérifie le nom de ton modèle local.</li>
 <li>Envoie cette demande :</li>
 </ol>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 18" aria-describedby="code-18-status" data-copy="code-18">Copier</button><span id="code-18-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 18"><code id="code-18">Donne un fait récent concernant la Belgique.
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 15" aria-describedby="code-15-status" data-copy="code-15">Copier</button><span id="code-15-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 15"><code id="code-15">Donne un fait récent concernant la Belgique.
 Indique la date de ce fait.
 Si tu ne connais pas une information, signale ton incertitude.
 </code></pre></div>
-<p>Dans le terminal, reprends le <a href="#dans-le-terminal">parcours de saisie multiligne</a>, en commençant par <code>/clear</code>.</p>
 <ol start="4">
 <li>Choisis une affirmation précise dans sa réponse.</li>
 <li>Cherche une source extérieure datée.</li>
@@ -559,28 +530,6 @@ Si tu ne connais pas une information, signale ton incertitude.
 <li>Applique les mêmes trois contrôles.</li>
 <li>Compare avec la réponse de Ministral.</li>
 </ol>
-<details>
-<summary>Linux ou terminal : change de modèle avant de comparer</summary>
-<ol>
-<li>Dans la conversation en cours, colle cette commande, puis appuie sur Entrée :</li>
-</ol>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 19" aria-describedby="code-19-status" data-copy="code-19">Copier</button><span id="code-19-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 19"><code id="code-19">/bye
-</code></pre></div>
-<ol start="2">
-<li>Lance Ornith depuis le terminal :</li>
-</ol>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 20" aria-describedby="code-20-status" data-copy="code-20">Copier</button><span id="code-20-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 20"><code id="code-20">ollama run ornith-1.5:9b
-</code></pre></div>
-<p>Si tu as prévu Qwen et que ta machine a au moins 36 Go, utilise cette commande à la place :</p>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 21" aria-describedby="code-21-status" data-copy="code-21">Copier</button><span id="code-21-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 21"><code id="code-21">ollama run qwen3.8:27b
-</code></pre></div>
-<ol start="3">
-<li>Reprends le <a href="#dans-le-terminal">parcours de saisie multiligne</a> avec le <a href="#bloc-complet">bloc complet de l’exercice 2</a>.</li>
-<li>Applique les mêmes trois contrôles et compare avec la réponse de Ministral.</li>
-</ol>
-<p>La commande <code>/clear</code> efface l’échange précédent. Pour changer de modèle, quitte d’abord cet échange avec <code>/bye</code>, puis lance le modèle choisi.</p>
-<p>Ces commandes sont celles qu’affiche <code>/?</code> dans Ollama 0.40.14. La saisie sur plusieurs lignes est décrite dans la <a href="https://docs.ollama.com/cli">référence officielle</a>.</p>
-</details>
 <p>Qwen peut prendre du temps avant d’afficher sa réponse.</p>
 <p><strong>C’est réussi si tu peux décrire une différence observée entre les réponses.</strong></p>
 <p><a href="#etape-7">Étape précédente</a> · <a href="#sommaire">Retour au sommaire</a> · <a href="#etape-9">Étape suivante</a></p>
@@ -621,7 +570,7 @@ Si tu ne connais pas une information, signale ton incertitude.
 </ol>
 <p>Le fournisseur indique à AnythingLLM quel moteur utiliser.</p>
 <p>L’adresse locale observée pendant l’essai est :</p>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 22" aria-describedby="code-22-status" data-copy="code-22">Copier</button><span id="code-22-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 22"><code id="code-22">http://127.0.0.1:11434
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 16" aria-describedby="code-16-status" data-copy="code-16">Copier</button><span id="code-16-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 16"><code id="code-16">http://127.0.0.1:11434
 </code></pre></div>
 <ol start="6">
 <li>Vérifie cette adresse dans les réglages.</li>
@@ -666,7 +615,7 @@ Si tu ne connais pas une information, signale ton incertitude.
 <li>Vérifie le dossier affiché par le terminal.</li>
 <li>Vérifie qu’OpenCode est disponible dans le terminal :</li>
 </ol>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 23" aria-describedby="code-23-status" data-copy="code-23">Copier</button><span id="code-23-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 23"><code id="code-23">opencode --version
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 17" aria-describedby="code-17-status" data-copy="code-17">Copier</button><span id="code-17-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 17"><code id="code-17">opencode --version
 </code></pre></div>
 <p>Si la commande est introuvable, arrête cette procédure et demande à un animateur de vérifier ton installation.</p>
 <ol start="6">
@@ -674,7 +623,7 @@ Si tu ne connais pas une information, signale ton incertitude.
 <li>Vérifie la présence de <code>ornith-1.5:9b</code>.</li>
 </ol>
 <p>La documentation officielle propose ce lancement :</p>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 24" aria-describedby="code-24-status" data-copy="code-24">Copier</button><span id="code-24-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 24"><code id="code-24">ollama launch opencode
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 18" aria-describedby="code-18-status" data-copy="code-18">Copier</button><span id="code-18-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 18"><code id="code-18">ollama launch opencode
 </code></pre></div>
 <p><strong>Cette procédure de lancement reste à répéter avec les versions retenues pour l’atelier.</strong> L’essai documenté utilisait une configuration isolée.</p>
 <p>La documentation demande aussi une fenêtre de contexte d’au moins <strong>64 000 tokens</strong>. C’est la quantité de texte disponible pour le travail en cours. Ce réglage augmente les besoins en mémoire.</p>
@@ -689,7 +638,7 @@ Si tu ne connais pas une information, signale ton incertitude.
 <p>Pendant l’essai préparé, la modification des fichiers était autorisée. L’exécution de commandes et l’accès au Web étaient désactivés.</p>
 <h3 id="demande-une-petite-page">Demande une petite page</h3>
 <p>Envoie cette demande :</p>
-<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 25" aria-describedby="code-25-status" data-copy="code-25">Copier</button><span id="code-25-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 25"><code id="code-25">Crée un fichier index.html dans le dossier de travail actuel.
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 19" aria-describedby="code-19-status" data-copy="code-19">Copier</button><span id="code-19-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 19"><code id="code-19">Crée un fichier index.html dans le dossier de travail actuel.
 
 La page présente un club de lecture fictif.
 Elle contient trois cartes de livres inventés.

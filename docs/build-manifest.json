@@ -569,7 +569,7 @@
     {
       "route": "jour-j/",
       "source": "depot-jour-j/README.md",
-      "sourceSha256": "8fcaa1de723317563d64b786e110bbe465e0048b73299109fe865f7c44eaa804",
+      "sourceSha256": "fe433443f737521720ee1ab73c03f3c145f87912c417fc9cbd2256bd1954ea08",
       "codeBlocks": [
         {
           "bytes": 27,
@@ -580,20 +580,8 @@
           "sha256": "9afd09690eb73713a964879be17cf7b8b96958e7ab786b5398e66c959cb691c2"
         },
         {
-          "bytes": 26,
-          "sha256": "c2206b38c97103ee57804db5a48be1e7d11f5d2627d7cce778cbf8ed33c7f61f"
-        },
-        {
           "bytes": 9,
           "sha256": "7dde2d4ed2100f7f8616addfb120a89df09970a7d2d705d98db9b19da38ef9f2"
-        },
-        {
-          "bytes": 7,
-          "sha256": "2e1ea95462b335fb40acce94fdd72b6af5b4a3e5be9f3db279652a84a7c508ac"
-        },
-        {
-          "bytes": 4,
-          "sha256": "a303ecdd4a4d10f19c73fd42fd12437fd3354a82681605da5255a97a39068dbb"
         },
         {
           "bytes": 1006,
@@ -642,18 +630,6 @@
         {
           "bytes": 137,
           "sha256": "24dd5b3d4aa110b1a192e221e98fed713e86149d793e8e1b33182c185035b908"
-        },
-        {
-          "bytes": 5,
-          "sha256": "8c2e5a2b0bc980539d895be0021a44b31a9113c80d380d337e0122b1b6f9c49a"
-        },
-        {
-          "bytes": 25,
-          "sha256": "02034e53fc16769c697c9991e3f47d0e262a542616b2c3a7c5e82e7ca21fdfd8"
-        },
-        {
-          "bytes": 23,
-          "sha256": "b98fec0e641d13ab6eb2c1214fce298059023b0a45fa5d449b131db3c1348b8b"
         },
         {
           "bytes": 23,

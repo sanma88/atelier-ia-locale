@@ -124,20 +124,9 @@ Choisis le modèle téléchargé sur ton ordinateur. Un modèle cloud enverrait 
 
 Le mot « cloud » indique que le modèle tourne chez un fournisseur en ligne, qui reçoit ton texte. Le contenu du menu déplié n’a pas été observé pendant l’essai.
 
-<details>
-<summary>Linux ou terminal : lance Ministral</summary>
-
-Exécute cette commande :
-
-```bash
-ollama run ministral-3:3b
-```
-
-</details>
-
 ### Envoie ton premier message
 
-1. Dans l’application, clique dans **« Send a message »** et saisis ce message. Dans le terminal, saisis-le après le repère `>>>` :
+1. Dans l’application, clique dans **« Send a message »** et saisis ce message :
 
 ```text
 Bonjour.
@@ -178,35 +167,10 @@ Le mail contient volontairement une information de santé et des éléments d’
 
 ### Temps 1 : vérifie la fidélité
 
-1. Dans l’application, clique sur le bouton en forme de crayon en haut à gauche pour ouvrir une conversation vide. Vérifie que `ministral-3:3b` est affiché en bas à droite du champ « Send a message ». Pour le terminal, suis le volet ci-dessous.
+1. Dans l’application, clique sur le bouton en forme de crayon en haut à gauche pour ouvrir une conversation vide. Vérifie que `ministral-3:3b` est affiché en bas à droite du champ « Send a message ».
 2. Copie le [bloc complet ci-dessous](#bloc-complet).
 3. Colle-le dans la zone de message.
 4. Envoie la demande.
-
-<a id="dans-le-terminal"></a>
-
-<details>
-<summary>Linux ou terminal : envoie un bloc sur plusieurs lignes</summary>
-
-1. Attends le repère `>>>`.
-2. Pour ouvrir un nouvel échange, colle cette commande, puis appuie sur Entrée :
-
-```text
-/clear
-```
-
-3. Colle ces trois guillemets droits, puis appuie sur Entrée :
-
-```text
-"""
-```
-
-4. Colle le [bloc complet](#bloc-complet).
-5. Sur une nouvelle ligne, colle à nouveau les trois guillemets, puis appuie sur Entrée pour envoyer l’ensemble.
-
-Pour corriger la réponse dans la même conversation, entoure à nouveau ta demande de trois guillemets. Garde l’échange en cours : cette fois, ne tape pas `/clear`.
-
-</details>
 
 <a id="bloc-complet"></a>
 
@@ -381,8 +345,6 @@ Claire doit confirmer les deux références fictives du dossier de Gérard.
 3. Copie le bloc entier ci-dessous. Il contient la nouvelle consigne et le mail d’origine.
 4. Envoie la demande.
 
-Dans le terminal, reprends le [parcours de saisie multiligne](#dans-le-terminal), en commençant par `/clear`.
-
 ```text
 Réécris ce mail fictif pour que Sophie demande seulement à Claire de confirmer les deux numéros du dossier de Gérard.
 Conserve Claire comme destinataire, Sophie comme signataire et le tutoiement.
@@ -434,8 +396,6 @@ Les deux références sont inventées et supposées utiles pour cet exercice. Po
 8. Colle-le dans la zone de message.
 9. Envoie la demande.
 10. Attends la nouvelle réponse.
-
-Dans le terminal, reprends le [parcours de saisie multiligne](#dans-le-terminal), en commençant par `/clear`.
 
 **C’est réussi si une nouvelle réponse arrive avec les connexions coupées.**
 
@@ -524,8 +484,6 @@ Indique la date de ce fait.
 Si tu ne connais pas une information, signale ton incertitude.
 ```
 
-Dans le terminal, reprends le [parcours de saisie multiligne](#dans-le-terminal), en commençant par `/clear`.
-
 4. Choisis une affirmation précise dans sa réponse.
 5. Cherche une source extérieure datée.
 6. Vérifie la date du fait raconté.
@@ -611,36 +569,6 @@ Si un modèle manque en salle, suis la démonstration. Tu retrouveras les instru
 5. Envoie la demande.
 6. Applique les mêmes trois contrôles.
 7. Compare avec la réponse de Ministral.
-
-<details>
-<summary>Linux ou terminal : change de modèle avant de comparer</summary>
-
-1. Dans la conversation en cours, colle cette commande, puis appuie sur Entrée :
-
-```text
-/bye
-```
-
-2. Lance Ornith depuis le terminal :
-
-```bash
-ollama run ornith-1.5:9b
-```
-
-Si tu as prévu Qwen et que ta machine a au moins 36 Go, utilise cette commande à la place :
-
-```bash
-ollama run qwen3.8:27b
-```
-
-3. Reprends le [parcours de saisie multiligne](#dans-le-terminal) avec le [bloc complet de l’exercice 2](#bloc-complet).
-4. Applique les mêmes trois contrôles et compare avec la réponse de Ministral.
-
-La commande `/clear` efface l’échange précédent. Pour changer de modèle, quitte d’abord cet échange avec `/bye`, puis lance le modèle choisi.
-
-Ces commandes sont celles qu’affiche `/?` dans Ollama 0.40.14. La saisie sur plusieurs lignes est décrite dans la [référence officielle](https://docs.ollama.com/cli).
-
-</details>
 
 Qwen peut prendre du temps avant d’afficher sa réponse.
 
