@@ -6,7 +6,7 @@
 
 **Le jour J, pas à pas**<br>
 Vendredi 20 novembre 2026 · HELMo · Digital Change with Ethics<br>
-Avec Mariano Sanfilippo et Vincent Daron
+Avec [Mariano Sanfilippo](https://www.linkedin.com/in/marianosanfilippo/) et [Vincent Daron](https://www.linkedin.com/in/vincent-daron-35757a2ab/)
 
 Sophie peut-elle se faire aider par une IA sans que son mail quitte son ordinateur ? Tu vas l’essayer avec un mail entièrement fictif.
 
@@ -716,6 +716,8 @@ Le bonus présenté ici utilise OpenCode avec un modèle local. Claude Code est 
 5. Conserve le message d’erreur exact si tu demandes de l’aide.
 
 **C’est réussi si tu sais quelle étape reprendre et où retrouver les consignes.**
+
+Pour garder le contact, retrouve [Mariano Sanfilippo](https://www.linkedin.com/in/marianosanfilippo/) et [Vincent Daron](https://www.linkedin.com/in/vincent-daron-35757a2ab/) sur LinkedIn.
 
 [Page de l’atelier](https://sanma88.github.io/atelier-ia-locale/jour-j/) · [Dépôt d’installation](https://sanma88.github.io/atelier-ia-locale/)
 
