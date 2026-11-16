@@ -540,7 +540,7 @@ Qwen peut prendre du temps avant d’afficher sa réponse.
 
 **C’est réussi si tu peux décrire une différence observée entre les réponses.**
 
-[Étape précédente](#etape-7) · [Retour au sommaire](#sommaire) · [Étape suivante](#etape-8)
+[Étape précédente](#etape-6) · [Retour au sommaire](#sommaire) · [Étape suivante](#etape-8)
 
 <a id="etape-8"></a>
 
