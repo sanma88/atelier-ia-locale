@@ -44,7 +44,7 @@ La mémoire d’une carte graphique, la VRAM, est bien plus rapide que la mémoi
 - **Repères :** environ 4 Go de mémoire dédiée pour Ministral 3, 8 Go pour Ornith 9B, 24 Go pour Qwen3.8 27B. Ollama exploite les cartes NVIDIA récentes et certaines Radeon récentes. Sinon, il calcule avec le processeur, plus lentement.
 - **Sans carte graphique,** garde de la marge : Windows et tes programmes ouverts occupent déjà une bonne part de la mémoire vive. Un modèle trop lourd peut ralentir fortement ton ordinateur, voire le bloquer.
 
-Sur Mac, la mémoire est unifiée : la mémoire vive sert aussi à la puce graphique. Lis seulement la mémoire vive.
+Sur un Mac avec une puce Apple M, le processeur et la puce graphique partagent la mémoire. Sur un Mac Intel, Ollama utilise le processeur ; les réponses peuvent être beaucoup plus lentes. Commence avec ministral-3:3b avant d’essayer un plus gros modèle.
 
 ## Les neuf dossiers
 
