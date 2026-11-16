@@ -212,15 +212,11 @@ Garde le mail d’origine sous les yeux.
 - **Les ajouts et la correspondance.** Repère tout fait ajouté, par exemple « je te joins ces éléments ». Vérifie que Claire reste la destinataire et que Sophie signe. Le mail garde le tutoiement, reste courtois et plus court.
 
 <details>
-<summary>Historique des essais : résultats et limites</summary>
+<summary>Exemple de réponse obtenue</summary>
 
-Deux consignes ont été essayées trois fois chacune le 16 novembre 2026 avec ministral-3:3b, dans le terminal d’un Mac de 48 Go équipé d’Ollama 0.40.14. La consigne courte supprimait plusieurs informations. La consigne longue retenue conserve les personnes, le burn-out, l’enquête et les deux numéros dans les trois réponses. Toutes perdent toutefois « j’ai appris que » et la mention de l’assurance. D’autres écarts apparaissent selon la réponse : lien inventé avec l’enquête, ajout d’une pièce jointe ou formulation moins précise. Le temps 2 a aussi été essayé trois fois le 16 novembre 2026 : les informations à retirer disparaissent dans les trois réponses et les deux numéros sont exacts. Une ligne « Objet » est ajoutée dans les trois réponses ; une fois, « le dossier de Gérard » devient « mon dossier ». Ces essais portent sur le terminal du Mac de préparation. Les autres machines restent à essayer.
-
-L’application Ollama 0.40.14 a aussi été essayée sur le Mac du formateur le 16 novembre 2026, avec `ministral-3:3b`. La consigne longue du temps 1 a produit une réponse. Elle écrit « Gérard est en arrêt pour burn-out », perd « j’ai appris que », la mention de l’assurance et « Ressources humaines », et conserve les deux numéros exacts. Une réponse arrive avec le Wi-Fi coupé. Le bouton en forme de crayon ouvre une conversation vide. Le contenu du menu de modèles déplié, notamment la présence ou non de modèles cloud, n’a pas été observé. Le temps 2 dans l’application et l’application sous Windows restent non essayés.
+Voici une réponse obtenue avec `ministral-3:3b` dans l’application Ollama. Elle garde les deux numéros et écrit « Gérard est en arrêt pour burn-out ». La tienne sera différente.
 
 ![Essai réel dans Ollama sur Mac : la réponse écrit « Gérard est en arrêt pour burn-out », conserve POL-000000 et 00.00.00-000.00, et omet l’assurance ainsi que « Ressources humaines ». Le modèle affiché est ministral-3:3b.](assets/ollama-app-reponse.png)
-
-Les trois demandes de correction visibles ont été essayées le 16 novembre 2026 avec le même modèle, via l’API locale d’Ollama. Chaque brouillon de départ contenait un écart introduit pour l’essai. Le passage visé a été corrigé dans les trois réponses. D’autres écarts restent : une ligne « Objet » ajoutée, une demande de confirmation affaiblie, ou la perte du caractère rapporté du burn-out. La variante sur les numéros conserve l’enquête et le responsable dans cet essai. La relecture reste nécessaire après chaque correction.
 
 </details>
 
