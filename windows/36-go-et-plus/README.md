@@ -13,7 +13,7 @@ Prépare Ollama et les modèles, vérifie une première réponse, puis installe 
 > [!NOTE]
 > Ce parcours a été préparé sur Mac et n’a pas encore été essayé sous Windows. Si un écran ou un message diffère de ce qui est décrit ici, note-le et viens quand même : tu nous aideras à l’améliorer.
 
-Ton PC a une carte graphique ? Sa mémoire dédiée est bien plus rapide que la mémoire vive. Vérifie combien elle en a avant de choisir ton dossier : [comment faire](../../README.md#et-si-ton-pc-a-une-carte-graphique-windows-et-linux).
+Ton PC a une carte graphique ? Elle calcule bien plus vite que le processeur, si le modèle tient dans sa mémoire dédiée. Vérifie combien elle en a avant de choisir ton dossier : [comment faire](../../README.md#et-si-ton-pc-a-une-carte-graphique-windows-et-linux).
 
 <a id="parcours"></a>
 
@@ -150,7 +150,7 @@ Note le message exact qui s’affiche et apporte ton ordinateur le 20 novembre. 
 
 ## 4. Préparer la dictée locale : Handy
 
-Nous utiliserons Handy pendant l’atelier. Installe-le et télécharge Parakeet avant de venir si possible. Si cela bloque, tu pourras suivre l’essai en binôme.
+Nous utiliserons Handy pendant l’atelier. Installe-le et télécharge Parakeet Ultra avant de venir si possible. Si cela bloque, tu pourras suivre l’essai en binôme.
 
 Handy écrit ce que tu dictes dans l’application où se trouve ton curseur. Le traitement se fait sur ton ordinateur. Version 0.10.0. Il n’a pas encore été testé sous Windows par l’équipe de l’atelier.
 
@@ -195,15 +195,15 @@ Pour savoir lequel prendre : ouvre Paramètres, puis Système, puis Information
 ### Prépare la dictée
 
 1. Lance Handy une fois à la maison.
-2. Choisis **Parakeet** comme modèle de transcription et attends la fin du téléchargement, environ **706 Mo**.
+2. Choisis **Parakeet Ultra** comme modèle de transcription et attends la fin du téléchargement, environ **740 Mo**.
 3. Laisse le post-traitement désactivé.
 
-Parakeet a été essayé en français, sans Wi-Fi, sur le Mac du formateur.
+Parakeet Ultra a été essayé en français, sans Wi-Fi, sur le Mac du formateur.
 
 <details>
 <summary>Autre modèle à partir de 24 Go : Voxtral</summary>
 
-Voxtral donne un résultat proche, pour une taille bien plus grande. Pour l’atelier, prépare Parakeet.
+Voxtral donne un résultat proche, pour une taille bien plus grande. Pour l’atelier, prépare Parakeet Ultra.
 
 </details>
 
@@ -212,7 +212,7 @@ Voxtral donne un résultat proche, pour une taille bien plus grande. Pour l’at
 
 **Dépôt officiel GitHub :** [github.com/cjpais/Handy](https://github.com/cjpais/Handy)
 
-**C’est réussi si…** Handy s’ouvre, Parakeet est téléchargé et le post-traitement reste désactivé.
+**C’est réussi si…** Handy s’ouvre, Parakeet Ultra est téléchargé et le post-traitement reste désactivé.
 
 [Retour au parcours](#parcours) · [Étape suivante](#opencode)
 

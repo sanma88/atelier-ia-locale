@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; font-src 'self'; style-src 'self'; script-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Mac, de 24 à 36 Go de mémoire vive | HELMo</title>
+<link rel="icon" href="../../assets/logo-helmo.png" type="image/png">
+<link rel="stylesheet" href="../../assets/site.css">
+<script src="../../assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header"><a class="logo-zone" href="../../" aria-label="HELMo, accueil de l’installation"><img src="../../assets/logo-helmo.png" alt="HELMo" width="120" height="120"></a><nav aria-label="Pages de l’atelier"><a class="main-link" href="../../jour-j/">Page de l’atelier</a><a href="../../">Installation</a></nav></header>
+<nav class="page-toc" aria-label="Étapes de cette page"><details><summary>Sommaire de la page</summary><ol><li><a href="#ollama">1. Installe Ollama</a></li><li><a href="#modeles">2. Télécharge les modèles</a></li><li><a href="#premiere-reponse">3. Vérifie une première réponse</a></li><li><a href="#handy">4. Préparer la dictée locale : Handy</a></li><li><a href="#opencode">5. Facultatif : prépare OpenCode avec Ornith</a></li></ol></details></nav>
+<main><article id="contenu" tabindex="-1"><h1 id="mac-de-24-à-36-go-de-mémoire-vive">Mac, de 24 à 36 Go de mémoire vive</h1>
+<p><strong>L’IA locale sur ton ordinateur</strong> · HELMo · Vendredi 20 novembre 2026</p>
+<p>Avec Mariano Sanfilippo et Vincent Daron.</p>
+<p>Tu es au bon endroit si ton ordinateur est un Mac et qu’il a au moins 24 Go de mémoire vive, mais moins de 36 Go. Sinon, reviens à <a href="../../">l’accueil</a> pour choisir ton dossier.</p>
+<p>Prépare Ollama et les modèles, vérifie une première réponse, puis installe Handy pour la dictée locale. Si ça bloque, viens quand même. Nous regarderons le problème avec toi et tu pourras travailler en binôme.</p>
+<p><a id="parcours"></a></p>
+<p><strong>Ton parcours</strong></p>
+<p><a href="#ollama">1. Ollama</a> · <a href="#modeles">2. Modèles</a> · <a href="#premiere-reponse">3. Première réponse</a> · <a href="#handy">4. Handy</a> · <a href="#opencode">5. OpenCode, facultatif</a></p>
+<p><a id="ollama"></a></p>
+<h2 id="1-installe-ollama">1. Installe Ollama</h2>
+<p>Ollama est le <strong>moteur</strong> : le logiciel qui fait tourner l’IA sur ton ordinateur. Ce qu’il fait tourner s’appelle un <strong>modèle</strong> : le fichier qui contient ce que l’IA a appris. Avec les modèles de ce dossier, tes questions et ses réponses sont calculées et gardées sur ton ordinateur : Internet sert au téléchargement.</p>
+<h3 id="installe-le-moteur">Installe le moteur</h3>
+<ol>
+<li>
+<p><strong>Télécharge</strong> l’installeur officiel : <a href="https://github.com/ollama/ollama/releases/download/v0.40.14/Ollama.dmg">Ollama.dmg, version 0.40.14</a> (231 Mo).</p>
+</li>
+<li>
+<p><strong>Ouvre</strong> le Terminal, une fenêtre où l’on tape des commandes. Tu le trouves dans Applications, puis Utilitaires.</p>
+</li>
+<li>
+<p><strong>Vérifie</strong> le fichier avant de l’ouvrir, grâce à son empreinte SHA-256 : une suite de caractères calculée à partir du fichier, comme une empreinte digitale. Si un seul octet change, l’empreinte change. Tape cette ligne dans le Terminal, puis appuie sur Entrée :</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 1" aria-describedby="code-1-status" data-copy="code-1">Copier</button><span id="code-1-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 1"><code id="code-1">shasum -a 256 ~/Downloads/Ollama.dmg
+</code></pre></div>
+<p>Le résultat doit commencer par :
+<code>683ca9baf3d4257f31fdd0004193527797c861be9d6dfb8c4617ba0800c170f9</code></p>
+</li>
+<li>
+<p><strong>Ouvre</strong> le fichier téléchargé, seulement si l’empreinte correspond, et suis les indications à l’écran.</p>
+</li>
+<li>
+<p><strong>Lance</strong> l’application Ollama.</p>
+</li>
+</ol>
+<!-- À COMPLÉTER APRÈS T1 ET T2 : ce que montre le .dmg (glisser dans Applications ?), alerte de sécurité macOS au premier lancement, demande éventuelle de compte, installation de la commande ollama dans le Terminal. -->
+<aside class="admonition" aria-label="Attention"><p class="admonition-title">Attention</p>
+<p>Si l’empreinte affichée diffère, n’ouvre pas le fichier. Il diffère de celui publié par l’éditeur. Supprime-le, retélécharge-le depuis le lien officiel ci-dessus, puis vérifie à nouveau.</p>
+</aside>
+<details>
+<summary>Pourquoi garder la version 0.40.14 ?</summary>
+<p>L’atelier a été préparé avec cette version. Une version plus récente existe : elle n’a pas été essayée pour l’atelier.</p>
+</details>
+<p><strong>Dépôt officiel GitHub :</strong> <a href="https://github.com/ollama/ollama">github.com/ollama/ollama</a></p>
+<p><strong>C’est réussi si…</strong> l’empreinte correspond et l’application Ollama s’ouvre.</p>
+<p><a href="#parcours">Retour au parcours</a> · <a href="#modeles">Étape suivante</a></p>
+<p><a id="modeles"></a></p>
+<h2 id="2-télécharge-les-modèles">2. Télécharge les modèles</h2>
+<p>Le modèle contient des réglages appris, rangés dans un fichier. Voici les modèles de ton parcours :</p>
+<div class="table-scroll" role="region" aria-label="Tableau à faire défiler horizontalement" tabindex="0"><table>
+<thead>
+<tr>
+<th>Modèle</th>
+<th>À quoi il sert</th>
+<th>Taille</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ministral-3:3b</code></td>
+<td>Ministral 3, le modèle de l’atelier, pour discuter</td>
+<td>2,95 Go</td>
+</tr>
+<tr>
+<td><code>ornith-1.5:9b</code></td>
+<td>Ornith 1.5 9B, pour comparer les réponses et pour le bonus code</td>
+<td>6,55 Go</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="télécharge-les-modèles-un-par-un">Télécharge les modèles un par un</h3>
+<p>Lance ces commandes une par une, dans le Terminal. Pour chacune : copie-la, colle-la, appuie sur Entrée, puis attends le mot <code>success</code> avant de lancer la suivante. Pendant le téléchargement, une barre de progression avance.</p>
+<ol>
+<li>
+<p><strong>Ministral 3</strong> :</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 2" aria-describedby="code-2-status" data-copy="code-2">Copier</button><span id="code-2-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 2"><code id="code-2">ollama pull ministral-3:3b
+</code></pre></div>
+</li>
+<li>
+<p><strong>Ornith 1.5 9B</strong> :</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 3" aria-describedby="code-3-status" data-copy="code-3">Copier</button><span id="code-3-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 3"><code id="code-3">ollama pull ornith-1.5:9b
+</code></pre></div>
+</li>
+</ol>
+<p><strong>Espace disque pour les modèles : 9,50 Go</strong>, en plus de l’installeur et d’Ollama lui-même. Garde de la marge : ton ordinateur a besoin de place libre pour bien fonctionner.</p>
+<details>
+<summary>Si le téléchargement s’interrompt</summary>
+<p>Ollama est conçu pour reprendre : relance la même commande sans rien supprimer.</p>
+</details>
+<p><strong>C’est réussi si…</strong> chaque téléchargement choisi se termine par le mot <code>success</code>.</p>
+<p><a href="#parcours">Retour au parcours</a> · <a href="#premiere-reponse">Étape suivante</a></p>
+<p><a id="premiere-reponse"></a></p>
+<h2 id="3-vérifie-une-première-réponse">3. Vérifie une première réponse</h2>
+<h3 id="envoie-un-message">Envoie un message</h3>
+<ol>
+<li>
+<p><strong>Ouvre</strong> l’application Ollama.</p>
+</li>
+<li>
+<p><strong>Choisis</strong> le modèle <code>ministral-3:3b</code>.</p>
+</li>
+<li>
+<p><strong>Copie</strong> ce message dans la conversation, puis envoie-le :</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 4" aria-describedby="code-4-status" data-copy="code-4">Copier</button><span id="code-4-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 4"><code id="code-4">bonjour
+</code></pre></div>
+</li>
+<li>
+<p><strong>Vérifie</strong> les modèles téléchargés. Dans le Terminal, tape cette commande, puis appuie sur Entrée :</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 5" aria-describedby="code-5-status" data-copy="code-5">Copier</button><span id="code-5-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 5"><code id="code-5">ollama list
+</code></pre></div>
+</li>
+</ol>
+<!-- À COMPLÉTER APRÈS T1 ET T2 : où se trouve le choix du modèle dans l'application Ollama, et à quoi ressemble l'écran de réponse. -->
+<p><strong>C’est réussi si…</strong></p>
+<ul>
+<li>une réponse à ton « bonjour » s’affiche dans l’application, écrite par ton propre ordinateur ;</li>
+<li>la commande <code>ollama list</code>, tapée dans le Terminal, affiche <code>ministral-3:3b</code> et <code>ornith-1.5:9b</code>.</li>
+</ul>
+<details>
+<summary>Si tu bloques à cette étape</summary>
+<p>Note le message exact qui s’affiche et apporte ton ordinateur le 20 novembre. Tu peux aussi coller ce message dans une IA en ligne pour qu’elle te l’explique. Retire d’abord ton nom, les chemins de tes dossiers personnels et toute adresse ou clé : ce message quitte alors ton ordinateur.</p>
+</details>
+<p><a href="#parcours">Retour au parcours</a> · <a href="#handy">Étape suivante</a></p>
+<p><a id="handy"></a></p>
+<h2 id="4-préparer-la-dictée-locale--handy">4. Préparer la dictée locale : Handy</h2>
+<p>Nous utiliserons Handy pendant l’atelier. Installe-le et télécharge Parakeet Ultra avant de venir si possible. Si cela bloque, tu pourras suivre l’essai en binôme.</p>
+<p>Handy écrit ce que tu dictes dans l’application où se trouve ton curseur. Le traitement se fait sur ton ordinateur. Version 0.10.0, essayée sur Mac, hors ligne, en français. Relis ce qu’il écrit : lors de notre essai, il a déformé des noms propres.</p>
+<h3 id="choisis-ton-fichier">Choisis ton fichier</h3>
+<div class="table-scroll" role="region" aria-label="Tableau à faire défiler horizontalement" tabindex="0"><table>
+<thead>
+<tr>
+<th>Ton Mac</th>
+<th>Fichier</th>
+<th>Taille</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Puce Apple</td>
+<td><a href="https://github.com/cjpais/Handy/releases/download/v0.10.0/Handy_0.10.0_aarch64.dmg">Télécharger .dmg</a></td>
+<td>15 Mo</td>
+</tr>
+<tr>
+<td>Processeur Intel</td>
+<td><a href="https://github.com/cjpais/Handy/releases/download/v0.10.0/Handy_0.10.0_x64.dmg">Télécharger .dmg</a></td>
+<td>15 Mo</td>
+</tr>
+</tbody>
+</table></div>
+<details>
+<summary>Empreintes SHA-256 des fichiers Handy</summary>
+<p><strong>Handy_0.10.0_aarch64.dmg</strong></p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 6" aria-describedby="code-6-status" data-copy="code-6">Copier</button><span id="code-6-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 6"><code id="code-6">bdc41359af0b8b3014f14c44ea3fe85b1e45387bdad261bd4a2cfc92f7f35496
+</code></pre></div>
+<p><strong>Handy_0.10.0_x64.dmg</strong></p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 7" aria-describedby="code-7-status" data-copy="code-7">Copier</button><span id="code-7-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 7"><code id="code-7">210cc45fa66c899dcb8848df807779c7a808fe8e6dd863b9d5ed448a8acd7d3a
+</code></pre></div>
+</details>
+<p>Pour savoir lequel prendre : menu Pomme, puis « À propos de ce Mac », ligne « Puce » ou « Processeur ».</p>
+<h3 id="vérifie-et-installe-handy">Vérifie et installe Handy</h3>
+<ol>
+<li>
+<p>Ouvre le Terminal.</p>
+</li>
+<li>
+<p>Vérifie l’empreinte du fichier. Adapte le nom à celui que tu as téléchargé :</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 8" aria-describedby="code-8-status" data-copy="code-8">Copier</button><span id="code-8-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 8"><code id="code-8">shasum -a 256 ~/Downloads/Handy_0.10.0_aarch64.dmg
+</code></pre></div>
+</li>
+<li>
+<p>Ouvre le volet « Empreintes SHA-256 des fichiers Handy » ci-dessus et compare le résultat. Si elle diffère, retélécharge le fichier depuis le lien du tableau.</p>
+</li>
+<li>
+<p>Si elle correspond, ouvre le fichier et suis les indications d’installation.</p>
+</li>
+</ol>
+<h3 id="prépare-la-dictée">Prépare la dictée</h3>
+<ol>
+<li>Lance Handy une fois à la maison.</li>
+<li>Accorde l’accès au micro et à l’accessibilité.</li>
+<li>Choisis <strong>Parakeet Ultra</strong> comme modèle de transcription et attends la fin du téléchargement, environ <strong>740 Mo</strong>.</li>
+<li>Laisse le post-traitement désactivé.</li>
+</ol>
+<p>Parakeet Ultra a été essayé en français, sans Wi-Fi, sur le Mac du formateur.</p>
+<details>
+<summary>Autre modèle à partir de 24 Go : Voxtral</summary>
+<p>Voxtral donne un résultat proche, pour une taille bien plus grande. Pour l’atelier, prépare Parakeet Ultra.</p>
+</details>
+<aside class="admonition" aria-label="Important"><p class="admonition-title">Important</p>
+<p>Handy garde tes derniers enregistrements audio sur ton ordinateur. Laisse aussi le « post-traitement » désactivé : il peut envoyer ton texte à un service en ligne.</p>
+</aside>
+<p><strong>Dépôt officiel GitHub :</strong> <a href="https://github.com/cjpais/Handy">github.com/cjpais/Handy</a></p>
+<p><strong>C’est réussi si…</strong> Handy s’ouvre, Parakeet Ultra est téléchargé et le post-traitement reste désactivé.</p>
+<p><a href="#parcours">Retour au parcours</a> · <a href="#opencode">Étape suivante</a></p>
+<p><a id="opencode"></a></p>
+<h2 id="5-facultatif--prépare-opencode-avec-ornith">5. Facultatif : prépare OpenCode avec Ornith</h2>
+<p>Tu peux suivre ce bonus en démonstration. Le parcours commun est prêt à la fin de l’étape 4.</p>
+<details>
+<summary>Préparer le bonus OpenCode</summary>
+<p>OpenCode est un assistant de programmation : il écrit et modifie des fichiers à ta demande. La version 2.2.5 est celle avec laquelle le bonus a été préparé.</p>
+<p>Ce bonus utilise OpenCode avec Ornith. Tu peux suivre la démonstration, puis reprendre le parcours de la page de l’atelier sur ton ordinateur. La procédure de lancement proposée reste à valider avec les versions retenues.</p>
+<p>L’installation passe par un script publié sur le site officiel d’OpenCode : il télécharge le logiciel, puis l’installe. Sans autre réglage, il installe la version que l’éditeur publie au moment où tu le lances. L’option <code>--version 2.2.5</code> lui demande la version du bonus ; ce réglage reste à vérifier, nous ne l’avons pas encore essayé.</p>
+<h3 id="installe-opencode">Installe OpenCode</h3>
+<ol>
+<li>
+<p><strong>Lis le script si tu veux savoir ce qu’il fait</strong> avant de le lancer. Cette ligne l’affiche dans le Terminal sans rien exécuter ; la touche <code>q</code> referme la lecture :</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 9" aria-describedby="code-9-status" data-copy="code-9">Copier</button><span id="code-9-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 9"><code id="code-9">curl -fsSL https://opencode.ai/v2/install | less
+</code></pre></div>
+</li>
+<li>
+<p><strong>Lance</strong> le script d’installation :</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 10" aria-describedby="code-10-status" data-copy="code-10">Copier</button><span id="code-10-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 10"><code id="code-10">curl -fsSL https://opencode.ai/v2/install | bash -s -- --version 2.2.5
+</code></pre></div>
+</li>
+</ol>
+<p><strong>Dépôt officiel GitHub :</strong> <a href="https://github.com/anomalyco/opencode">github.com/anomalyco/opencode</a></p>
+<h3 id="vérifie-la-commande">Vérifie la commande</h3>
+<p>Dans le terminal, tape cette commande :</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 11" aria-describedby="code-11-status" data-copy="code-11">Copier</button><span id="code-11-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 11"><code id="code-11">opencode --version
+</code></pre></div>
+<p>Si la commande est introuvable, arrête cette procédure et demande à un animateur de vérifier ton installation.</p>
+</details>
+<p><strong>C’est réussi si…</strong> la commande affiche une version. La connexion à Ornith reste à vérifier avec un animateur avant le bonus.</p>
+<p><a href="#parcours">Retour au parcours</a></p>
+<p><a href="../../">Retour à l’accueil et au choix du parcours</a></p>
+</article></main>
+</body>
+</html>

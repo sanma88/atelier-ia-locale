@@ -2,6 +2,8 @@
 
 # L’IA locale sur ton ordinateur
 
+**Page de l’atelier :** https://sanma88.github.io/atelier-ia-locale/jour-j/
+
 **Prépare ta machine avant l’atelier**
 
 Vendredi **20 novembre 2026**, à **16 h 30**, salle **Imprimerie** · Digital Change with Ethics<br>
@@ -9,7 +11,7 @@ Avec **Mariano Sanfilippo** et **Vincent Daron**, pour **HELMo**.
 
 Voici les installations à préparer avant l’atelier. Télécharge-les chez toi : les modèles occupent plusieurs gigaoctets et une douzaine de personnes partageront le Wi-Fi en salle.
 
-Ce dépôt sert à préparer ton ordinateur. En salle, nous suivrons une autre page, dont le lien sera fourni au début de l’atelier.
+Cette page sert à préparer ton ordinateur. Le lien vers la page de l’atelier est tout en haut.
 
 <a id="sommaire"></a>
 
@@ -53,7 +55,7 @@ Si la valeur tombe juste sous un palier, prends la valeur ronde. Par exemple, **
 <details>
 <summary>Carte graphique, Mac Apple M ou Mac Intel : quel repère garder ?</summary>
 
-La mémoire d’une carte graphique, la **VRAM**, est bien plus rapide que la mémoire vive de l’ordinateur. Si le modèle tient dedans, il répond nettement plus vite.
+Une carte graphique calcule bien plus vite que le processeur. Pour en profiter, le modèle doit tenir dans sa mémoire dédiée, la **VRAM**.
 
 **Sur Windows :**
 
@@ -129,21 +131,21 @@ Chaque parcours explique comment installer Ollama, télécharger les modèles et
 | **1** | Ollama | Le moteur qui fait tourner le modèle sur ton ordinateur |
 | **2** | Les modèles de ton palier | Les fichiers disponibles avant l’atelier |
 | **3** | Une première demande à Ministral | Une réponse qui confirme que l’installation fonctionne |
-| **4** | Handy et son modèle Parakeet | La dictée locale prête à être essayée en salle |
+| **4** | Handy et son modèle Parakeet Ultra | La dictée locale prête à être essayée en salle |
 | **Facultatif** | OpenCode, à partir de 24 Go | La préparation du bonus code avec Ornith |
 
-Nous utiliserons Handy pendant l’atelier. Installe-le et télécharge Parakeet avant de venir si possible. Si cela bloque, tu pourras suivre l’essai en binôme.
+Nous utiliserons Handy pendant l’atelier. Installe-le et télécharge Parakeet Ultra, environ 740 Mo, avant de venir si possible. Si cela bloque, tu pourras suivre l’essai en binôme.
 
 Pour OpenCode, tu peux suivre la démonstration, puis reprendre le parcours de la page de l’atelier sur ton ordinateur. La procédure de lancement proposée reste à valider avec les versions retenues.
 
 ### Fais le point avant de venir
 
 1. Vérifie qu’Ollama et `ministral-3:3b` donnent une première réponse.
-2. Vérifie que Handy et Parakeet sont prêts.
+2. Vérifie que Handy et Parakeet Ultra sont prêts.
 3. Note l’étape qui bloque et le message d’erreur exact, s’il y en a un.
 4. Prépare ton chargeur.
 
-**C’est réussi si tu as obtenu une réponse de Ministral et préparé Handy avec Parakeet. Si une étape bloque, garde tes notes pour la reprendre avec nous.**
+**C’est réussi si tu as obtenu une réponse de Ministral et préparé Handy avec Parakeet Ultra. Si une étape bloque, garde tes notes pour la reprendre avec nous.**
 
 [Retour aux parcours](#parcours) · [Retour au sommaire](#sommaire)
 

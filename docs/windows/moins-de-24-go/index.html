@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; font-src 'self'; style-src 'self'; script-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Windows, moins de 24 Go de mémoire vive | HELMo</title>
+<link rel="icon" href="../../assets/logo-helmo.png" type="image/png">
+<link rel="stylesheet" href="../../assets/site.css">
+<script src="../../assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header"><a class="logo-zone" href="../../" aria-label="HELMo, accueil de l’installation"><img src="../../assets/logo-helmo.png" alt="HELMo" width="120" height="120"></a><nav aria-label="Pages de l’atelier"><a class="main-link" href="../../jour-j/">Page de l’atelier</a><a href="../../">Installation</a></nav></header>
+<nav class="page-toc" aria-label="Étapes de cette page"><details><summary>Sommaire de la page</summary><ol><li><a href="#ollama">1. Installe Ollama</a></li><li><a href="#modeles">2. Télécharge le modèle</a></li><li><a href="#premiere-reponse">3. Vérifie une première réponse</a></li><li><a href="#handy">4. Préparer la dictée locale : Handy</a></li></ol></details></nav>
+<main><article id="contenu" tabindex="-1"><h1 id="windows-moins-de-24-go-de-mémoire-vive">Windows, moins de 24 Go de mémoire vive</h1>
+<p><strong>L’IA locale sur ton ordinateur</strong> · HELMo · Vendredi 20 novembre 2026</p>
+<p>Avec Mariano Sanfilippo et Vincent Daron.</p>
+<p>Tu es au bon endroit si ton ordinateur tourne sous Windows et qu’il a moins de 24 Go de mémoire vive. Sinon, reviens à <a href="../../">l’accueil</a> pour choisir ton dossier.</p>
+<p>Prépare Ollama et les modèles, vérifie une première réponse, puis installe Handy pour la dictée locale. Si ça bloque, viens quand même. Nous regarderons le problème avec toi et tu pourras travailler en binôme.</p>
+<p>Ces paliers sont nos repères, testés pour l’instant sur une seule machine. En dessous de 16 Go de mémoire vive, viens quand même : on travaillera en binôme.</p>
+<aside class="admonition" aria-label="Note"><p class="admonition-title">Note</p>
+<p>Ce parcours a été préparé sur Mac et n’a pas encore été essayé sous Windows. Si un écran ou un message diffère de ce qui est décrit ici, note-le et viens quand même : tu nous aideras à l’améliorer.</p>
+</aside>
+<p>Ton PC a une carte graphique ? Elle calcule bien plus vite que le processeur, si le modèle tient dans sa mémoire dédiée. Vérifie combien elle en a avant de choisir ton dossier : <a href="../../#et-si-ton-pc-a-une-carte-graphique-windows-et-linux">comment faire</a>.</p>
+<p><a id="parcours"></a></p>
+<p><strong>Ton parcours</strong></p>
+<p><a href="#ollama">1. Ollama</a> · <a href="#modeles">2. Modèles</a> · <a href="#premiere-reponse">3. Première réponse</a> · <a href="#handy">4. Handy</a></p>
+<p><a id="ollama"></a></p>
+<h2 id="1-installe-ollama">1. Installe Ollama</h2>
+<p>Ollama est le <strong>moteur</strong> : le logiciel qui fait tourner l’IA sur ton ordinateur. Ce qu’il fait tourner s’appelle un <strong>modèle</strong> : le fichier qui contient ce que l’IA a appris. Avec les modèles de ce dossier, tes questions et ses réponses sont calculées et gardées sur ton ordinateur : Internet sert au téléchargement.</p>
+<h3 id="installe-le-moteur">Installe le moteur</h3>
+<ol>
+<li>
+<p><strong>Télécharge</strong> l’installeur officiel : <a href="https://github.com/ollama/ollama/releases/download/v0.40.14/OllamaSetup.exe">OllamaSetup.exe, version 0.40.14</a> (1,68 Go).</p>
+</li>
+<li>
+<p><strong>Ouvre</strong> PowerShell, une fenêtre où l’on tape des commandes, appelée aussi terminal. Tape « PowerShell » dans le menu Démarrer et ouvre-le.</p>
+</li>
+<li>
+<p><strong>Vérifie</strong> le fichier avant de l’ouvrir, grâce à son empreinte SHA-256 : une suite de caractères calculée à partir du fichier, comme une empreinte digitale. Si un seul octet change, l’empreinte change. Tape cette ligne dans PowerShell, puis appuie sur Entrée :</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 1" aria-describedby="code-1-status" data-copy="code-1">Copier</button><span id="code-1-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 1"><code id="code-1">Get-FileHash $HOME\Downloads\OllamaSetup.exe
+</code></pre></div>
+<p>La colonne <code>Hash</code> doit afficher, en majuscules ou en minuscules :
+<code>e069c7cc7d4808f77684e81efa0b1f853a5190b4b8f070bc8fd63041180e3eba</code></p>
+</li>
+<li>
+<p><strong>Ouvre</strong> le fichier téléchargé, seulement si l’empreinte correspond, et suis les indications à l’écran.</p>
+</li>
+<li>
+<p><strong>Lance</strong> l’application Ollama.</p>
+</li>
+</ol>
+<!-- À COMPLÉTER APRÈS T1 ET T2 : procédure Windows pas encore essayée. Écrans de l'installeur, avertissement SmartScreen éventuel, demande éventuelle de compte, disponibilité de la commande ollama dans PowerShell. -->
+<aside class="admonition" aria-label="Attention"><p class="admonition-title">Attention</p>
+<p>Si l’empreinte affichée diffère, n’ouvre pas le fichier. Il diffère de celui publié par l’éditeur. Supprime-le, retélécharge-le depuis le lien officiel ci-dessus, puis vérifie à nouveau.</p>
+</aside>
+<details>
+<summary>Pourquoi garder la version 0.40.14 ?</summary>
+<p>L’atelier a été préparé avec cette version. Une version plus récente existe : elle n’a pas été essayée pour l’atelier.</p>
+</details>
+<p><strong>Dépôt officiel GitHub :</strong> <a href="https://github.com/ollama/ollama">github.com/ollama/ollama</a></p>
+<p><strong>C’est réussi si…</strong> l’empreinte correspond et l’application Ollama s’ouvre.</p>
+<p><a href="#parcours">Retour au parcours</a> · <a href="#modeles">Étape suivante</a></p>
+<p><a id="modeles"></a></p>
+<h2 id="2-télécharge-le-modèle">2. Télécharge le modèle</h2>
+<p>Le modèle contient des réglages appris, rangés dans un fichier. Voici les modèles de ton parcours :</p>
+<div class="table-scroll" role="region" aria-label="Tableau à faire défiler horizontalement" tabindex="0"><table>
+<thead>
+<tr>
+<th>Modèle</th>
+<th>À quoi il sert</th>
+<th>Taille</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ministral-3:3b</code></td>
+<td>Ministral 3, le modèle de l’atelier, pour discuter</td>
+<td>2,95 Go</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="télécharge-ministral">Télécharge Ministral</h3>
+<ol>
+<li>
+<p><strong>Copie</strong> la commande ci-dessous, colle-la dans PowerShell, puis appuie sur Entrée.</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 2" aria-describedby="code-2-status" data-copy="code-2">Copier</button><span id="code-2-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 2"><code id="code-2">ollama pull ministral-3:3b
+</code></pre></div>
+</li>
+<li>
+<p><strong>Laisse la commande aller au bout</strong> : une barre de progression avance, puis le mot <code>success</code> apparaît.</p>
+</li>
+</ol>
+<p><strong>Espace disque pour le modèle : 2,95 Go</strong>, en plus de l’installeur et d’Ollama lui-même. Garde de la marge : ton ordinateur a besoin de place libre pour bien fonctionner.</p>
+<details>
+<summary>Si le téléchargement s’interrompt</summary>
+<p>Ollama est conçu pour reprendre : relance la même commande sans rien supprimer.</p>
+</details>
+<p><strong>C’est réussi si…</strong> chaque téléchargement choisi se termine par le mot <code>success</code>.</p>
+<p><a href="#parcours">Retour au parcours</a> · <a href="#premiere-reponse">Étape suivante</a></p>
+<p><a id="premiere-reponse"></a></p>
+<h2 id="3-vérifie-une-première-réponse">3. Vérifie une première réponse</h2>
+<h3 id="envoie-un-message">Envoie un message</h3>
+<ol>
+<li>
+<p><strong>Ouvre</strong> l’application Ollama.</p>
+</li>
+<li>
+<p><strong>Choisis</strong> le modèle <code>ministral-3:3b</code>.</p>
+</li>
+<li>
+<p><strong>Copie</strong> ce message dans la conversation, puis envoie-le :</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 3" aria-describedby="code-3-status" data-copy="code-3">Copier</button><span id="code-3-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 3"><code id="code-3">bonjour
+</code></pre></div>
+</li>
+<li>
+<p><strong>Vérifie</strong> les modèles téléchargés. Dans PowerShell, tape cette commande, puis appuie sur Entrée :</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 4" aria-describedby="code-4-status" data-copy="code-4">Copier</button><span id="code-4-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 4"><code id="code-4">ollama list
+</code></pre></div>
+</li>
+</ol>
+<!-- À COMPLÉTER APRÈS T1 ET T2 : où se trouve le choix du modèle dans l'application Ollama, et à quoi ressemble l'écran de réponse. -->
+<p><strong>C’est réussi si…</strong></p>
+<ul>
+<li>une réponse à ton « bonjour » s’affiche dans l’application, écrite par ton propre ordinateur ;</li>
+<li>la commande <code>ollama list</code>, tapée dans PowerShell, affiche <code>ministral-3:3b</code>.</li>
+</ul>
+<details>
+<summary>Si tu bloques à cette étape</summary>
+<p>Note le message exact qui s’affiche et apporte ton ordinateur le 20 novembre. Tu peux aussi coller ce message dans une IA en ligne pour qu’elle te l’explique. Retire d’abord ton nom, les chemins de tes dossiers personnels et toute adresse ou clé : ce message quitte alors ton ordinateur.</p>
+</details>
+<p><a href="#parcours">Retour au parcours</a> · <a href="#handy">Étape suivante</a></p>
+<p><a id="handy"></a></p>
+<h2 id="4-préparer-la-dictée-locale--handy">4. Préparer la dictée locale : Handy</h2>
+<p>Nous utiliserons Handy pendant l’atelier. Installe-le et télécharge Parakeet Ultra avant de venir si possible. Si cela bloque, tu pourras suivre l’essai en binôme.</p>
+<p>Handy écrit ce que tu dictes dans l’application où se trouve ton curseur. Le traitement se fait sur ton ordinateur. Version 0.10.0. Il n’a pas encore été testé sous Windows par l’équipe de l’atelier.</p>
+<h3 id="choisis-ton-fichier">Choisis ton fichier</h3>
+<div class="table-scroll" role="region" aria-label="Tableau à faire défiler horizontalement" tabindex="0"><table>
+<thead>
+<tr>
+<th>Ton PC</th>
+<th>Fichier</th>
+<th>Taille</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Processeur x64 (Intel, AMD)</td>
+<td><a href="https://github.com/cjpais/Handy/releases/download/v0.10.0/Handy_0.10.0_x64-setup.exe">Télécharger .exe</a></td>
+<td>17 Mo</td>
+</tr>
+<tr>
+<td>Processeur ARM64</td>
+<td><a href="https://github.com/cjpais/Handy/releases/download/v0.10.0/Handy_0.10.0_arm64-setup.exe">Télécharger .exe</a></td>
+<td>11 Mo</td>
+</tr>
+</tbody>
+</table></div>
+<details>
+<summary>Empreintes SHA-256 des fichiers Handy</summary>
+<p><strong>Handy_0.10.0_x64-setup.exe</strong></p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 5" aria-describedby="code-5-status" data-copy="code-5">Copier</button><span id="code-5-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 5"><code id="code-5">d4c02386d6b4b2a8ef8e53a7ce5c6c417d554005e91b3529def3920e0e786d03
+</code></pre></div>
+<p><strong>Handy_0.10.0_arm64-setup.exe</strong></p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 6" aria-describedby="code-6-status" data-copy="code-6">Copier</button><span id="code-6-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 6"><code id="code-6">2cec8defbe193d9cf837ac7e2f55880d685c486b0f15d2da11fa71f36de4c3d1
+</code></pre></div>
+</details>
+<p>Pour savoir lequel prendre : ouvre Paramètres, puis Système, puis Informations. La ligne « Type de système » indique x64 ou ARM64.</p>
+<h3 id="vérifie-et-installe-handy">Vérifie et installe Handy</h3>
+<ol>
+<li>
+<p>Ouvre PowerShell.</p>
+</li>
+<li>
+<p>Vérifie l’empreinte du fichier. Adapte le nom à celui que tu as téléchargé :</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 7" aria-describedby="code-7-status" data-copy="code-7">Copier</button><span id="code-7-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 7"><code id="code-7">Get-FileHash $HOME\Downloads\Handy_0.10.0_x64-setup.exe
+</code></pre></div>
+</li>
+<li>
+<p>Ouvre le volet « Empreintes SHA-256 des fichiers Handy » ci-dessus et compare le résultat. Si elle diffère, retélécharge le fichier depuis le lien du tableau.</p>
+</li>
+<li>
+<p>Si elle correspond, ouvre le fichier et suis les indications d’installation.</p>
+</li>
+</ol>
+<h3 id="prépare-la-dictée">Prépare la dictée</h3>
+<ol>
+<li>Lance Handy une fois à la maison.</li>
+<li>Choisis <strong>Parakeet Ultra</strong> comme modèle de transcription et attends la fin du téléchargement, environ <strong>740 Mo</strong>.</li>
+<li>Laisse le post-traitement désactivé.</li>
+</ol>
+<p>Parakeet Ultra a été essayé en français, sans Wi-Fi, sur le Mac du formateur.</p>
+<details>
+<summary>Autre modèle à partir de 24 Go : Voxtral</summary>
+<p>Voxtral donne un résultat proche, pour une taille bien plus grande. Pour l’atelier, prépare Parakeet Ultra.</p>
+</details>
+<aside class="admonition" aria-label="Important"><p class="admonition-title">Important</p>
+<p>Handy garde tes derniers enregistrements audio sur ton ordinateur. Laisse aussi le « post-traitement » désactivé : il peut envoyer ton texte à un service en ligne.</p>
+</aside>
+<p><strong>Dépôt officiel GitHub :</strong> <a href="https://github.com/cjpais/Handy">github.com/cjpais/Handy</a></p>
+<p><strong>C’est réussi si…</strong> Handy s’ouvre, Parakeet Ultra est téléchargé et le post-traitement reste désactivé.</p>
+<p><a href="#parcours">Retour au parcours</a></p>
+<p><a href="../../">Retour à l’accueil et au choix du parcours</a></p>
+</article></main>
+</body>
+</html>

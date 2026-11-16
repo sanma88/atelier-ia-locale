@@ -136,7 +136,7 @@ Note le message exact qui s’affiche et apporte ton ordinateur le 20 novembre. 
 
 ## 4. Préparer la dictée locale : Handy
 
-Nous utiliserons Handy pendant l’atelier. Installe-le et télécharge Parakeet avant de venir si possible. Si cela bloque, tu pourras suivre l’essai en binôme.
+Nous utiliserons Handy pendant l’atelier. Installe-le et télécharge Parakeet Ultra avant de venir si possible. Si cela bloque, tu pourras suivre l’essai en binôme.
 
 Handy écrit ce que tu dictes dans l’application où se trouve ton curseur. Le traitement se fait sur ton ordinateur. Version 0.10.0, essayée sur Mac, hors ligne, en français. Relis ce qu’il écrit : lors de notre essai, il a déformé des noms propres.
 
@@ -182,15 +182,15 @@ Pour savoir lequel prendre : menu Pomme, puis « À propos de ce Mac », lign
 
 1. Lance Handy une fois à la maison.
 2. Accorde l’accès au micro et à l’accessibilité.
-3. Choisis **Parakeet** comme modèle de transcription et attends la fin du téléchargement, environ **706 Mo**.
+3. Choisis **Parakeet Ultra** comme modèle de transcription et attends la fin du téléchargement, environ **740 Mo**.
 4. Laisse le post-traitement désactivé.
 
-Parakeet a été essayé en français, sans Wi-Fi, sur le Mac du formateur.
+Parakeet Ultra a été essayé en français, sans Wi-Fi, sur le Mac du formateur.
 
 <details>
 <summary>Autre modèle à partir de 24 Go : Voxtral</summary>
 
-Voxtral donne un résultat proche, pour une taille bien plus grande. Pour l’atelier, prépare Parakeet.
+Voxtral donne un résultat proche, pour une taille bien plus grande. Pour l’atelier, prépare Parakeet Ultra.
 
 </details>
 
@@ -199,7 +199,7 @@ Voxtral donne un résultat proche, pour une taille bien plus grande. Pour l’at
 
 **Dépôt officiel GitHub :** [github.com/cjpais/Handy](https://github.com/cjpais/Handy)
 
-**C’est réussi si…** Handy s’ouvre, Parakeet est téléchargé et le post-traitement reste désactivé.
+**C’est réussi si…** Handy s’ouvre, Parakeet Ultra est téléchargé et le post-traitement reste désactivé.
 
 [Retour au parcours](#parcours) · [Étape suivante](#opencode)
 

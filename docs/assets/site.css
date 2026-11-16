@@ -1,0 +1,103 @@
+@font-face{font-family:'Open Sans';src:url('fonts/open-sans-variable.ttf') format('truetype');font-weight:300 800;font-style:normal;font-display:swap}
+@font-face{font-family:'Open Sans';src:url('fonts/open-sans-italic-variable.ttf') format('truetype');font-weight:300 800;font-style:italic;font-display:swap}
+:root{font-family:'Open Sans',Arial,sans-serif;color:#1d1d1d;background:#fff;font-size:20px;line-height:1.65;--red:#d90b43;--line:#767676;scroll-padding-top:5rem}
+*{box-sizing:border-box}
+body{margin:0}
+a{color:var(--red);text-underline-offset:.2em;text-decoration-thickness:1px;overflow-wrap:anywhere}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid #1d1d1d;outline-offset:4px}
+.skip-link{position:fixed;top:.4rem;left:.5rem;transform:translateY(-200%);z-index:30;background:white;padding:.5rem 1rem}
+.skip-link:focus{transform:none}
+.site-header{max-width:1040px;margin:auto;padding:20px 24px 12px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+/* Clear space >= the M width (about 30% of this official image), charter p. 8. */
+.logo-zone{display:block;flex-shrink:0;padding:32px;line-height:0;background:#fff}
+.logo-zone img{display:block;width:100px;height:auto;object-fit:contain}
+.site-header nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.main-link{display:inline-block;font-weight:700;border:2px solid var(--red);padding:10px 18px;text-decoration:none;line-height:1.4}
+.main-link:hover{background:#fff2f6}
+.page-toc{position:sticky;top:0;z-index:10;background:#fff;border-block:1px solid #b7b7b7;box-shadow:0 2px 3px #0000000a}
+.page-toc>details{max-width:928px;margin:auto;border:0;padding:0}
+.page-toc summary{padding:12px 24px;min-height:52px;font-weight:700;color:#1d1d1d;cursor:pointer}
+.page-toc ol{list-style:none;padding:4px 24px 20px;margin:0;max-height:50vh;overflow:auto}
+.page-toc li{margin:0}
+.page-toc a{display:block;padding:8px 0;line-height:1.4}
+main{max-width:928px;margin:0 auto;padding:36px 24px 90px}
+article{min-width:0}
+article>h1{font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.2;letter-spacing:-.025em;margin:0 0 1.2rem;font-weight:700}
+h2{font-size:1.5rem;line-height:1.3;margin:3rem 0 1.1rem;padding-top:1.4rem;border-top:3px solid var(--red);letter-spacing:-.02em}
+h3{font-size:1.15rem;line-height:1.4;margin:1.8rem 0 .8rem}
+p{margin:1rem 0}
+strong{font-weight:700}
+article img{display:block;max-width:100%;height:auto;margin:1.4rem auto}
+article a[id]{display:block;scroll-margin-top:5rem}
+[id]{scroll-margin-top:5rem}
+ul,ol{padding-left:1.7rem}
+li{padding-left:.2rem;margin:.65rem 0}
+ol>li::marker{color:var(--red);font-weight:750;font-size:1.1em}
+li>p:first-child{margin-top:0}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.87em;overflow-wrap:anywhere}
+p code,li>code,td code{background:#f2f2f2;padding:.08em .2em;border-radius:3px}
+.code-block{margin:1.2rem 0;border:1px solid var(--line);background:#f7f7f7;max-width:100%;break-inside:avoid}
+.code-tools{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid #c2c2c2;flex-wrap:wrap;background:#fff}
+.copy-button{font:700 .85rem/1.3 'Open Sans',Arial,sans-serif;cursor:pointer;border:2px solid var(--red);color:var(--red);background:#fff;min-height:44px;padding:8px 18px}
+.copy-button:hover{background:#fff2f6}
+[role=status]{font-size:.8rem;line-height:1.5}
+pre{padding:20px;margin:0;max-width:100%;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;tab-size:2;font:400 .85rem/1.65 ui-monospace,SFMono-Regular,Consolas,monospace}
+pre code{font:inherit;background:none;padding:0;white-space:inherit}
+.clipboard-fallback{position:fixed;left:0;top:0;width:1px;height:1px;opacity:0}
+.table-scroll{max-width:100%;overflow-x:auto;margin:1.4rem 0;overscroll-behavior-x:contain}
+table{border-collapse:collapse;width:100%;font-size:.9rem;line-height:1.55}
+th,td{text-align:left;padding:14px 16px;border:1px solid #8a8a8a;vertical-align:top;min-width:150px}
+th{font-weight:700;background:#f2f2f2}
+tbody tr:nth-child(even){background:#fafafa}
+td:first-child,th:first-child{min-width:125px}
+.admonition{border:1px solid var(--line);border-left:5px solid var(--red);padding:16px 22px;margin:1.5rem 0;background:#fff}
+.admonition-title{font-weight:750;color:var(--red);margin:0 0 .4rem}
+.admonition p:last-child{margin-bottom:0}
+article details{border:1px solid var(--line);padding:0 20px;margin:1.2rem 0;background:#fff}
+article summary{cursor:pointer;font-weight:650;padding:15px 0;line-height:1.45;min-height:48px}
+article details[open]{padding-bottom:16px}
+article details>summary::marker{color:var(--red)}
+blockquote{border-left:3px solid var(--line);padding-left:20px;margin:1.5rem 0}
+@media(max-width:600px){
+  .site-header{padding:8px 12px;gap:8px;align-items:center}
+  .logo-zone{padding:24px}
+  .logo-zone img{width:72px}
+  .site-header nav{font-size:.85rem;gap:8px}
+  .main-link{padding:10px 12px}
+  main{padding:28px 18px 60px}
+  .page-toc summary{padding-inline:18px}
+  .page-toc ol{padding-inline:18px}
+  h2{font-size:1.4rem;overflow-wrap:anywhere}
+  h3{overflow-wrap:anywhere}
+  article details{padding-inline:14px}
+  .admonition{padding:14px 16px}
+  pre{padding:16px}
+  th,td{padding:12px;min-width:145px}
+  .code-tools{padding:8px 10px}
+}
+@media print{
+  @page{margin:16mm}
+  :root{font-size:11pt;line-height:1.45;color:#000;scroll-padding-top:0}
+  .site-header{padding:0;margin:0 0 6mm;max-width:none;justify-content:flex-start}
+  .logo-zone{padding:7mm}
+  .logo-zone img{width:20mm}
+  .site-header nav,.page-toc,.skip-link,.code-tools{display:none!important}
+  main{max-width:none;padding:0}
+  a{color:#000;text-decoration:underline}
+  h1{font-size:24pt!important}
+  h2{font-size:18pt;margin-top:10mm;break-after:avoid}
+  h3,summary{break-after:avoid}
+  p,li{orphans:3;widows:3}
+  .code-block,article details,.admonition{break-inside:auto}
+  article details{border:none;padding:0}
+  article details>*{display:block}
+  article details::details-content{content-visibility:visible;display:block}
+  .table-scroll{overflow:visible}
+  table{font-size:9pt;table-layout:fixed}
+  th,td{min-width:0;padding:2mm;overflow-wrap:anywhere}
+  thead{display:table-header-group}
+  tr{break-inside:avoid}
+  pre{font-size:9pt;overflow:visible;white-space:pre-wrap;overflow-wrap:anywhere}
+  article img{max-height:200mm;object-fit:contain;break-inside:avoid}
+}
