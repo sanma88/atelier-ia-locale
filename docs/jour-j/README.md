@@ -10,7 +10,7 @@ Avec Mariano Sanfilippo et Vincent Daron
 
 Sophie peut-elle se faire aider par une IA sans que son mail quitte son ordinateur ? Tu vas l’essayer avec un mail entièrement fictif.
 
-Garde cette page à côté d’Ollama pour suivre les gestes. Commence avec **`ministral-3:3b`**, même si tu as téléchargé un modèle plus gros. Tu pourras reprendre les étapes chez toi.
+Garde cette page à côté d’Ollama pour suivre les gestes. Les exemples utilisent **`ministral-3:3b`**. Si tu as téléchargé un modèle plus gros, tu peux l’essayer à la place. Tu pourras reprendre les étapes chez toi.
 
 <a id="sommaire"></a>
 
@@ -34,9 +34,6 @@ Clique sur une étape pour la retrouver.
 | [Avant de partir](#avant-de-partir) | Note ton modèle et la suite. | Un point de reprise pour chez toi. |
 
 [Accès direct au bloc complet de l’exercice 2](#bloc-complet)
-
-> [!NOTE]
-> Les parcours **Windows et Linux ont été préparés sur Mac, sans essai préalable sur ces systèmes**. Si un écran diffère, note la différence. Si une étape bloque, garde le message exact à l’écran et lève la main. Tu peux poursuivre en binôme pendant un téléchargement.
 
 <a id="etape-0"></a>
 
@@ -118,7 +115,7 @@ Ces repères ont été observés sur Mac avec Ollama 0.40.14. L’interface est 
 
 1. Ouvre l’application Ollama.
 2. Repère le champ de saisie **« Send a message »**.
-3. Le menu de choix du modèle est **en bas à droite de ce champ**. Lis le nom affiché : il doit être **`ministral-3:3b`**, le modèle présent dans la liste de l’étape précédente. Si le nom affiché n’est pas `ministral-3:3b`, fais vérifier ton écran.
+3. Le menu de choix du modèle est **en bas à droite de ce champ**. Lis le nom affiché : **`ministral-3:3b`**, ou le modèle plus gros que tu as téléchargé. Si tu vois un autre nom, fais vérifier ton écran.
 4. Pour repartir d’une conversation vide, clique sur le **bouton en forme de crayon, en haut à gauche de la fenêtre**. Vérifie à nouveau le nom du modèle en bas à droite du champ.
 
 ![Conversation vide dans Ollama sur Mac : la flèche désigne le bouton en forme de crayon en haut à gauche ; le champ « Send a message » affiche ministral-3:3b en bas à droite.](assets/ollama-app-nouvelle-conversation.png)
