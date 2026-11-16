@@ -8,7 +8,9 @@
 Vendredi 20 novembre 2026 · [HELMo](https://www.helmo.be/) · Digital Change with Ethics<br>
 Avec [Mariano Sanfilippo](https://www.linkedin.com/in/marianosanfilippo/) et [Vincent Daron](https://www.linkedin.com/in/vincent-daron-35757a2ab/)
 
-Sophie peut-elle se faire aider par une IA sans que son mail quitte son ordinateur ? Tu vas l’essayer avec un mail entièrement fictif.
+<aside class="admonition" aria-label="Cas du jour"><p class="admonition-title">Cas du jour</p>
+<p>Sophie peut-elle se faire aider par une IA sans que son mail quitte son ordinateur ? Tu vas l’essayer avec un mail entièrement fictif.</p>
+</aside>
 
 Garde cette page à côté d’Ollama pour suivre les gestes. Les exemples utilisent **`ministral-3:3b`**. Si tu as téléchargé un modèle plus gros, tu peux l’essayer à la place. Tu pourras reprendre les étapes chez toi.
 
