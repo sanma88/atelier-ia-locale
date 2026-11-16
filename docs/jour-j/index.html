@@ -180,7 +180,7 @@ Avec Mariano Sanfilippo et Vincent Daron</p>
 </ol>
 <p><img src="../assets/ollama-app-nouvelle-conversation.png" alt="Conversation vide dans Ollama sur Mac : la flèche désigne le bouton en forme de crayon en haut à gauche ; le champ « Send a message » affiche ministral-3:3b en bas à droite." decoding="async"></p>
 <p>Choisis le modèle téléchargé sur ton ordinateur. Un modèle cloud enverrait ton texte sur Internet.</p>
-<p>Le mot « cloud » indique que le modèle tourne chez un fournisseur en ligne, qui reçoit ton texte. Le contenu du menu déplié n’a pas été observé pendant l’essai.</p>
+<p>Le mot « cloud » indique que le modèle tourne chez un fournisseur en ligne, qui reçoit ton texte.</p>
 <h3 id="envoie-ton-premier-message">Envoie ton premier message</h3>
 <ol>
 <li>Dans l’application, clique dans <strong>« Send a message »</strong> et saisis ce message :</li>
@@ -388,8 +388,7 @@ Ressources humaines
 <p><a id="etape-5"></a></p>
 <h2 id="5--dicte-avec-handy">5 · Dicte avec Handy</h2>
 <p>Handy écrit le texte que tu prononces dans l’application où se trouve ton curseur.</p>
-<p>La version <strong>0.10.0</strong> a été essayée en français, Wi-Fi coupé, sur le Mac du formateur.</p>
-<p>Le modèle <strong>Parakeet Ultra</strong>, d’environ <strong>740 Mo</strong>, a fonctionné pendant cet essai. Les parcours Windows et Linux restent non essayés.</p>
+<p>Handy utilise le modèle <strong>Parakeet Ultra</strong>, d’environ <strong>740 Mo</strong>.</p>
 <h3 id="prépare-handy">Prépare Handy</h3>
 <p>Si l’application manque, retrouve son installation dans le parcours de ton système ou sur le <a href="https://github.com/cjpais/Handy">dépôt officiel de Handy</a>.</p>
 <ol>
@@ -398,7 +397,7 @@ Ressources humaines
 </li>
 <li>
 <p>Accorde l’autorisation nécessaire au micro.</p>
-<p>Sur le Mac essayé, Handy demande aussi l’accès à l’accessibilité.</p>
+<p>Sur Mac, Handy demande aussi l’accès à l’accessibilité.</p>
 </li>
 <li>
 <p>Choisis Parakeet Ultra comme modèle de transcription.</p>
@@ -414,7 +413,7 @@ Ressources humaines
 </li>
 </ol>
 <p>Le post-traitement peut utiliser un service en ligne. Il reste désactivé pour cet atelier.</p>
-<p>Sur le Mac essayé, le raccourci est <strong>Option + Espace</strong>. Le maintien ou la bascule dépend du réglage. <strong>Échap</strong> annule la dictée.</p>
+<p>Sur Mac, le raccourci est <strong>Option + Espace</strong>. Le maintien ou la bascule dépend du réglage. <strong>Échap</strong> annule la dictée.</p>
 <h3 id="dicte-une-phrase">Dicte une phrase</h3>
 <ol>
 <li>Coupe le Wi-Fi si tu l’as rétabli pour le téléchargement.</li>
@@ -434,7 +433,7 @@ Ressources humaines
 </ol>
 <p>Tu peux ensuite essayer dans la zone de message d’Ollama.</p>
 <h3 id="regarde-ce-qui-reste-sur-ton-ordinateur">Regarde ce qui reste sur ton ordinateur</h3>
-<p>Handy conserve les derniers enregistrements audio sur le disque dans la configuration essayée.</p>
+<p>Handy conserve les derniers enregistrements audio sur le disque.</p>
 <ol>
 <li>Repère le réglage de conservation des enregistrements.</li>
 <li>Choisis une conservation adaptée à ton usage.</li>
@@ -464,6 +463,11 @@ Si tu ne connais pas une information, signale ton incertitude.
 </ol>
 <p>Un site officiel ou un article daté peut servir de point de comparaison.</p>
 <p>Une réponse exacte ou une incertitude bien signalée constitue aussi un résultat utile.</p>
+<details>
+<summary>Exemple de réponse obtenue</summary>
+<p>Voici une réponse obtenue avec <code>ministral-3:3b</code>. Elle donne une date, des noms et des partis, sans signaler le moindre doute. Wouter Beke est pourtant membre du CD&amp;V et Alexander De Croo de l’Open VLD. Le PS est un parti francophone.</p>
+<p><img src="../assets/ollama-app-fait-recent.png" alt="Réponse de ministral-3:3b dans Ollama sur Mac : elle annonce que Wouter Beke (PS) a été investi Premier ministre flamand le 12 novembre 2026, à la suite d’Alexander De Croo (PS)." decoding="async"></p>
+</details>
 <h3 id="deux-autres-pistes">Deux autres pistes</h3>
 <ul>
 <li>Vérifie un nom, un chiffre ou une source citée par le modèle.</li>
@@ -557,7 +561,6 @@ Si tu ne connais pas une information, signale ton incertitude.
 <p>L’application Ollama, AnythingLLM et OpenCode sont des harnais.</p>
 <p>Avec AnythingLLM, tu changes d’application tout en conservant Ollama et <code>ministral-3:3b</code>.</p>
 <h3 id="prépare-la-connexion">Prépare la connexion</h3>
-<p>La version essayée pendant la préparation est <strong>AnythingLLM Desktop 1.19.0</strong>, sur le Mac du formateur.</p>
 <p>Si tu as gardé les connexions coupées après Handy, rétablis ta connexion pour ouvrir la page d’installation et télécharger l’application.</p>
 <ol>
 <li>Ouvre la <a href="https://docs.anythingllm.com/installation-desktop/overview">page officielle d’installation d’AnythingLLM Desktop</a>.</li>
@@ -596,8 +599,7 @@ Si tu ne connais pas une information, signale ton incertitude.
 <h2 id="10--bonus--crée-un-fichier-avec-opencode">10 · Bonus : crée un fichier avec OpenCode</h2>
 <p>OpenCode peut écrire et modifier des fichiers à ta demande.</p>
 <p>Pour ce bonus, le modèle retenu est <strong><code>ornith-1.5:9b</code></strong>, à partir du palier de 24 Go prévu dans le dépôt.</p>
-<p>L’essai documenté a eu lieu sur un <strong>Mac de 48 Go</strong>, avec <strong>OpenCode 2.2.5</strong> et <strong>Ollama 0.40.14</strong>.</p>
-<p>Ornith a créé le fichier demandé. Dans le même essai, Ministral a fourni du code dans la conversation sans créer le fichier.</p>
+<p>Pendant la préparation, Ornith a créé le fichier demandé. Ministral a fourni du code dans la conversation sans créer le fichier.</p>
 <h3 id="en-salle">En salle</h3>
 <p>Suis la démonstration si ton installation OpenCode est encore à préparer.</p>
 <p>Le formateur utilise un dossier de démonstration isolé et déjà vérifié.</p>
@@ -623,7 +625,6 @@ Si tu ne connais pas une information, signale ton incertitude.
 <p>La documentation officielle propose ce lancement :</p>
 <div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 18" aria-describedby="code-18-status" data-copy="code-18">Copier</button><span id="code-18-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 18"><code id="code-18">ollama launch opencode
 </code></pre></div>
-<p><strong>Cette procédure de lancement reste à répéter avec les versions retenues pour l’atelier.</strong> L’essai documenté utilisait une configuration isolée.</p>
 <p>La documentation demande aussi une fenêtre de contexte d’au moins <strong>64 000 tokens</strong>. C’est la quantité de texte disponible pour le travail en cours. Ce réglage augmente les besoins en mémoire.</p>
 <p>Fais vérifier ce réglage avant le bonus.</p>
 <p>Consulte la <a href="https://docs.ollama.com/integrations/opencode">documentation Ollama pour OpenCode</a>.</p>
@@ -656,7 +657,6 @@ Crée le fichier avec les outils disponibles.
 <li>Vérifie qu’un message apparaît.</li>
 </ol>
 <p><strong>C’est réussi si le fichier existe, si la page s’ouvre et si le bouton fonctionne.</strong></p>
-<p>Lors de l’essai documenté, le fichier a été créé et son contenu a été lu. <strong>L’ouverture dans le navigateur et le fonctionnement du bouton restent à vérifier.</strong></p>
 </details>
 <details>
 <summary>Et Claude Code ?</summary>

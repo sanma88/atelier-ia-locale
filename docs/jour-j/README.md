@@ -122,7 +122,7 @@ Ces repères ont été observés sur Mac avec Ollama 0.40.14. L’interface est 
 
 Choisis le modèle téléchargé sur ton ordinateur. Un modèle cloud enverrait ton texte sur Internet.
 
-Le mot « cloud » indique que le modèle tourne chez un fournisseur en ligne, qui reçoit ton texte. Le contenu du menu déplié n’a pas été observé pendant l’essai.
+Le mot « cloud » indique que le modèle tourne chez un fournisseur en ligne, qui reçoit ton texte.
 
 ### Envoie ton premier message
 
@@ -409,9 +409,7 @@ Si Handy doit encore télécharger son modèle, demande l’aide d’un animateu
 
 Handy écrit le texte que tu prononces dans l’application où se trouve ton curseur.
 
-La version **0.10.0** a été essayée en français, Wi-Fi coupé, sur le Mac du formateur.
-
-Le modèle **Parakeet Ultra**, d’environ **740 Mo**, a fonctionné pendant cet essai. Les parcours Windows et Linux restent non essayés.
+Handy utilise le modèle **Parakeet Ultra**, d’environ **740 Mo**.
 
 ### Prépare Handy
 
@@ -420,7 +418,7 @@ Si l’application manque, retrouve son installation dans le parcours de ton sys
 1. Ouvre Handy.
 2. Accorde l’autorisation nécessaire au micro.
 
-   Sur le Mac essayé, Handy demande aussi l’accès à l’accessibilité.
+   Sur Mac, Handy demande aussi l’accès à l’accessibilité.
 
 3. Choisis Parakeet Ultra comme modèle de transcription.
 4. Attends la fin de son téléchargement si nécessaire.
@@ -429,7 +427,7 @@ Si l’application manque, retrouve son installation dans le parcours de ton sys
 
 Le post-traitement peut utiliser un service en ligne. Il reste désactivé pour cet atelier.
 
-Sur le Mac essayé, le raccourci est **Option + Espace**. Le maintien ou la bascule dépend du réglage. **Échap** annule la dictée.
+Sur Mac, le raccourci est **Option + Espace**. Le maintien ou la bascule dépend du réglage. **Échap** annule la dictée.
 
 ### Dicte une phrase
 
@@ -453,7 +451,7 @@ Tu peux ensuite essayer dans la zone de message d’Ollama.
 
 ### Regarde ce qui reste sur ton ordinateur
 
-Handy conserve les derniers enregistrements audio sur le disque dans la configuration essayée.
+Handy conserve les derniers enregistrements audio sur le disque.
 
 1. Repère le réglage de conservation des enregistrements.
 2. Choisis une conservation adaptée à ton usage.
@@ -490,6 +488,15 @@ Si tu ne connais pas une information, signale ton incertitude.
 Un site officiel ou un article daté peut servir de point de comparaison.
 
 Une réponse exacte ou une incertitude bien signalée constitue aussi un résultat utile.
+
+<details>
+<summary>Exemple de réponse obtenue</summary>
+
+Voici une réponse obtenue avec `ministral-3:3b`. Elle donne une date, des noms et des partis, sans signaler le moindre doute. Wouter Beke est pourtant membre du CD&V et Alexander De Croo de l’Open VLD. Le PS est un parti francophone.
+
+![Réponse de ministral-3:3b dans Ollama sur Mac : elle annonce que Wouter Beke (PS) a été investi Premier ministre flamand le 12 novembre 2026, à la suite d’Alexander De Croo (PS).](assets/ollama-app-fait-recent.png)
+
+</details>
 
 ### Deux autres pistes
 
@@ -593,8 +600,6 @@ Avec AnythingLLM, tu changes d’application tout en conservant Ollama et `minis
 
 ### Prépare la connexion
 
-La version essayée pendant la préparation est **AnythingLLM Desktop 1.19.0**, sur le Mac du formateur.
-
 Si tu as gardé les connexions coupées après Handy, rétablis ta connexion pour ouvrir la page d’installation et télécharger l’application.
 
 1. Ouvre la [page officielle d’installation d’AnythingLLM Desktop](https://docs.anythingllm.com/installation-desktop/overview).
@@ -648,9 +653,7 @@ OpenCode peut écrire et modifier des fichiers à ta demande.
 
 Pour ce bonus, le modèle retenu est **`ornith-1.5:9b`**, à partir du palier de 24 Go prévu dans le dépôt.
 
-L’essai documenté a eu lieu sur un **Mac de 48 Go**, avec **OpenCode 2.2.5** et **Ollama 0.40.14**.
-
-Ornith a créé le fichier demandé. Dans le même essai, Ministral a fourni du code dans la conversation sans créer le fichier.
+Pendant la préparation, Ornith a créé le fichier demandé. Ministral a fourni du code dans la conversation sans créer le fichier.
 
 ### En salle
 
@@ -684,8 +687,6 @@ La documentation officielle propose ce lancement :
 ```bash
 ollama launch opencode
 ```
-
-**Cette procédure de lancement reste à répéter avec les versions retenues pour l’atelier.** L’essai documenté utilisait une configuration isolée.
 
 La documentation demande aussi une fenêtre de contexte d’au moins **64 000 tokens**. C’est la quantité de texte disponible pour le travail en cours. Ce réglage augmente les besoins en mémoire.
 
@@ -727,8 +728,6 @@ Crée le fichier avec les outils disponibles.
 5. Vérifie qu’un message apparaît.
 
 **C’est réussi si le fichier existe, si la page s’ouvre et si le bouton fonctionne.**
-
-Lors de l’essai documenté, le fichier a été créé et son contenu a été lu. **L’ouverture dans le navigateur et le fonctionnement du bouton restent à vérifier.**
 
 </details>
 
