@@ -27,10 +27,9 @@ Clique sur une étape pour la retrouver.
 | [4 · Sans connexion](#etape-4) | Coupe les connexions et renouvelle la demande. | Une réponse produite hors ligne. |
 | [5 · Dictée avec Handy](#etape-5) | Dicte une phrase dans une note. | Un texte inséré à l’endroit du curseur. |
 | [6 · Défi facultatif](#etape-6) | Vérifie une affirmation récente. | Une affirmation comparée à une source datée. |
-| [7 · Trois habitudes](#etape-7) | Repère versions, retours et accès. | Des points à vérifier avant de poursuivre. |
-| [8 · Modèle plus gros](#etape-8) | Suis la démonstration ou compare sur ta machine. | Une différence observée entre deux réponses. |
-| [9 · AnythingLLM](#etape-9) | Découvre un autre harnais avec le même modèle. | Une réponse à relire dans une autre application. |
-| [10 · Bonus OpenCode](#etape-10) | Suis la création d’une petite page. | Un fichier dont la page et le bouton sont à vérifier. |
+| [7 · Modèle plus gros](#etape-7) | Suis la démonstration ou compare sur ta machine. | Une différence observée entre deux réponses. |
+| [8 · AnythingLLM](#etape-8) | Découvre un autre harnais avec le même modèle. | Une réponse à relire dans une autre application. |
+| [9 · Bonus OpenCode](#etape-9) | Suis la création d’une petite page. | Un fichier dont la page et le bouton sont à vérifier. |
 | [Avant de partir](#avant-de-partir) | Note ton modèle et la suite. | Un point de reprise pour chez toi. |
 
 [Accès direct au bloc complet de l’exercice 2](#bloc-complet)
@@ -509,43 +508,7 @@ Voici une réponse obtenue avec `ministral-3:3b`. Elle donne une date, des noms 
 
 <a id="etape-7"></a>
 
-## 7 · Garde trois habitudes
-
-### 1. Garde une version précise
-
-Note le numéro de la version utilisée.
-
-Tu pourras retrouver plus facilement ton installation et décrire un problème.
-
-### 2. Lis les retours avant de changer
-
-Consulte les problèmes signalés.
-
-Lis les notes de version.
-
-Accorde une attention particulière aux corrections de sécurité.
-
-Une version qui vient de sortir a encore peu de retours d’utilisation.
-
-### 3. Protège tes accès
-
-Garde tes mots de passe et tes clés hors des fichiers confiés à l’application.
-
-Une clé d’accès sert de mot de passe à un programme.
-
-Vérifie les dossiers que l’application peut lire.
-
-Vérifie les services auxquels elle peut se connecter.
-
-Ces précautions restent utiles quand le modèle tourne sur ton ordinateur.
-
-**C’est réussi si tu sais retrouver ta version, lire ses notes de version et vérifier les accès accordés.**
-
-[Étape précédente](#etape-6) · [Retour au sommaire](#sommaire) · [Étape suivante](#etape-8)
-
-<a id="etape-8"></a>
-
-## 8 · Essaie un modèle plus gros
+## 7 · Essaie un modèle plus gros
 
 Mariano montre d’abord la même demande sur Qwen, un modèle local plus gros.
 
@@ -577,11 +540,11 @@ Qwen peut prendre du temps avant d’afficher sa réponse.
 
 **C’est réussi si tu peux décrire une différence observée entre les réponses.**
 
-[Étape précédente](#etape-7) · [Retour au sommaire](#sommaire) · [Étape suivante](#etape-9)
+[Étape précédente](#etape-7) · [Retour au sommaire](#sommaire) · [Étape suivante](#etape-8)
 
-<a id="etape-9"></a>
+<a id="etape-8"></a>
 
-## 9 · Change de harnais avec AnythingLLM
+## 8 · Change de harnais avec AnythingLLM
 
 Tu peux suivre la démonstration de Mariano, puis reprendre cette étape chez toi.
 
@@ -643,11 +606,11 @@ LiteLLM permet à une application d’accéder à plusieurs fournisseurs de mod�
 
 </details>
 
-[Étape précédente](#etape-8) · [Retour au sommaire](#sommaire) · [Étape suivante](#etape-10)
+[Étape précédente](#etape-7) · [Retour au sommaire](#sommaire) · [Étape suivante](#etape-9)
 
-<a id="etape-10"></a>
+<a id="etape-9"></a>
 
-## 10 · Bonus : crée un fichier avec OpenCode
+## 9 · Bonus : crée un fichier avec OpenCode
 
 OpenCode peut écrire et modifier des fichiers à ta demande.
 
@@ -740,7 +703,7 @@ Le bonus présenté ici utilise OpenCode avec un modèle local. Claude Code est 
 
 **C’est réussi si tu as vu le fichier se créer.**
 
-[Étape précédente](#etape-9) · [Retour au sommaire](#sommaire) · [Étape suivante](#avant-de-partir)
+[Étape précédente](#etape-8) · [Retour au sommaire](#sommaire) · [Étape suivante](#avant-de-partir)
 
 <a id="avant-de-partir"></a>
 
@@ -756,4 +719,4 @@ Le bonus présenté ici utilise OpenCode avec un modèle local. Claude Code est 
 
 [Page de l’atelier](https://sanma88.github.io/atelier-ia-locale/jour-j/) · [Dépôt d’installation](https://sanma88.github.io/atelier-ia-locale/)
 
-[Étape précédente](#etape-10) · [Retour au sommaire](#sommaire)
+[Étape précédente](#etape-9) · [Retour au sommaire](#sommaire)
