@@ -1,107 +1,188 @@
-# L’IA locale sur ton ordinateur : préparer ta machine
+<img src="assets/logo-helmo.png" alt="HELMo" width="120">
 
-Vivement le 20 novembre, on va pouvoir discuter ensemble et découvrir cet univers. Voici tout ce qu’on utilisera ce jour-là. Télécharge-le avant de venir : tu gagneras du temps le jour J.
+# L’IA locale sur ton ordinateur
 
-Atelier d’initiation du vendredi 20 novembre 2026, à 16 h 30, salle Imprimerie, dans le cadre de Digital Change with Ethics. Animé par Mariano Sanfilippo et Vincent Daron, au nom de HELMo.
+**Prépare ta machine avant l’atelier**
 
-## À quoi sert ce dépôt
+Vendredi **20 novembre 2026**, à **16 h 30**, salle **Imprimerie** · Digital Change with Ethics<br>
+Avec **Mariano Sanfilippo** et **Vincent Daron**, pour **HELMo**.
 
-Le jour de l’atelier, une douzaine de personnes voudront télécharger les mêmes fichiers, de plusieurs gigaoctets, sur le même Wi-Fi. Ce dépôt te permet de le faire chez toi, au calme : tu arrives avec un ordinateur prêt et tu passes l’atelier à t’en servir, pas à regarder une barre de progression.
+Voici les installations à préparer avant l’atelier. Télécharge-les chez toi : les modèles occupent plusieurs gigaoctets et une douzaine de personnes partageront le Wi-Fi en salle.
 
-Avant l’atelier, ce dépôt n’est pas un cours : c’est une liste de courses. Il ne contient aucun logiciel ni aucun modèle, seulement les liens officiels pour les télécharger et les commandes pour les installer. Tout s’explique le jour J, et ce dépôt sera aussi le support de l’atelier.
+Ce dépôt sert à préparer ton ordinateur. En salle, nous suivrons une autre page, dont le lien sera fourni au début de l’atelier.
 
-Le jour J, tu recevras sur place le lien vers la page que nous suivrons ensemble.
+<a id="sommaire"></a>
 
-Deux mots reviennent partout :
+**Sur cette page** : [1. Repère ta mémoire](#memoire) · [2. Choisis ton parcours](#parcours) · [3. Prépare les applications](#preparation) · [Repères et licences](#reperes) · [Contact](#contact)
 
-- le **moteur**, c’est Ollama : le logiciel qui fait tourner une IA sur ton ordinateur. Avec les modèles de ce dépôt, tes questions et ses réponses sont calculées et gardées sur ton ordinateur : Internet sert au téléchargement ;
-- le **modèle**, c’est le fichier qui contient ce que l’IA a appris. Tu ne télécharges pas Internet : tu télécharges des réglages.
+> [!NOTE]
+> Si ça bloque ou si tu manques de temps, viens quand même. Nous regarderons le problème avec toi et tu pourras travailler en binôme. Note le message d’erreur exact et pense à ton chargeur.
 
-## Ce n’est pas obligatoire
+<a id="memoire"></a>
 
-Ce n’est pas un examen d’entrée. Si ça bloque, ou si tu n’as pas eu le temps, viens quand même : on règle ça ensemble sur place. Note seulement le message d’erreur exact s’il y en a un, et pense à ton chargeur.
+## 1. Repère la mémoire de ton ordinateur
 
-## Choisir ton dossier en deux questions
+La **mémoire vive** est la mémoire de travail de l’ordinateur. Le modèle l’occupe pendant qu’il répond. L’**espace disque** sert à ranger les fichiers.
 
-**1. Quel est ton système ?** Mac, Windows ou Linux.
+### Trouve la valeur
 
-**2. Combien de mémoire vive a ton ordinateur ?** La mémoire vive, c’est la mémoire de travail de l’ordinateur, celle que le modèle occupe pendant qu’il répond. À ne pas confondre avec l’espace disque, où les fichiers sont rangés.
+| Ton système | Où lire la mémoire vive |
+|---|---|
+| **Mac** | Menu Pomme, puis **À propos de ce Mac**. Lis la ligne **Mémoire**. |
+| **Windows** | Ouvre le Gestionnaire des tâches avec **Ctrl + Maj + Échap**. Choisis **Performances**, puis **Mémoire**. Lis le total en haut à droite. |
+| **Linux** | Ouvre le détail ci-dessous pour afficher la mémoire dans le terminal. |
 
-Pour la lire :
+<details>
+<summary>Linux : lire la mémoire dans le terminal</summary>
 
-- **Mac** : menu Pomme, en haut à gauche, puis « À propos de ce Mac ». Regarde la ligne « Mémoire ».
-- **Windows** : ouvre le Gestionnaire des tâches avec `Ctrl` + `Maj` + `Échap`, onglet « Performances », puis « Mémoire ». Le total s’affiche en haut à droite.
-- **Linux** : dans un terminal, une fenêtre où l’on tape des commandes, tape `free -h`. Regarde la colonne `total` de la ligne qui commence par `Mem` ou `Mém.`.
+1. Ouvre un terminal, la fenêtre où tu peux taper des commandes.
+2. Copie cette commande, puis appuie sur Entrée :
 
-Si la valeur affichée tombe juste sous un palier, 15,8 Go pour une machine de 16 Go par exemple, prends le palier de la valeur ronde : une partie de la mémoire est réservée par le système.
-
-### Et si ton PC a une carte graphique ? (Windows et Linux)
-
-La mémoire d’une carte graphique, la VRAM, est bien plus rapide que la mémoire vive de l’ordinateur. Si ton modèle tient dedans, il répond nettement plus vite.
-
-- **Windows :** ouvre le Gestionnaire des tâches (`Ctrl + Maj + Échap`), onglet **Performances**, puis **GPU**, et lis la **mémoire GPU dédiée**. La « mémoire GPU partagée » n’est que de la mémoire vive de l’ordinateur prêtée à la carte : elle ne va pas plus vite. Si la mémoire dédiée est faible ou absente, ta carte partage la mémoire de l’ordinateur : choisis ton dossier d’après la mémoire vive.
-- **Linux, carte NVIDIA :** la commande `nvidia-smi` affiche la mémoire de la carte.
-- **Repères :** environ 4 Go de mémoire dédiée pour Ministral 3, 8 Go pour Ornith 9B, 24 Go pour Qwen3.8 27B. Ollama exploite les cartes NVIDIA récentes et certaines Radeon récentes. Sinon, il calcule avec le processeur, plus lentement.
-- **Sans carte graphique,** garde de la marge : Windows et tes programmes ouverts occupent déjà une bonne part de la mémoire vive. Un modèle trop lourd peut ralentir fortement ton ordinateur, voire le bloquer.
-
-Sur un Mac avec une puce Apple M, le processeur et la puce graphique partagent la mémoire. Sur un Mac Intel, Ollama utilise le processeur ; les réponses peuvent être beaucoup plus lentes. Commence avec ministral-3:3b avant d’essayer un plus gros modèle.
-
-## Les neuf dossiers
-
-| Système | Moins de 24 Go | De 24 à 36 Go | 36 Go et plus |
-|---|---|---|---|
-| Mac | [mac/moins-de-24-go](mac/moins-de-24-go/README.md) | [mac/de-24-a-36-go](mac/de-24-a-36-go/README.md) | [mac/36-go-et-plus](mac/36-go-et-plus/README.md) |
-| Windows | [windows/moins-de-24-go](windows/moins-de-24-go/README.md) | [windows/de-24-a-36-go](windows/de-24-a-36-go/README.md) | [windows/36-go-et-plus](windows/36-go-et-plus/README.md) |
-| Linux | [linux/moins-de-24-go](linux/moins-de-24-go/README.md) | [linux/de-24-a-36-go](linux/de-24-a-36-go/README.md) | [linux/36-go-et-plus](linux/36-go-et-plus/README.md) |
-
-« De 24 à 36 Go » veut dire 24 Go ou plus, mais moins de 36 Go. Une machine de 36 Go va dans « 36 Go et plus ».
-
-Ces paliers sont nos repères, testés pour l’instant sur une seule machine. En dessous de 16 Go de mémoire vive, viens quand même : on travaillera en binôme.
-
-Ce que chaque palier télécharge :
-
-| Palier | Modèles | Espace disque pour les modèles |
-|---|---|---|
-| Moins de 24 Go | Ministral 3 | 2,95 Go |
-| De 24 à 36 Go | Ministral 3, Ornith 1.5 9B | 9,50 Go |
-| 36 Go et plus | Ministral 3, Ornith 1.5 9B, Qwen3.8 27B (facultatif) | 27,25 Go, ou 9,50 Go sans Qwen3.8 27B |
-
-Ministral 3 est le modèle de l’atelier : tout le monde l’utilise. Ornith 1.5 9B sert au bonus code. Qwen3.8 27B, plus gros, sert à comparer un petit modèle et un gros.
-
-## Structure du dépôt
-
-```text
-.
-├── README.md                 cette page
-├── mac/
-│   ├── moins-de-24-go/README.md
-│   ├── de-24-a-36-go/README.md
-│   └── 36-go-et-plus/README.md
-├── windows/
-│   └── (les trois mêmes dossiers)
-└── linux/
-    └── (les trois mêmes dossiers)
+```bash
+free -h
 ```
 
-Chaque dossier tient en trois étapes : installer le moteur, télécharger les modèles, vérifier que tout répond. Viennent ensuite des outils en option.
+3. Lis la colonne `total` de la ligne qui commence par `Mem` ou `Mém.`.
 
-## Pourquoi des liens officiels
+</details>
 
-Tous les liens directs mènent aux pages de publication des éditeurs, à une version précise : un installeur récupéré ailleurs peut embarquer autre chose que ce qu’il annonce. Chaque fichier est accompagné de son empreinte SHA-256, qui permet de vérifier que le fichier reçu est bien celui publié. Cette vérification se fait avant d’ouvrir le fichier ; chaque dossier donne la commande de ton système, et quoi faire si l’empreinte diffère.
+Si la valeur tombe juste sous un palier, prends la valeur ronde. Par exemple, **15,8 Go correspond à une machine de 16 Go**. Une partie de la mémoire est réservée au système.
 
-Sous Linux, et pour OpenCode sur Mac, l’installation passe par un script du site officiel de l’éditeur. Sans autre réglage, un script installe la version que l’éditeur publie au moment où tu le lances ; chaque dossier montre comment le lire avant de le lancer.
+<a id="et-si-ton-pc-a-une-carte-graphique-windows-et-linux"></a>
 
-## Licences
+<details>
+<summary>Carte graphique, Mac Apple M ou Mac Intel : quel repère garder ?</summary>
 
-Logiciels :
+La mémoire d’une carte graphique, la **VRAM**, est bien plus rapide que la mémoire vive de l’ordinateur. Si le modèle tient dedans, il répond nettement plus vite.
+
+**Sur Windows :**
+
+1. Ouvre le Gestionnaire des tâches avec **Ctrl + Maj + Échap**.
+2. Choisis **Performances**, puis **GPU**.
+3. Lis la **mémoire GPU dédiée**.
+
+La mémoire GPU partagée est de la mémoire vive prêtée à la carte. Elle ne va pas plus vite. Si la mémoire dédiée est faible ou absente, choisis ton parcours d’après la mémoire vive.
+
+**Sur Linux avec une carte NVIDIA**, cette commande affiche la mémoire de la carte :
+
+```bash
+nvidia-smi
+```
+
+| Modèle | Repère de mémoire graphique dédiée |
+|---|---|
+| Ministral 3 | Environ 4 Go |
+| Ornith 9B | Environ 8 Go |
+| Qwen3.8 27B | Environ 24 Go |
+
+Ollama exploite les cartes NVIDIA récentes et certaines Radeon récentes. Sinon, il calcule avec le processeur, plus lentement.
+
+Sans carte graphique, garde de la marge. Windows et tes programmes ouverts occupent déjà une partie de la mémoire vive. Un modèle trop lourd peut ralentir fortement ton ordinateur, voire le bloquer.
+
+Sur un **Mac avec une puce Apple M**, le processeur et la puce graphique partagent la mémoire. Sur un **Mac Intel**, Ollama utilise le processeur et les réponses peuvent être beaucoup plus lentes. Commence avec `ministral-3:3b` avant d’essayer un modèle plus gros.
+
+</details>
+
+**C’est réussi si tu connais ton système et la quantité de mémoire vive de ton ordinateur.**
+
+[Étape suivante : choisis ton parcours](#parcours) · [Retour au sommaire](#sommaire)
+
+<a id="parcours"></a>
+<a id="les-neuf-dossiers"></a>
+
+## 2. Choisis ton parcours
+
+Clique sur la case qui correspond à ton ordinateur. Chaque lien ouvre les instructions adaptées.
+
+| Système | Moins de 24 Go | De 24 à moins de 36 Go | 36 Go et plus |
+|---|---|---|---|
+| **Mac** | [Ouvrir le parcours](mac/moins-de-24-go/README.md) | [Ouvrir le parcours](mac/de-24-a-36-go/README.md) | [Ouvrir le parcours](mac/36-go-et-plus/README.md) |
+| **Windows** | [Ouvrir le parcours](windows/moins-de-24-go/README.md) | [Ouvrir le parcours](windows/de-24-a-36-go/README.md) | [Ouvrir le parcours](windows/36-go-et-plus/README.md) |
+| **Linux** | [Ouvrir le parcours](linux/moins-de-24-go/README.md) | [Ouvrir le parcours](linux/de-24-a-36-go/README.md) | [Ouvrir le parcours](linux/36-go-et-plus/README.md) |
+
+Une machine de **36 Go** va dans **36 Go et plus**. Ces paliers sont nos repères, essayés pour l’instant sur une seule machine. En dessous de **16 Go**, viens quand même : tu pourras travailler en binôme.
+
+### Prévois la place pour les modèles
+
+| Mémoire vive | Modèles à télécharger | Espace disque pour les modèles |
+|---|---|---|
+| Moins de 24 Go | Ministral 3 | 2,95 Go |
+| De 24 à moins de 36 Go | Ministral 3 et Ornith 1.5 9B | 9,50 Go |
+| 36 Go et plus | Ministral 3, Ornith 1.5 9B et Qwen3.8 27B facultatif | 27,25 Go, ou 9,50 Go sans Qwen3.8 27B |
+
+**Ministral 3** est le modèle de l’atelier : tout le monde l’utilise. **Ornith 1.5 9B** sert à comparer les réponses et au bonus code. **Qwen3.8 27B**, plus gros, sert à comparer un petit modèle et un gros.
+
+**C’est réussi si tu as ouvert le parcours de ton système et de ta mémoire.**
+
+[Étape suivante : prépare les applications](#preparation) · [Retour au sommaire](#sommaire)
+
+<a id="preparation"></a>
+
+## 3. Prépare les applications
+
+Chaque parcours explique comment installer Ollama, télécharger les modèles et vérifier une première réponse. Prépare ensuite Handy pour la dictée locale. OpenCode reste facultatif.
+
+### Suis les étapes de ton parcours
+
+| Ordre | Ce que tu prépares | Ce que tu obtiens |
+|---|---|---|
+| **1** | Ollama | Le moteur qui fait tourner le modèle sur ton ordinateur |
+| **2** | Les modèles de ton palier | Les fichiers disponibles avant l’atelier |
+| **3** | Une première demande à Ministral | Une réponse qui confirme que l’installation fonctionne |
+| **4** | Handy et son modèle Parakeet | La dictée locale prête à être essayée en salle |
+| **Facultatif** | OpenCode, à partir de 24 Go | La préparation du bonus code avec Ornith |
+
+Nous utiliserons Handy pendant l’atelier. Installe-le et télécharge Parakeet avant de venir si possible. Si cela bloque, tu pourras suivre l’essai en binôme.
+
+Pour OpenCode, tu peux suivre la démonstration, puis reprendre le parcours de la page de l’atelier sur ton ordinateur. La procédure de lancement proposée reste à valider avec les versions retenues.
+
+### Fais le point avant de venir
+
+1. Vérifie qu’Ollama et `ministral-3:3b` donnent une première réponse.
+2. Vérifie que Handy et Parakeet sont prêts.
+3. Note l’étape qui bloque et le message d’erreur exact, s’il y en a un.
+4. Prépare ton chargeur.
+
+**C’est réussi si tu as obtenu une réponse de Ministral et préparé Handy avec Parakeet. Si une étape bloque, garde tes notes pour la reprendre avec nous.**
+
+[Retour aux parcours](#parcours) · [Retour au sommaire](#sommaire)
+
+<a id="reperes"></a>
+
+## Repères et licences
+
+<details>
+<summary>Moteur et modèle : deux mots que tu retrouveras</summary>
+
+Le **moteur**, Ollama, est le logiciel qui fait tourner une IA sur ton ordinateur. Avec les modèles de ce dépôt, tes questions et ses réponses sont calculées et gardées sur ton ordinateur. Internet sert au téléchargement.
+
+Le **modèle** est le fichier qui contient les réglages appris pendant l’entraînement.
+
+Ce dépôt contient les liens officiels et les commandes pour préparer ton ordinateur. Les logiciels et les modèles se téléchargent depuis les sites indiqués dans les parcours.
+
+</details>
+
+<details>
+<summary>Pourquoi les parcours donnent des liens officiels et des empreintes SHA-256</summary>
+
+Les liens directs mènent aux pages de publication des éditeurs, à une version précise. Un installeur récupéré ailleurs peut embarquer autre chose que ce qu’il annonce.
+
+Chaque fichier est accompagné de son **empreinte SHA-256**. Elle permet de vérifier que le fichier reçu est bien celui publié. Fais cette vérification avant d’ouvrir le fichier. Ton parcours donne la commande et explique quoi faire si l’empreinte diffère.
+
+Sous Linux, et pour OpenCode sur Mac, l’installation passe par un script du site officiel de l’éditeur. Sans autre réglage, ce script installe la version publiée au moment où tu le lances. Chaque parcours montre comment le lire avant de le lancer.
+
+</details>
+
+<details>
+<summary>Licences des logiciels et des modèles</summary>
 
 | Logiciel | Rôle | Licence |
 |---|---|---|
-| Ollama | moteur | MIT |
-| OpenCode | assistant de programmation, en option | MIT |
-| Handy | dictée vocale, en bonus | MIT |
+| Ollama | Moteur | MIT |
+| OpenCode | Assistant de programmation, facultatif | MIT |
+| Handy | Dictée vocale locale | MIT |
 
-Modèles : chacun porte sa propre licence, distincte de celle d’Ollama.
+Chaque modèle porte sa propre licence, distincte de celle d’Ollama.
 
 | Modèle | Licence |
 |---|---|
@@ -109,8 +190,16 @@ Modèles : chacun porte sa propre licence, distincte de celle d’Ollama.
 | Ornith 1.5 9B (`ornith-1.5:9b`) | MIT, selon son éditeur |
 | Qwen3.8 27B (`qwen3.8:27b`) | Apache 2.0 |
 
-## Contact
+</details>
+
+[Retour au sommaire](#sommaire)
+
+<a id="contact"></a>
+
+## Une question avant l’atelier ?
 
 Mariano Sanfilippo et Vincent Daron, pour HELMo.
 
-Une question avant l’atelier ? Passe par l’organisateur, Digital Change with Ethics, qui nous transmet.
+Une question avant l’atelier ? Passe par l’organisateur, **Digital Change with Ethics**, qui nous transmet.
+
+[Retour au sommaire](#sommaire)

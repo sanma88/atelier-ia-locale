@@ -1,17 +1,33 @@
+<img src="../../assets/logo-helmo.png" alt="HELMo" width="120">
+
 # Windows, de 24 à 36 Go de mémoire vive
+
+**L’IA locale sur ton ordinateur** · HELMo · Vendredi 20 novembre 2026
+
+Avec Mariano Sanfilippo et Vincent Daron.
 
 Tu es au bon endroit si ton ordinateur tourne sous Windows et qu’il a au moins 24 Go de mémoire vive, mais moins de 36 Go. Sinon, reviens à [l’accueil](../../README.md) pour choisir ton dossier.
 
-Trois étapes : installer le moteur, télécharger les modèles, vérifier que tout répond. Ce n’est pas un examen d’entrée : si ça bloque, viens quand même, on règle ça ensemble sur place.
+Prépare Ollama et les modèles, vérifie une première réponse, puis installe Handy pour la dictée locale. Si ça bloque, viens quand même. Nous regarderons le problème avec toi et tu pourras travailler en binôme.
 
-Ce parcours a été préparé sur Mac et n’a pas encore été essayé sous Windows. Si un écran ou un message diffère de ce qui est décrit ici, note-le et viens quand même : tu nous aideras à l’améliorer.
+> [!NOTE]
+> Ce parcours a été préparé sur Mac et n’a pas encore été essayé sous Windows. Si un écran ou un message diffère de ce qui est décrit ici, note-le et viens quand même : tu nous aideras à l’améliorer.
 
-> **Astuce**
-> Ton PC a une carte graphique ? Sa mémoire dédiée est bien plus rapide que la mémoire vive. Vérifie combien elle en a avant de choisir ton dossier : [comment faire](../../README.md#et-si-ton-pc-a-une-carte-graphique-windows-et-linux).
+Ton PC a une carte graphique ? Sa mémoire dédiée est bien plus rapide que la mémoire vive. Vérifie combien elle en a avant de choisir ton dossier : [comment faire](../../README.md#et-si-ton-pc-a-une-carte-graphique-windows-et-linux).
 
-## 1. Installer Ollama
+<a id="parcours"></a>
+
+**Ton parcours**
+
+[1. Ollama](#ollama) · [2. Modèles](#modeles) · [3. Première réponse](#premiere-reponse) · [4. Handy](#handy) · [5. OpenCode, facultatif](#opencode)
+
+<a id="ollama"></a>
+
+## 1. Installe Ollama
 
 Ollama est le **moteur** : le logiciel qui fait tourner l’IA sur ton ordinateur. Ce qu’il fait tourner s’appelle un **modèle** : le fichier qui contient ce que l’IA a appris. Avec les modèles de ce dossier, tes questions et ses réponses sont calculées et gardées sur ton ordinateur : Internet sert au téléchargement.
+
+### Installe le moteur
 
 1. **Télécharge** l’installeur officiel : [OllamaSetup.exe, version 0.40.14](https://github.com/ollama/ollama/releases/download/v0.40.14/OllamaSetup.exe) (1,68 Go).
 2. **Ouvre** PowerShell, une fenêtre où l’on tape des commandes, appelée aussi terminal. Tape « PowerShell » dans le menu Démarrer et ouvre-le.
@@ -29,21 +45,34 @@ Ollama est le **moteur** : le logiciel qui fait tourner l’IA sur ton ordinate
 
 <!-- À COMPLÉTER APRÈS T1 ET T2 : procédure Windows pas encore essayée. Écrans de l'installeur, avertissement SmartScreen éventuel, demande éventuelle de compte, disponibilité de la commande ollama dans PowerShell. -->
 
-> **Attention**
-> Si l’empreinte affichée diffère, n’ouvre pas le fichier : ce n’est pas celui que l’éditeur a publié. Supprime-le, retélécharge-le depuis le lien officiel ci-dessus, puis vérifie à nouveau.
+> [!WARNING]
+> Si l’empreinte affichée diffère, n’ouvre pas le fichier. Il diffère de celui publié par l’éditeur. Supprime-le, retélécharge-le depuis le lien officiel ci-dessus, puis vérifie à nouveau.
 
-Pourquoi la version 0.40.14 et pas la toute dernière ? C’est avec elle que l’atelier a été préparé. Une version plus récente existe : elle n’a pas été essayée pour l’atelier.
+<details>
+<summary>Pourquoi garder la version 0.40.14 ?</summary>
+
+L’atelier a été préparé avec cette version. Une version plus récente existe : elle n’a pas été essayée pour l’atelier.
+
+</details>
 
 **Dépôt officiel GitHub :** [github.com/ollama/ollama](https://github.com/ollama/ollama)
 
-## 2. Télécharger les modèles
+**C’est réussi si…** l’empreinte correspond et l’application Ollama s’ouvre.
 
-Le modèle, c’est ce que l’IA a appris, rangé dans un fichier. Tu ne télécharges pas Internet : tu télécharges des réglages. Dans ce dossier :
+[Retour au parcours](#parcours) · [Étape suivante](#modeles)
+
+<a id="modeles"></a>
+
+## 2. Télécharge les modèles
+
+Le modèle contient des réglages appris, rangés dans un fichier. Voici les modèles de ton parcours :
 
 | Modèle | À quoi il sert | Taille |
 |---|---|---|
 | `ministral-3:3b` | Ministral 3, le modèle de l’atelier, pour discuter | 2,95 Go |
-| `ornith-1.5:9b` | Ornith 1.5 9B, un modèle plus grand, pour le bonus code | 6,55 Go |
+| `ornith-1.5:9b` | Ornith 1.5 9B, pour comparer les réponses et pour le bonus code | 6,55 Go |
+
+### Télécharge les modèles un par un
 
 Lance ces commandes une par une, dans PowerShell. Pour chacune : copie-la, colle-la, appuie sur Entrée, puis attends le mot `success` avant de lancer la suivante. Pendant le téléchargement, une barre de progression avance.
 
@@ -61,68 +90,189 @@ Lance ces commandes une par une, dans PowerShell. Pour chacune : copie-la, coll
 
 **Espace disque pour les modèles : 9,50 Go**, en plus de l’installeur et d’Ollama lui-même. Garde de la marge : ton ordinateur a besoin de place libre pour bien fonctionner.
 
-> **À retenir**
-> Si le téléchargement s’interrompt, Ollama est conçu pour reprendre : relance la même commande sans rien supprimer.
+<details>
+<summary>Si le téléchargement s’interrompt</summary>
 
-## 3. Vérifier
+Ollama est conçu pour reprendre : relance la même commande sans rien supprimer.
+
+</details>
+
+**C’est réussi si…** chaque téléchargement choisi se termine par le mot `success`.
+
+[Retour au parcours](#parcours) · [Étape suivante](#premiere-reponse)
+
+<a id="premiere-reponse"></a>
+
+## 3. Vérifie une première réponse
+
+### Envoie un message
 
 1. **Ouvre** l’application Ollama.
 2. **Choisis** le modèle `ministral-3:3b`.
-3. **Écris** `bonjour`, puis envoie.
+3. **Copie** ce message dans la conversation, puis envoie-le :
+
+   ```text
+   bonjour
+   ```
+
+4. **Vérifie** les modèles téléchargés. Dans PowerShell, tape cette commande, puis appuie sur Entrée :
+
+   ```powershell
+   ollama list
+   ```
 
 <!-- À COMPLÉTER APRÈS T1 ET T2 : où se trouve le choix du modèle dans l'application Ollama, et à quoi ressemble l'écran de réponse. -->
 
-## C’est réussi si…
+**C’est réussi si…**
 
 - une réponse à ton « bonjour » s’affiche dans l’application, écrite par ton propre ordinateur ;
 - la commande `ollama list`, tapée dans PowerShell, affiche `ministral-3:3b` et `ornith-1.5:9b`.
 
-> **Besoin d’un indice ?**
-> Note le message exact qui s’affiche et apporte ton ordinateur le 20 novembre. Tu peux aussi coller ce message dans une IA en ligne pour qu’elle te l’explique. Retire d’abord ton nom, les chemins de tes dossiers personnels et toute adresse ou clé : ce message quitte alors ton ordinateur.
+<details>
+<summary>Si tu bloques à cette étape</summary>
 
-## En option
+Note le message exact qui s’affiche et apporte ton ordinateur le 20 novembre. Tu peux aussi coller ce message dans une IA en ligne pour qu’elle te l’explique. Retire d’abord ton nom, les chemins de tes dossiers personnels et toute adresse ou clé : ce message quitte alors ton ordinateur.
 
-Rien de ce qui suit n’est nécessaire pour participer à l’atelier.
+</details>
 
-### Bonus code : OpenCode, avec Ornith
+[Retour au parcours](#parcours) · [Étape suivante](#handy)
 
-OpenCode est un assistant de programmation : il écrit et modifie des fichiers à ta demande. Le jour J, il travaillera avec le modèle Ornith, sur ton ordinateur. La version 2.2.5 est celle avec laquelle le bonus a été préparé. La façon de le relier à Ornith est donnée pendant l’atelier.
+<a id="handy"></a>
 
-**Pas encore testé sous Windows** : le bonus a été préparé sur Mac. L’application de bureau ci-dessous est celle que l’éditeur publie pour Windows ; son fonctionnement avec Ornith reste à essayer.
+## 4. Préparer la dictée locale : Handy
 
-| Ton PC | Fichier | Taille | SHA-256 |
-|---|---|---|---|
-| Processeur x64 (Intel, AMD) | [opencode-desktop-win-x64.exe](https://github.com/anomalyco/opencode/releases/download/v2.2.5/opencode-desktop-win-x64.exe) | 264 Mo | `634cd9b3b0e6dea71285dc4ed98d54d6617721d5e302bc8c8661fc957c321cc8` |
-| Processeur ARM64 | [opencode-desktop-win-arm64.exe](https://github.com/anomalyco/opencode/releases/download/v2.2.5/opencode-desktop-win-arm64.exe) | 251 Mo | `435a9f0c931cc9ab8657f57528d4791b058d56f4fc01238e1e9deaf45923ffb5` |
+Nous utiliserons Handy pendant l’atelier. Installe-le et télécharge Parakeet avant de venir si possible. Si cela bloque, tu pourras suivre l’essai en binôme.
+
+Handy écrit ce que tu dictes dans l’application où se trouve ton curseur. Le traitement se fait sur ton ordinateur. Version 0.10.0. Il n’a pas encore été testé sous Windows par l’équipe de l’atelier.
+
+### Choisis ton fichier
+
+| Ton PC | Fichier | Taille |
+|---|---|---|
+| Processeur x64 (Intel, AMD) | [Télécharger .exe](https://github.com/cjpais/Handy/releases/download/v0.10.0/Handy_0.10.0_x64-setup.exe) | 17 Mo |
+| Processeur ARM64 | [Télécharger .exe](https://github.com/cjpais/Handy/releases/download/v0.10.0/Handy_0.10.0_arm64-setup.exe) | 11 Mo |
+
+<details>
+<summary>Empreintes SHA-256 des fichiers Handy</summary>
+
+**Handy_0.10.0_x64-setup.exe**
+
+```text
+d4c02386d6b4b2a8ef8e53a7ce5c6c417d554005e91b3529def3920e0e786d03
+```
+
+**Handy_0.10.0_arm64-setup.exe**
+
+```text
+2cec8defbe193d9cf837ac7e2f55880d685c486b0f15d2da11fa71f36de4c3d1
+```
+
+</details>
 
 Pour savoir lequel prendre : ouvre Paramètres, puis Système, puis Informations. La ligne « Type de système » indique x64 ou ARM64.
 
-Avant d’ouvrir le fichier, vérifie son empreinte comme pour Ollama, dans PowerShell : `Get-FileHash $HOME\Downloads\opencode-desktop-win-x64.exe`, avec le nom de ton fichier. Si elle diffère de la colonne SHA-256, ne l’ouvre pas : retélécharge-le depuis le lien du tableau.
+### Vérifie et installe Handy
 
-**Dépôt officiel GitHub :** [github.com/anomalyco/opencode](https://github.com/anomalyco/opencode)
+1. Ouvre PowerShell.
+2. Vérifie l’empreinte du fichier. Adapte le nom à celui que tu as téléchargé :
 
-### Dictée vocale (bonus) : Handy
+   ```powershell
+   Get-FileHash $HOME\Downloads\Handy_0.10.0_x64-setup.exe
+   ```
 
-Handy transforme ta voix en texte, sur ton ordinateur. Ce n’est pas une application de conversation : il écrit ce que tu dictes, il ne te répond pas. Version 0.10.0. Il n’a pas encore été testé par l’équipe de l’atelier.
+3. Ouvre le volet « Empreintes SHA-256 des fichiers Handy » ci-dessus et compare le résultat. Si elle diffère, retélécharge le fichier depuis le lien du tableau.
+4. Si elle correspond, ouvre le fichier et suis les indications d’installation.
 
-| Ton PC | Fichier | Taille | SHA-256 |
-|---|---|---|---|
-| Processeur x64 (Intel, AMD) | [Handy_0.10.0_x64-setup.exe](https://github.com/cjpais/Handy/releases/download/v0.10.0/Handy_0.10.0_x64-setup.exe) | 17 Mo | `d4c02386d6b4b2a8ef8e53a7ce5c6c417d554005e91b3529def3920e0e786d03` |
-| Processeur ARM64 | [Handy_0.10.0_arm64-setup.exe](https://github.com/cjpais/Handy/releases/download/v0.10.0/Handy_0.10.0_arm64-setup.exe) | 11 Mo | `2cec8defbe193d9cf837ac7e2f55880d685c486b0f15d2da11fa71f36de4c3d1` |
+### Prépare la dictée
 
-Pour savoir lequel prendre : ouvre Paramètres, puis Système, puis Informations. La ligne « Type de système » indique x64 ou ARM64.
+1. Lance Handy une fois à la maison.
+2. Choisis **Parakeet** comme modèle de transcription et attends la fin du téléchargement, environ **706 Mo**.
+3. Laisse le post-traitement désactivé.
 
-Avant d’ouvrir le fichier, vérifie son empreinte comme pour Ollama, dans PowerShell : `Get-FileHash $HOME\Downloads\Handy_0.10.0_x64-setup.exe`, avec le nom de ton fichier. Si elle diffère de la colonne SHA-256, ne l’ouvre pas : retélécharge-le depuis le lien du tableau.
+Parakeet a été essayé en français, sans Wi-Fi, sur le Mac du formateur.
 
-Au premier lancement, Handy télécharge son modèle de transcription. Lance-le une fois à la maison : ce téléchargement sera déjà fait le jour J.
+<details>
+<summary>Autre modèle à partir de 24 Go : Voxtral</summary>
 
-Au moment de choisir le modèle de transcription dans Handy, prends **Parakeet** (environ 706 Mo) : nous l'avons essayé en français, sans Wi-Fi. À partir de 24 Go, **Voxtral** donne un résultat proche, pour une taille bien plus grande.
+Voxtral donne un résultat proche, pour une taille bien plus grande. Pour l’atelier, prépare Parakeet.
 
-> **Attention**
+</details>
+
+> [!IMPORTANT]
 > Handy garde tes derniers enregistrements audio sur ton ordinateur. Laisse aussi le « post-traitement » désactivé : il peut envoyer ton texte à un service en ligne.
 
 **Dépôt officiel GitHub :** [github.com/cjpais/Handy](https://github.com/cjpais/Handy)
 
----
+**C’est réussi si…** Handy s’ouvre, Parakeet est téléchargé et le post-traitement reste désactivé.
 
-[Retour à l’accueil](../../README.md)
+[Retour au parcours](#parcours) · [Étape suivante](#opencode)
+
+<a id="opencode"></a>
+
+## 5. Facultatif : prépare OpenCode avec Ornith
+
+Tu peux suivre ce bonus en démonstration. Le parcours commun est prêt à la fin de l’étape 4.
+
+<details>
+<summary>Préparer le bonus OpenCode</summary>
+
+OpenCode est un assistant de programmation : il écrit et modifie des fichiers à ta demande. La version 2.2.5 est celle avec laquelle le bonus a été préparé.
+
+Ce bonus utilise OpenCode avec Ornith. Tu peux suivre la démonstration, puis reprendre le parcours de la page de l’atelier sur ton ordinateur. La procédure de lancement proposée reste à valider avec les versions retenues.
+
+**Pas encore testé sous Windows** : le bonus a été préparé sur Mac. L’application de bureau ci-dessous est celle que l’éditeur publie pour Windows ; son fonctionnement avec Ornith reste à essayer.
+
+| Ton PC | Fichier | Taille |
+|---|---|---|
+| Processeur x64 (Intel, AMD) | [Télécharger .exe](https://github.com/anomalyco/opencode/releases/download/v2.2.5/opencode-desktop-win-x64.exe) | 264 Mo |
+| Processeur ARM64 | [Télécharger .exe](https://github.com/anomalyco/opencode/releases/download/v2.2.5/opencode-desktop-win-arm64.exe) | 251 Mo |
+
+<details>
+<summary>Empreintes SHA-256 des fichiers OpenCode</summary>
+
+**opencode-desktop-win-x64.exe**
+
+```text
+634cd9b3b0e6dea71285dc4ed98d54d6617721d5e302bc8c8661fc957c321cc8
+```
+
+**opencode-desktop-win-arm64.exe**
+
+```text
+435a9f0c931cc9ab8657f57528d4791b058d56f4fc01238e1e9deaf45923ffb5
+```
+
+</details>
+
+Pour savoir lequel prendre : ouvre Paramètres, puis Système, puis Informations. La ligne « Type de système » indique x64 ou ARM64.
+
+### Vérifie et installe OpenCode
+
+1. Vérifie l’empreinte du fichier dans PowerShell. Adapte le nom à celui que tu as téléchargé :
+
+   ```powershell
+   Get-FileHash $HOME\Downloads\opencode-desktop-win-x64.exe
+   ```
+
+2. Ouvre le volet « Empreintes SHA-256 des fichiers OpenCode » ci-dessus et compare le résultat. Si elle diffère, retélécharge le fichier depuis le lien du tableau.
+3. Si elle correspond, ouvre le fichier et suis les indications d’installation.
+
+**Dépôt officiel GitHub :** [github.com/anomalyco/opencode](https://github.com/anomalyco/opencode)
+
+### Vérifie la commande
+
+Dans le terminal, tape cette commande :
+
+```powershell
+opencode --version
+```
+
+Si la commande est introuvable, arrête cette procédure et demande à un animateur de vérifier ton installation.
+
+</details>
+
+**C’est réussi si…** la commande affiche une version. La connexion à Ornith reste à vérifier avec un animateur avant le bonus.
+
+[Retour au parcours](#parcours)
+
+[Retour à l’accueil et au choix du parcours](../../README.md)
