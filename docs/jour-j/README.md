@@ -5,7 +5,7 @@
 # L’IA locale sur ton ordinateur
 
 **Le jour J, pas à pas**<br>
-Vendredi 20 novembre 2026 · HELMo · Digital Change with Ethics<br>
+Vendredi 20 novembre 2026 · [HELMo](https://www.helmo.be/) · Digital Change with Ethics<br>
 Avec [Mariano Sanfilippo](https://www.linkedin.com/in/marianosanfilippo/) et [Vincent Daron](https://www.linkedin.com/in/vincent-daron-35757a2ab/)
 
 Sophie peut-elle se faire aider par une IA sans que son mail quitte son ordinateur ? Tu vas l’essayer avec un mail entièrement fictif.

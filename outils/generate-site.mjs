@@ -159,7 +159,7 @@ for (const page of pages) {
 </head>
 <body>
 <a class="skip-link" href="#contenu">Aller au contenu</a>
-<header class="site-header"><a class="logo-zone" href="${home}" aria-label="HELMo, accueil de l’installation"><img src="${assets}logo-helmo.png" alt="HELMo" width="120" height="120"></a><nav aria-label="Pages de l’atelier">${navigation}</nav></header>
+<header class="site-header"><a class="logo-zone" href="https://www.helmo.be/" aria-label="HELMo, site de la haute école"><img src="${assets}logo-helmo.png" alt="HELMo" width="120" height="120"></a><nav aria-label="Pages de l’atelier">${navigation}</nav></header>
 <nav class="page-toc" aria-label="Étapes de cette page"><details><summary>Sommaire de la page</summary><ol>${toc.map(item => `<li><a href="#${escape(item.id)}">${escape(item.title)}</a></li>`).join('')}</ol></details></nav>
 <main><article id="contenu" tabindex="-1">${body}</article></main>
 </body>
