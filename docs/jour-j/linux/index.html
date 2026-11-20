@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; font-src 'self'; style-src 'self'; script-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>L’IA locale sur ton ordinateur | HELMo</title>
+<link rel="icon" href="../../assets/logo-helmo.png" type="image/png">
+<link rel="stylesheet" href="../../assets/site.css">
+<script src="../../assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header"><a class="logo-zone" href="https://www.helmo.be/" aria-label="HELMo, site de la haute école"><img src="../../assets/logo-helmo.png" alt="HELMo" width="120" height="120"></a><nav aria-label="Pages de l’atelier"><a class="main-link" href="../">Page de l’atelier</a><a href="../../">Installation</a></nav></header>
+<nav class="page-toc" aria-label="Étapes de cette page"><details><summary>Sommaire de la page</summary><ol><li><a href="#etape-0">0 · Vérifie ton installation</a></li><li><a href="#etape-1">1 · Exercice 1 : obtiens une première réponse</a></li><li><a href="#etape-2">2 · Exercice 2 : vérifie la fidélité d’une reformulation</a></li><li><a href="#etape-3">3 · Corrige un écart</a></li><li><a href="#etape-4">4 · Coupe le Wi-Fi</a></li><li><a href="#etape-5">5 · Dicte avec Handy</a></li><li><a href="#etape-6">6 · Piège ton modèle</a></li><li><a href="#etape-7">7 · Essaie un modèle plus gros</a></li><li><a href="#etape-8">8 · Change de harnais avec AnythingLLM</a></li><li><a href="#etape-9">9 · Bonus : crée un fichier avec OpenCode</a></li><li><a href="#avant-de-partir">Avant de partir</a></li></ol></details></nav>
+<main><article id="contenu" tabindex="-1"><p><a href="./">Version en ligne de la page Linux</a></p>
+<h1 id="lia-locale-sur-ton-ordinateur">L’IA locale sur ton ordinateur</h1>
+<p><strong>Le jour J, pas à pas · version Linux</strong><br>
+Vendredi 20 novembre 2026 · <a href="https://www.helmo.be/">HELMo</a> · Digital Change with Ethics<br>
+Avec <a href="https://www.linkedin.com/in/marianosanfilippo/">Mariano Sanfilippo</a> et <a href="https://www.linkedin.com/in/vincent-daron-35757a2ab/">Vincent Daron</a></p>
+<aside class="admonition" aria-label="Cas du jour"><p class="admonition-title">Cas du jour</p>
+<p>Sophie peut-elle se faire aider par une IA sans que son mail quitte son ordinateur ? Tu vas l’essayer avec un mail entièrement fictif.</p>
+</aside>
+<aside class="admonition" aria-label="Note"><p class="admonition-title">Note</p>
+<p>Cette page est la version Linux de l’atelier. Sous Linux, Ollama n’a pas d’application de bureau : tu fais les mêmes exercices dans le terminal. Sur Mac ou Windows, suis la <a href="../">page de l’atelier</a>.</p>
+</aside>
+<p>Garde cette page à côté de ton terminal pour suivre les gestes. Les exemples utilisent <strong><code>ministral-3:3b</code></strong>. Si tu as téléchargé un modèle plus gros, tu peux l’essayer à la place. Tu pourras reprendre les étapes chez toi.</p>
+<p><a id="sommaire"></a></p>
+<p><strong>Sommaire : ton parcours</strong></p>
+<p>Clique sur une étape pour la retrouver.</p>
+<div class="table-scroll" role="region" aria-label="Tableau à faire défiler horizontalement" tabindex="0"><table>
+<thead>
+<tr>
+<th>Étape</th>
+<th>Ce que tu fais</th>
+<th>Ce que tu obtiens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#etape-0">0 · Installation</a></td>
+<td>Vérifie Ollama, Ministral et Handy.</td>
+<td>Une machine prête, ou un binôme pour commencer.</td>
+</tr>
+<tr>
+<td><a href="#etape-1">1 · Première réponse</a></td>
+<td>Envoie « Bonjour. » à Ministral.</td>
+<td>Une première réponse de ton modèle local.</td>
+</tr>
+<tr>
+<td><a href="#etape-2">2 · Reformulation</a></td>
+<td>Envoie le mail de Sophie et relis la réponse.</td>
+<td>Un brouillon dont tu as vérifié la fidélité.</td>
+</tr>
+<tr>
+<td><a href="#etape-3">3 · Correction et tri</a></td>
+<td>Corrige les écarts, puis garde les informations utiles.</td>
+<td>Une demande de confirmation relue.</td>
+</tr>
+<tr>
+<td><a href="#etape-4">4 · Sans connexion</a></td>
+<td>Coupe les connexions et renouvelle la demande.</td>
+<td>Une réponse produite hors ligne.</td>
+</tr>
+<tr>
+<td><a href="#etape-5">5 · Dictée avec Handy</a></td>
+<td>Dicte une phrase dans une note.</td>
+<td>Un texte inséré à l’endroit du curseur.</td>
+</tr>
+<tr>
+<td><a href="#etape-6">6 · Défi facultatif</a></td>
+<td>Vérifie une affirmation récente.</td>
+<td>Une affirmation comparée à une source datée.</td>
+</tr>
+<tr>
+<td><a href="#etape-7">7 · Modèle plus gros</a></td>
+<td>Suis la démonstration ou compare sur ta machine.</td>
+<td>Une différence observée entre deux réponses.</td>
+</tr>
+<tr>
+<td><a href="#etape-8">8 · AnythingLLM</a></td>
+<td>Découvre un autre harnais avec le même modèle.</td>
+<td>Une réponse à relire dans une autre application.</td>
+</tr>
+<tr>
+<td><a href="#etape-9">9 · Bonus OpenCode</a></td>
+<td>Suis la création d’une petite page.</td>
+<td>Un fichier dont la page et le bouton sont à vérifier.</td>
+</tr>
+<tr>
+<td><a href="#avant-de-partir">Avant de partir</a></td>
+<td>Note ton modèle et la suite.</td>
+<td>Un point de reprise pour chez toi.</td>
+</tr>
+</tbody>
+</table></div>
+<p><a href="#bloc-complet">Accès direct au bloc complet de l’exercice 2</a></p>
+<p><a id="etape-0"></a></p>
+<h2 id="0--vérifie-ton-installation">0 · Vérifie ton installation</h2>
+<p>Démarre Ollama et vérifie que <code>ministral-3:3b</code> est disponible. S’il manque, signale-le à un animateur. Tu pourras commencer avec un voisin pendant le téléchargement. Vérifie aussi que Handy et Parakeet Ultra sont prêts.</p>
+<p>Ollama fait tourner le modèle sur ton ordinateur. La version utilisée pour préparer l’atelier est <strong>0.40.14</strong>.</p>
+<details>
+<summary>Installation manquante ou incomplète : retrouve ton parcours</summary>
+<p>Choisis le dossier qui correspond à ton système et à ta mémoire vive.</p>
+<div class="table-scroll" role="region" aria-label="Tableau à faire défiler horizontalement" tabindex="0"><table>
+<thead>
+<tr>
+<th>Système</th>
+<th>Moins de 24 Go</th>
+<th>De 24 Go à moins de 36 Go</th>
+<th>36 Go et plus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux</td>
+<td><a href="../../linux/moins-de-24-go/">Ouvrir le parcours</a></td>
+<td><a href="../../linux/de-24-a-36-go/">Ouvrir le parcours</a></td>
+<td><a href="../../linux/36-go-et-plus/">Ouvrir le parcours</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>La mémoire vive est la mémoire de travail de ton ordinateur. L’espace disque sert à ranger les fichiers.</p>
+<p>Si tu ne connais pas ta mémoire vive, consulte les indications du <a href="../../">dépôt d’installation</a>.</p>
+<p>Ces paliers sont des repères. Les essais disponibles portent sur une seule machine.</p>
+<p>En dessous de 16 Go de mémoire vive, prévois de travailler en binôme.</p>
+<h3 id="si-linstallation-manque">Si l’installation manque</h3>
+<ol>
+<li>Ouvre le parcours de ton système.</li>
+<li>Suis les instructions d’installation d’Ollama.</li>
+<li>Effectue les vérifications indiquées avant d’ouvrir l’installeur.</li>
+<li>Télécharge uniquement <code>ministral-3:3b</code> pour commencer.</li>
+</ol>
+<p>Le dépôt d’installation fournit les liens officiels et les commandes de vérification des fichiers. Lorsqu’un script d’installation est utilisé, le parcours explique comment le lire avant de le lancer.</p>
+<p>Si Ollama est déjà installé et démarré, exécute cette commande dans le terminal :</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 1" aria-describedby="code-1-status" data-copy="code-1">Copier</button><span id="code-1-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 1"><code id="code-1">ollama pull ministral-3:3b
+</code></pre></div>
+<p>Attends le message <code>success</code>.</p>
+<p>Le téléchargement représente environ <strong>3 Go</strong>.</p>
+<p>Si le téléchargement s’interrompt, relance la même commande.</p>
+<p>Conserve les fichiers déjà téléchargés.</p>
+</details>
+<h3 id="démarre-ollama">Démarre Ollama</h3>
+<p>Sous Linux, Ollama tourne comme un <strong>service</strong> : un programme qui reste actif en arrière-plan, sans fenêtre. Tu gardes ainsi un seul terminal pour tout l’atelier.</p>
+<ol>
+<li>Ouvre le terminal.</li>
+<li>Vérifie l’état du service :</li>
+</ol>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 2" aria-describedby="code-2-status" data-copy="code-2">Copier</button><span id="code-2-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 2"><code id="code-2">systemctl status ollama
+</code></pre></div>
+<ol start="3">
+<li>Si tu lis <code>active (running)</code>, Ollama tourne déjà. C’est le cas après le script d’installation officiel. Si l’affichage ne te rend pas la main, appuie sur <code>q</code>.</li>
+<li>Sinon, démarre-le. C’est le cas observé après une installation avec <code>pacman</code> sur Arch Linux :</li>
+</ol>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 3" aria-describedby="code-3-status" data-copy="code-3">Copier</button><span id="code-3-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 3"><code id="code-3">sudo systemctl start ollama
+</code></pre></div>
+<p>Le terminal te demande ton mot de passe : c’est normal pour <code>sudo</code>.</p>
+<p>Évite <code>ollama serve</code> : cette commande bloque le terminal et range les modèles dans un autre dossier que le service.</p>
+<h3 id="vérifie-la-présence-du-modèle">Vérifie la présence du modèle</h3>
+<ol>
+<li>Exécute cette commande :</li>
+</ol>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 4" aria-describedby="code-4-status" data-copy="code-4">Copier</button><span id="code-4-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 4"><code id="code-4">ollama list
+</code></pre></div>
+<ol start="2">
+<li>Repère <code>ministral-3:3b</code> dans le résultat.</li>
+</ol>
+<details>
+<summary>Le modèle a disparu de la liste</summary>
+<p>Le service range ses modèles dans son propre dossier. Sur Arch Linux, nous avons observé <code>/var/lib/ollama</code>. Un modèle téléchargé pendant que tu utilisais <code>ollama serve</code> reste dans ton dossier personnel, et le service ne le voit pas.</p>
+<p>Service démarré, télécharge-le à nouveau :</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 5" aria-describedby="code-5-status" data-copy="code-5">Copier</button><span id="code-5-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 5"><code id="code-5">ollama pull ministral-3:3b
+</code></pre></div>
+</details>
+<p><strong>C’est réussi si <code>ministral-3:3b</code> apparaît dans la liste et si Handy et Parakeet Ultra sont prêts.</strong></p>
+<p>Si la commande est introuvable ou si <code>ollama list</code> signale qu’il ne peut pas joindre Ollama, montre l’écran à Mariano ou Vincent. Si un téléchargement continue, garde sa progression visible et commence avec un voisin.</p>
+<p><a href="#sommaire">Retour au sommaire</a> · <a href="#etape-1">Étape suivante</a></p>
+<p><a id="etape-1"></a></p>
+<h2 id="1--exercice-1--obtiens-une-première-réponse">1 · Exercice 1 : obtiens une première réponse</h2>
+<h3 id="dans-le-terminal">Dans le terminal</h3>
+<ol>
+<li>Lance Ministral :</li>
+</ol>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 6" aria-describedby="code-6-status" data-copy="code-6">Copier</button><span id="code-6-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 6"><code id="code-6">ollama run ministral-3:3b
+</code></pre></div>
+<ol start="2">
+<li>Attends le repère <code>&gt;&gt;&gt;</code> et le texte « Send a message ». Tu es dans la conversation avec le modèle.</li>
+<li>Pour quitter la conversation plus tard, tape <code>/bye</code>. La commande <code>/?</code> affiche l’aide.</li>
+</ol>
+<p>Vérifie le nom du modèle dans ta commande. Un modèle dont le nom contient « cloud » tourne chez un fournisseur en ligne, qui reçoit ton texte.</p>
+<h3 id="envoie-ton-premier-message">Envoie ton premier message</h3>
+<ol>
+<li>Après le repère <code>&gt;&gt;&gt;</code>, saisis ce message :</li>
+</ol>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 7" aria-describedby="code-7-status" data-copy="code-7">Copier</button><span id="code-7-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 7"><code id="code-7">Bonjour.
+</code></pre></div>
+<ol start="2">
+<li>Appuie sur Entrée.</li>
+<li>Attends la réponse.</li>
+</ol>
+<p>La première demande peut prendre plus de temps : Ollama charge le modèle en mémoire.</p>
+<p><strong>C’est réussi si une réponse apparaît dans le terminal, sous ton message.</strong></p>
+<p>Continue sans attendre. Montre ta réponse si un animateur passe près de toi.</p>
+<details>
+<summary>Pour comprendre : tokens et base de données</summary>
+<p>Un <strong>token</strong> est un morceau de texte traité par le modèle. Il peut correspondre à une partie de mot. Ollama peut afficher plusieurs morceaux ensemble.</p>
+<p>Une <strong>base de données</strong> range des informations pour les retrouver. Le modèle produit sa réponse à partir de réglages appris. Pour rechercher dans des documents ou une base de données, il lui faut un accès et des outils adaptés.</p>
+</details>
+<p><a href="#etape-0">Étape précédente</a> · <a href="#sommaire">Retour au sommaire</a> · <a href="#etape-2">Étape suivante</a></p>
+<p><a id="etape-2"></a></p>
+<h2 id="2--exercice-2--vérifie-la-fidélité-dune-reformulation">2 · Exercice 2 : vérifie la fidélité d’une reformulation</h2>
+<p>Sophie travaille aux ressources humaines d’une entreprise fictive. Elle écrit à sa collègue Claire.</p>
+<p>Le mail contient volontairement une information de santé et des éléments d’enquête interne. Les deux numéros sont factices.</p>
+<aside class="admonition" aria-label="Important"><p class="admonition-title">Important</p>
+<p>Cet exercice utilise uniquement des données inventées. Tu vas d’abord vérifier la fidélité d’une reformulation, puis garder les informations utiles à la demande. Le modèle local lit le mail sur ton ordinateur.</p>
+<p>Peux-tu coller le mail de Sophie dans ChatGPT, Claude ou Copilot ? Non. Il contient une donnée de santé et un numéro de registre national. Le RGPD protège la première, la loi belge encadre le second. Ce mail reste sur l’ordinateur de Sophie.</p>
+</aside>
+<h3 id="temps-1--vérifie-la-fidélité">Temps 1 : vérifie la fidélité</h3>
+<p>Dans le terminal, après le repère <code>&gt;&gt;&gt;</code>. Pour coller dans un terminal Linux, utilise <strong>Ctrl + Maj + V</strong> ou le clic droit, puis « Coller ». Ctrl + V seul ne colle pas toujours.</p>
+<p>Si tu ne vois plus le repère <code>&gt;&gt;&gt;</code>, relance d’abord <code>ollama run ministral-3:3b</code>.</p>
+<ol>
+<li>Pour repartir d’un échange vide, colle cette commande, puis appuie sur Entrée :</li>
+</ol>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 8" aria-describedby="code-8-status" data-copy="code-8">Copier</button><span id="code-8-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 8"><code id="code-8">/clear
+</code></pre></div>
+<ol start="2">
+<li>Colle ces trois guillemets droits, puis appuie sur Entrée :</li>
+</ol>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 9" aria-describedby="code-9-status" data-copy="code-9">Copier</button><span id="code-9-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 9"><code id="code-9">&quot;&quot;&quot;
+</code></pre></div>
+<ol start="3">
+<li>Colle le <a href="#bloc-complet">bloc complet ci-dessous</a>.</li>
+<li>Appuie sur Entrée pour passer à une nouvelle ligne.</li>
+<li>Colle à nouveau les trois guillemets, puis appuie sur Entrée : l’ensemble part d’un coup.</li>
+</ol>
+<p>Les trois guillemets indiquent à Ollama que ton message tient sur plusieurs lignes. Sans eux, chaque retour à la ligne enverrait un morceau du mail.</p>
+<p><a id="bloc-complet"></a></p>
+<h3 id="copie-la-consigne-et-le-mail">Copie la consigne et le mail</h3>
+<p>Utilise le bouton de copie du bloc pour prendre tout le texte, y compris les lignes qui dépassent à droite.</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 10" aria-describedby="code-10-status" data-copy="code-10">Copier</button><span id="code-10-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 10"><code id="code-10">Raccourcis les formulations de ce mail fictif sans supprimer d'information.
+Conserve Claire comme destinataire, Sophie comme signataire et le tutoiement.
+Le dossier concerne Gérard.
+Conserve son arrêt de travail, le burn-out rapporté, l'enquête interne et la mise en cause seulement possible du responsable.
+Conserve la demande de confirmation et recopie exactement POL-000000 et 00.00.00-000.00.
+N'ajoute aucun fait.
+Donne uniquement le mail reformulé.
+
+Exemple fictif :
+
+Bonjour Claire,
+
+Gérard est en arrêt de travail et je prépare son dossier d’incapacité auprès de l’assurance.
+J’ai appris qu’il s’agit d’un burn-out.
+Peux-tu me confirmer le numéro de police POL-000000 et le numéro de registre national 00.00.00-000.00 pour compléter le dossier ?
+Une enquête interne sur le management est en cours.
+Le responsable de Gérard pourrait être mis en cause.
+Je te donne aussi cette information pour que tu aies tout le contexte.
+
+Merci pour ton aide,
+Sophie
+Ressources humaines
+</code></pre></div>
+<h3 id="relis-avec-ces-trois-contrôles">Relis avec ces trois contrôles</h3>
+<p>Garde le mail d’origine sous les yeux.</p>
+<ul>
+<li><strong>Les informations rapportées et les incertitudes.</strong> « J’ai appris qu’il s’agit d’un burn-out » doit rester une information rapportée par Sophie. « Gérard est en arrêt pour burn-out » présente le lien comme établi. Vérifie aussi que « pourrait être mis en cause » garde son sens : « pourrait être concerné » reste vague.</li>
+<li><strong>Le dossier et la demande.</strong> Le dossier concerne Gérard et se prépare auprès de l’assurance. Les numéros servent à compléter ce dossier. Ce lien doit rester explicite, même si l’enquête apparaît ailleurs dans le mail. Claire doit toujours recevoir une demande de confirmation. Compare les intitulés et chaque caractère : numéro de police POL-000000 ; numéro de registre national 00.00.00-000.00.</li>
+<li><strong>Les ajouts et la correspondance.</strong> Repère tout fait ajouté, par exemple « je te joins ces éléments ». Vérifie que Claire reste la destinataire et que Sophie signe. Le mail garde le tutoiement, reste courtois et plus court.</li>
+</ul>
+<details>
+<summary>Exemple de réponse obtenue</summary>
+<p>Voici une réponse obtenue avec <code>ministral-3:3b</code>, dans l’application Ollama sur Mac. Dans ton terminal, la présentation diffère. Elle garde les deux numéros et écrit « Gérard est en arrêt pour burn-out ». La tienne sera différente.</p>
+<p><img src="../../assets/ollama-app-reponse.png" alt="Essai réel dans Ollama sur Mac : la réponse écrit « Gérard est en arrêt pour burn-out », conserve POL-000000 et 00.00.00-000.00, et omet l’assurance ainsi que « Ressources humaines ». Le modèle affiché est ministral-3:3b." decoding="async"></p>
+</details>
+<p><strong>C’est réussi si tu as fait les trois contrôles et repéré les éventuels écarts.</strong></p>
+<p>Trouver un écart fait partie de l’exercice.</p>
+<p><strong>Le modèle écrit vite et bien, et il peut changer le sens sans le signaler.</strong> Sa réponse reste un brouillon tant que tu ne l’as pas relue contre l’original.</p>
+<p><a href="#etape-1">Étape précédente</a> · <a href="#sommaire">Retour au sommaire</a> · <a href="#etape-3">Étape suivante</a></p>
+<p><a id="etape-3"></a></p>
+<h2 id="3--corrige-un-écart">3 · Corrige un écart</h2>
+<ol>
+<li>Repère un passage qui s’éloigne du mail d’origine.</li>
+<li>Choisis la demande de correction adaptée ci-dessous.</li>
+<li>Si la demande contient des crochets, colle-la d’abord dans une note, remplace le texte entre crochets, puis copie la version complétée. Dans le terminal, une ligne validée ne se modifie plus.</li>
+<li>Envoie la demande dans la même conversation : entoure-la de trois guillemets <code>&quot;&quot;&quot;</code>, sans taper <code>/clear</code>. Si tu ne vois plus le repère <code>&gt;&gt;&gt;</code>, relance <code>ollama run ministral-3:3b</code> et renvoie d’abord le bloc complet de l’exercice 2.</li>
+<li>Relis toute la nouvelle réponse avec les trois contrôles.</li>
+</ol>
+<p>Fais une seule correction. Relis la nouvelle réponse, puis passe à la suite, même s’il reste un écart. Une correction peut en faire apparaître un autre : observe-le, puis poursuis l’exercice.</p>
+<h3 id="si-une-information-rapportée-devient-une-affirmation">Si une information rapportée devient une affirmation</h3>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 11" aria-describedby="code-11-status" data-copy="code-11">Copier</button><span id="code-11-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 11"><code id="code-11">Tu as remplacé une information rapportée par une affirmation.
+Dans le mail d’origine, Sophie écrit : « J’ai appris qu’il s’agit d’un burn-out. »
+Conserve ce caractère rapporté.
+Reprends le mail complet sans ajouter de fait.
+</code></pre></div>
+<h3 id="si-le-lien-entre-le-dossier-les-numéros-et-la-demande-change">Si le lien entre le dossier, les numéros et la demande change</h3>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 12" aria-describedby="code-12-status" data-copy="code-12">Copier</button><span id="code-12-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 12"><code id="code-12">Les deux numéros servent à compléter le dossier d’incapacité de Gérard auprès de l’assurance.
+Garde aussi la phrase sur l’enquête interne et celle sur le responsable de Gérard.
+Claire doit toujours recevoir une demande de confirmation.
+Corrige ce passage et reprends le mail complet sans ajouter de fait.
+</code></pre></div>
+<h3 id="si-le-modèle-ajoute-une-information">Si le modèle ajoute une information</h3>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 13" aria-describedby="code-13-status" data-copy="code-13">Copier</button><span id="code-13-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 13"><code id="code-13">Tu as ajouté cette information : [recopie l’ajout].
+Le mail d’origine ne la contient pas.
+Retire-la et reprends le mail complet sans ajouter de fait.
+</code></pre></div>
+<details>
+<summary>Autres corrections : oubli, destinataire, dossier, incertitude ou numéro</summary>
+<h3 id="si-une-information-a-disparu">Si une information a disparu</h3>
+<p>Recopie le passage manquant du mail d’origine à la place du texte entre crochets.</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 14" aria-describedby="code-14-status" data-copy="code-14">Copier</button><span id="code-14-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 14"><code id="code-14">Tu as supprimé cette information : [recopie le passage du mail d’origine].
+Rétablis-la sans en changer le sens.
+Reprends le mail complet sans ajouter de fait.
+</code></pre></div>
+<h3 id="si-le-dossier-devient-celui-de-sophie">Si le dossier devient celui de Sophie</h3>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 15" aria-describedby="code-15-status" data-copy="code-15">Copier</button><span id="code-15-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 15"><code id="code-15">Le dossier d’incapacité concerne Gérard.
+Sophie prépare ce dossier auprès de l’assurance.
+Corrige toute formulation qui attribue ce dossier à Sophie.
+Reprends le mail complet en restant fidèle au texte d’origine.
+</code></pre></div>
+<h3 id="si-claire-ou-sophie-disparaissent-ou-si-le-tutoiement-change">Si Claire ou Sophie disparaissent, ou si le tutoiement change</h3>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 16" aria-describedby="code-16-status" data-copy="code-16">Copier</button><span id="code-16-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 16"><code id="code-16">Le mail est écrit par Sophie à sa collègue Claire.
+Conserve le prénom de Claire dans la salutation.
+Conserve le tutoiement.
+Signe le mail avec Sophie, puis Ressources humaines.
+Reprends le mail complet sans ajouter de fait.
+</code></pre></div>
+<h3 id="si-la-mise-en-cause-devient-certaine-ou-ambiguë">Si la mise en cause devient certaine ou ambiguë</h3>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 17" aria-describedby="code-17-status" data-copy="code-17">Copier</button><span id="code-17-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 17"><code id="code-17">Dans le mail d’origine, le responsable de Gérard pourrait être mis en cause.
+Garde cette incertitude.
+Retire toute affirmation qui le présente comme responsable du burn-out ou déjà mis en cause.
+Reprends le mail complet sans ajouter de fait.
+</code></pre></div>
+<h3 id="si-la-demande-change-ou-si-un-numéro-change">Si la demande change ou si un numéro change</h3>
+<p>Les numéros étaient exacts dans les trois essais. Ce contrôle reste nécessaire pour ta propre réponse.</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 18" aria-describedby="code-18-status" data-copy="code-18">Copier</button><span id="code-18-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 18"><code id="code-18">Conserve la demande de confirmation des deux numéros.
+Recopie exactement :
+POL-000000
+00.00.00-000.00
+
+Reprends le mail complet sans ajouter de fait.
+</code></pre></div>
+</details>
+<h3 id="si-tu-ne-trouves-aucun-écart">Si tu ne trouves aucun écart</h3>
+<ol>
+<li>Choisis un passage dont le sens a bien été conservé.</li>
+<li>Explique à ton voisin comment tu l’as vérifié.</li>
+</ol>
+<p><strong>C’est réussi si tu peux expliquer le résultat de ta relecture.</strong></p>
+<p>Si un écart persiste, montre-le à Mariano ou Vincent.</p>
+<h3 id="ensuite--garde-les-informations-utiles">Ensuite : garde les informations utiles</h3>
+<p>Claire doit confirmer les deux références fictives du dossier de Gérard.</p>
+<ol>
+<li>Repère les passages dont elle n’a pas besoin pour cette action.</li>
+<li>Tape <code>/clear</code> pour repartir d’un échange vide.</li>
+<li>Copie le bloc entier ci-dessous. Il contient la nouvelle consigne et le mail d’origine.</li>
+<li>Envoie-le entre deux lignes <code>&quot;&quot;&quot;</code>, comme à l’<a href="#etape-2">exercice 2</a>.</li>
+</ol>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 19" aria-describedby="code-19-status" data-copy="code-19">Copier</button><span id="code-19-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 19"><code id="code-19">Réécris ce mail fictif pour que Sophie demande seulement à Claire de confirmer les deux numéros du dossier de Gérard.
+Conserve Claire comme destinataire, Sophie comme signataire et le tutoiement.
+Recopie exactement le numéro de police POL-000000 et le numéro de registre national 00.00.00-000.00.
+Retire les informations sur l’arrêt de travail, le burn-out, l’incapacité, l’enquête interne et le responsable de Gérard.
+N’ajoute aucun fait, aucune pièce jointe ni aucun nouveau motif à la demande.
+Donne uniquement le mail réécrit.
+
+Exemple fictif :
+
+Bonjour Claire,
+
+Gérard est en arrêt de travail et je prépare son dossier d’incapacité auprès de l’assurance.
+J’ai appris qu’il s’agit d’un burn-out.
+Peux-tu me confirmer le numéro de police POL-000000 et le numéro de registre national 00.00.00-000.00 pour compléter le dossier ?
+Une enquête interne sur le management est en cours.
+Le responsable de Gérard pourrait être mis en cause.
+Je te donne aussi cette information pour que tu aies tout le contexte.
+
+Merci pour ton aide,
+Sophie
+Ressources humaines
+</code></pre></div>
+<p>Vérifie que la demande de confirmation reste claire et que les deux références sont exactes. Vérifie que les informations de santé et d’enquête ont disparu. Explique pourquoi tu as demandé ces suppressions.</p>
+<p>Vérifie que le dossier reste celui de Gérard et repère toute ligne ajoutée, notamment une ligne « Objet ».</p>
+<p>Les deux références sont inventées et supposées utiles pour cet exercice. Pour une vraie aide à la rédaction, utilise des repères fictifs. L’utilisation d’un vrai numéro de registre national doit être nécessaire et autorisée pour la finalité concernée.</p>
+<p><strong>C’est réussi si seuls les éléments utiles à la confirmation restent, si les références sont exactes et si tu peux expliquer les suppressions.</strong></p>
+<p><a href="#etape-2">Étape précédente</a> · <a href="#sommaire">Retour au sommaire</a> · <a href="#etape-4">Étape suivante</a></p>
+<p><a id="etape-4"></a></p>
+<h2 id="4--coupe-le-wi-fi">4 · Coupe le Wi-Fi</h2>
+<aside class="admonition" aria-label="Important"><p class="admonition-title">Important</p>
+<p>Attends le signal de Mariano ou Vincent. Garde cette page ouverte avant de couper les connexions.</p>
+</aside>
+<ol>
+<li>Garde cette page ouverte.</li>
+<li>Vérifie que le téléchargement de <code>ministral-3:3b</code> est terminé.</li>
+<li>Coupe le Wi-Fi, par exemple depuis le menu réseau de ton bureau.</li>
+<li>Débranche une éventuelle connexion Ethernet.</li>
+<li>Désactive un éventuel partage de connexion.</li>
+<li>Dans le terminal, tape <code>/clear</code> pour repartir d’un échange vide.</li>
+<li>Copie le <a href="#bloc-complet">bloc complet de l’exercice 2</a>.</li>
+<li>Envoie-le entre deux lignes <code>&quot;&quot;&quot;</code>, comme à l’<a href="#etape-2">exercice 2</a>.</li>
+<li>Attends la nouvelle réponse.</li>
+</ol>
+<p><strong>C’est réussi si une nouvelle réponse arrive avec les connexions coupées.</strong></p>
+<p>Cette observation montre que ton ordinateur peut réaliser ce traitement hors ligne. Les réglages des applications restent à examiner lorsque la connexion revient.</p>
+<p>Garde les connexions coupées pour Handy si son modèle est déjà téléchargé.</p>
+<p>Si Handy doit encore télécharger son modèle, demande l’aide d’un animateur avant de poursuivre.</p>
+<p><a href="#etape-3">Étape précédente</a> · <a href="#sommaire">Retour au sommaire</a> · <a href="#etape-5">Étape suivante</a></p>
+<p><a id="etape-5"></a></p>
+<h2 id="5--dicte-avec-handy">5 · Dicte avec Handy</h2>
+<p>Handy écrit le texte que tu prononces dans l’application où se trouve ton curseur.</p>
+<p>Handy utilise le modèle <strong>Parakeet Ultra</strong>, d’environ <strong>740 Mo</strong>.</p>
+<h3 id="prépare-handy">Prépare Handy</h3>
+<p>Si l’application manque, retrouve son installation dans le parcours de ton système ou sur le <a href="https://github.com/cjpais/Handy">dépôt officiel de Handy</a>.</p>
+<ol>
+<li>
+<p>Ouvre Handy.</p>
+</li>
+<li>
+<p>Si ton système le demande, accorde l’accès au micro.</p>
+</li>
+<li>
+<p>Choisis Parakeet Ultra comme modèle de transcription.</p>
+</li>
+<li>
+<p>Attends la fin de son téléchargement si nécessaire.</p>
+</li>
+<li>
+<p>Laisse le post-traitement désactivé.</p>
+</li>
+<li>
+<p>Lis le raccourci indiqué dans les réglages.</p>
+</li>
+</ol>
+<p>Le post-traitement peut utiliser un service en ligne. Il reste désactivé pour cet atelier.</p>
+<p>Le maintien ou la bascule dépend du réglage. <strong>Échap</strong> annule la dictée.</p>
+<p>Handy n’a pas encore été essayé sous Linux pour cet atelier. Si le raccourci ne réagit pas ou si le texte n’apparaît pas, montre ton écran à un animateur.</p>
+<h3 id="dicte-une-phrase">Dicte une phrase</h3>
+<ol>
+<li>Coupe le Wi-Fi si tu l’as rétabli pour le téléchargement.</li>
+<li>Débranche une éventuelle connexion Ethernet.</li>
+<li>Désactive un éventuel partage de connexion.</li>
+<li>Ouvre une note vide.</li>
+<li>Place le curseur dans la note.</li>
+<li>Active la dictée avec le raccourci affiché.</li>
+<li>Prononce cette phrase :</li>
+</ol>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 20" aria-describedby="code-20-status" data-copy="code-20">Copier</button><span id="code-20-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 20"><code id="code-20">Bonjour, je participe à l’atelier de HELMo et je découvre la dictée sur mon ordinateur.
+</code></pre></div>
+<ol start="8">
+<li>Termine la dictée.</li>
+<li>Relis le texte obtenu.</li>
+<li>Corrige le nom HELMo si nécessaire.</li>
+</ol>
+<h3 id="regarde-ce-qui-reste-sur-ton-ordinateur">Regarde ce qui reste sur ton ordinateur</h3>
+<p>Handy conserve les derniers enregistrements audio sur le disque.</p>
+<ol>
+<li>Repère le réglage de conservation des enregistrements.</li>
+<li>Choisis une conservation adaptée à ton usage.</li>
+</ol>
+<p><strong>C’est réussi si ta phrase apparaît dans la fenêtre choisie et si tu l’as relue.</strong></p>
+<p><a href="#etape-4">Étape précédente</a> · <a href="#sommaire">Retour au sommaire</a> · <a href="#etape-6">Étape suivante</a></p>
+<p><a id="etape-6"></a></p>
+<h2 id="6--piège-ton-modèle">6 · Piège ton modèle</h2>
+<p>Ce défi est facultatif. Tu peux l’essayer après la relecture du mail.</p>
+<h3 id="demande-un-fait-récent">Demande un fait récent</h3>
+<ol>
+<li>Rétablis ta connexion pour pouvoir consulter une source extérieure.</li>
+<li>Dans le terminal, tape <code>/clear</code> pour repartir d’un échange vide.</li>
+<li>Envoie cette demande entre deux lignes <code>&quot;&quot;&quot;</code> :</li>
+</ol>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 21" aria-describedby="code-21-status" data-copy="code-21">Copier</button><span id="code-21-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 21"><code id="code-21">Donne un fait récent concernant la Belgique.
+Indique la date de ce fait.
+Si tu ne connais pas une information, signale ton incertitude.
+</code></pre></div>
+<ol start="4">
+<li>Choisis une affirmation précise dans sa réponse.</li>
+<li>Cherche une source extérieure datée.</li>
+<li>Vérifie la date du fait raconté.</li>
+<li>Compare l’affirmation avec cette source.</li>
+<li>Note ce que tu peux confirmer.</li>
+<li>Note ce qui reste incertain.</li>
+</ol>
+<p>Un site officiel ou un article daté peut servir de point de comparaison.</p>
+<p>Une réponse exacte ou une incertitude bien signalée constitue aussi un résultat utile.</p>
+<details>
+<summary>Exemple de réponse obtenue</summary>
+<p>Voici une réponse obtenue avec <code>ministral-3:3b</code>. Elle donne une date, des noms et des partis, sans signaler le moindre doute. Wouter Beke est pourtant membre du CD&amp;V et Alexander De Croo de l’Open VLD. Le PS est un parti francophone.</p>
+<p><img src="../../assets/ollama-app-fait-recent.png" alt="Réponse de ministral-3:3b dans Ollama sur Mac : elle annonce que Wouter Beke (PS) a été investi Premier ministre flamand le 12 novembre 2026, à la suite d’Alexander De Croo (PS)." decoding="async"></p>
+</details>
+<h3 id="deux-autres-pistes">Deux autres pistes</h3>
+<ul>
+<li>Vérifie un nom, un chiffre ou une source citée par le modèle.</li>
+<li>Compare une même demande avec et sans consigne précise.</li>
+</ul>
+<p><strong>C’est réussi si tu peux montrer une affirmation et la source utilisée pour la vérifier.</strong></p>
+<p><a href="#etape-5">Étape précédente</a> · <a href="#sommaire">Retour au sommaire</a> · <a href="#etape-7">Étape suivante</a></p>
+<p><a id="etape-7"></a></p>
+<h2 id="7--essaie-un-modèle-plus-gros">7 · Essaie un modèle plus gros</h2>
+<p>Mariano montre d’abord la même demande sur Qwen, un modèle local plus gros.</p>
+<p>Tu peux ensuite comparer sur ta machine si sa mémoire le permet.</p>
+<div class="table-scroll" role="region" aria-label="Tableau à faire défiler horizontalement" tabindex="0"><table>
+<thead>
+<tr>
+<th>Mémoire vive</th>
+<th>Modèles prévus dans le dépôt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Moins de 24 Go</td>
+<td><code>ministral-3:3b</code></td>
+</tr>
+<tr>
+<td>Au moins 24 Go, moins de 36 Go</td>
+<td><code>ministral-3:3b</code> et <code>ornith-1.5:9b</code></td>
+</tr>
+<tr>
+<td>36 Go et plus</td>
+<td>Les précédents, avec <code>qwen3.8:27b</code> en option</td>
+</tr>
+</tbody>
+</table></div>
+<p>Ces paliers restent des repères pour l’atelier. Le modèle et les autres applications occupent de la mémoire. La longueur des échanges compte aussi.</p>
+<p>Tu as normalement déjà téléchargé les modèles de ton parcours grâce à la <a href="../../">page d’installation envoyée avant l’atelier</a>.</p>
+<p>Si un modèle manque en salle, suis la démonstration. Tu retrouveras les instructions de téléchargement sur cette page pour reprendre chez toi.</p>
+<h3 id="compare-les-réponses">Compare les réponses</h3>
+<ol>
+<li>Quitte la conversation en cours :</li>
+</ol>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 22" aria-describedby="code-22-status" data-copy="code-22">Copier</button><span id="code-22-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 22"><code id="code-22">/bye
+</code></pre></div>
+<ol start="2">
+<li>Vérifie avec <code>ollama list</code> que le modèle plus gros est déjà téléchargé. S’il manque, suis la démonstration : <code>ollama run</code> le téléchargerait, soit plusieurs Go sur le Wi-Fi de la salle.</li>
+<li>Lance le modèle plus gros :</li>
+</ol>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 23" aria-describedby="code-23-status" data-copy="code-23">Copier</button><span id="code-23-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 23"><code id="code-23">ollama run ornith-1.5:9b
+</code></pre></div>
+<p>Si tu as prévu Qwen et que ta machine a au moins 36 Go, utilise cette commande à la place :</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 24" aria-describedby="code-24-status" data-copy="code-24">Copier</button><span id="code-24-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 24"><code id="code-24">ollama run qwen3.8:27b
+</code></pre></div>
+<ol start="4">
+<li>Envoie exactement le <a href="#bloc-complet">bloc complet de l’exercice 2</a> entre deux lignes <code>&quot;&quot;&quot;</code>.</li>
+<li>Applique les mêmes trois contrôles.</li>
+<li>Compare avec la réponse de Ministral.</li>
+<li>Tape <code>/bye</code>, puis relance <code>ollama run ministral-3:3b</code> pour revenir à Ministral.</li>
+</ol>
+<p>La commande <code>/clear</code> efface l’échange. Pour changer de modèle, quitte d’abord avec <code>/bye</code>, puis lance le modèle choisi.</p>
+<p>Qwen peut prendre du temps avant d’afficher sa réponse.</p>
+<p><strong>C’est réussi si tu peux décrire une différence observée entre les réponses.</strong></p>
+<p><a href="#etape-6">Étape précédente</a> · <a href="#sommaire">Retour au sommaire</a> · <a href="#etape-8">Étape suivante</a></p>
+<p><a id="etape-8"></a></p>
+<h2 id="8--change-de-harnais-avec-anythingllm">8 · Change de harnais avec AnythingLLM</h2>
+<p>Tu peux suivre la démonstration de Mariano, puis reprendre cette étape chez toi.</p>
+<h3 id="retrouve-les-rôles">Retrouve les rôles</h3>
+<div class="table-scroll" role="region" aria-label="Tableau à faire défiler horizontalement" tabindex="0"><table>
+<thead>
+<tr>
+<th>Élément</th>
+<th>Son rôle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modèle</td>
+<td>Contient les réglages appris.</td>
+</tr>
+<tr>
+<td>Moteur Ollama</td>
+<td>Fait tourner le modèle sur ton ordinateur.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Le <strong>harnais</strong> réunit l’application et les moyens utilisés autour du modèle. Il peut proposer des documents et des outils, en plus du dialogue. Il peut aussi prévoir des vérifications.</p>
+<p>Le terminal d’Ollama, AnythingLLM et OpenCode sont des harnais.</p>
+<p>Avec AnythingLLM, tu changes d’application tout en conservant Ollama et <code>ministral-3:3b</code>.</p>
+<h3 id="prépare-la-connexion">Prépare la connexion</h3>
+<p>Si tu as gardé les connexions coupées après Handy, rétablis ta connexion pour ouvrir la page d’installation et télécharger l’application.</p>
+<ol>
+<li>Ouvre la <a href="https://docs.anythingllm.com/installation-desktop/overview">page officielle d’installation d’AnythingLLM Desktop</a>.</li>
+<li>Installe la version adaptée à ton système.</li>
+<li>Si tu es encore dans une conversation (repère <code>&gt;&gt;&gt;</code>), tape <code>/bye</code>. Vérifie ensuite que le service Ollama tourne : <code>systemctl status ollama</code>.</li>
+<li>Ouvre AnythingLLM Desktop.</li>
+<li>Choisis Ollama comme fournisseur du modèle.</li>
+</ol>
+<p>Le fournisseur indique à AnythingLLM quel moteur utiliser.</p>
+<p>L’adresse locale observée pendant l’essai est :</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 25" aria-describedby="code-25-status" data-copy="code-25">Copier</button><span id="code-25-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 25"><code id="code-25">http://127.0.0.1:11434
+</code></pre></div>
+<ol start="6">
+<li>Vérifie cette adresse dans les réglages.</li>
+<li>Sélectionne <code>ministral-3:3b</code>.</li>
+<li>Désactive l’envoi de statistiques d’utilisation dans les réglages de confidentialité.</li>
+</ol>
+<p>Cet envoi de statistiques porte aussi le nom de <strong>télémétrie</strong>.</p>
+<h3 id="reprends-le-mail">Reprends le mail</h3>
+<ol>
+<li>Ouvre une conversation dans AnythingLLM.</li>
+<li>Copie le <a href="#bloc-complet">bloc complet de l’exercice 2</a>.</li>
+<li>Colle-le dans la zone de message.</li>
+<li>Envoie la demande.</li>
+<li>Relis la réponse avec les trois contrôles.</li>
+</ol>
+<p><strong>C’est réussi si AnythingLLM utilise le modèle choisi dans Ollama et si tu as relu sa réponse.</strong></p>
+<p>La connexion à Ollama a été observée sur la machine de démonstration. La télémétrie a été désactivée pendant l’essai. L’ensemble des échanges réseau de l’application n’a pas été mesuré.</p>
+<details>
+<summary>Pour comprendre : API et LiteLLM</summary>
+<p>Une <strong>API</strong> permet à deux logiciels d’échanger des demandes et des réponses. Ici, AnythingLLM utilise celle d’Ollama sur ton ordinateur.</p>
+<p>LiteLLM permet à une application d’accéder à plusieurs fournisseurs de modèles. Selon la configuration, les demandes vont vers des modèles locaux ou des services en ligne.</p>
+</details>
+<p><a href="#etape-7">Étape précédente</a> · <a href="#sommaire">Retour au sommaire</a> · <a href="#etape-9">Étape suivante</a></p>
+<p><a id="etape-9"></a></p>
+<h2 id="9--bonus--crée-un-fichier-avec-opencode">9 · Bonus : crée un fichier avec OpenCode</h2>
+<p>OpenCode peut écrire et modifier des fichiers à ta demande.</p>
+<p>Pour ce bonus, le modèle retenu est <strong><code>ornith-1.5:9b</code></strong>, à partir du palier de 24 Go prévu dans le dépôt.</p>
+<p>Pendant la préparation, Ornith a créé le fichier demandé. Ministral a fourni du code dans la conversation sans créer le fichier.</p>
+<h3 id="en-salle">En salle</h3>
+<p>Suis la démonstration si ton installation OpenCode est encore à préparer.</p>
+<p>Le formateur utilise un dossier de démonstration isolé et déjà vérifié.</p>
+<details>
+<summary>Sur ta machine : prépare OpenCode, crée la page et vérifie-la</summary>
+<aside class="admonition" aria-label="Attention"><p class="admonition-title">Attention</p>
+<p>Cette procédure reste à valider avec les versions de l’atelier. Fais-toi accompagner pour vérifier le lancement, le contexte et les permissions avant de l’utiliser.</p>
+</aside>
+<ol>
+<li>Retrouve l’installation d’OpenCode dans le parcours de ton système.</li>
+<li>Crée un dossier vide réservé à ce bonus.</li>
+<li>Ouvre un terminal dans ce dossier.</li>
+<li>Vérifie le dossier affiché par le terminal.</li>
+<li>Vérifie qu’OpenCode est disponible dans le terminal :</li>
+</ol>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 26" aria-describedby="code-26-status" data-copy="code-26">Copier</button><span id="code-26-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 26"><code id="code-26">opencode --version
+</code></pre></div>
+<p>Si la commande est introuvable, arrête cette procédure et demande à un animateur de vérifier ton installation.</p>
+<ol start="6">
+<li>Si tu es encore dans une conversation (repère <code>&gt;&gt;&gt;</code>), tape <code>/bye</code>. Vérifie ensuite que le service Ollama tourne : <code>systemctl status ollama</code>.</li>
+<li>Vérifie la présence de <code>ornith-1.5:9b</code> avec <code>ollama list</code>.</li>
+</ol>
+<p>La documentation officielle propose ce lancement :</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 27" aria-describedby="code-27-status" data-copy="code-27">Copier</button><span id="code-27-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 27"><code id="code-27">ollama launch opencode
+</code></pre></div>
+<p>La documentation demande aussi une fenêtre de contexte d’au moins <strong>64 000 tokens</strong>. C’est la quantité de texte disponible pour le travail en cours. Ce réglage augmente les besoins en mémoire.</p>
+<p>Fais vérifier ce réglage avant le bonus.</p>
+<p>Consulte la <a href="https://docs.ollama.com/integrations/opencode">documentation Ollama pour OpenCode</a>.</p>
+<p>Après le lancement :</p>
+<ol>
+<li>Sélectionne le modèle local <code>ornith-1.5:9b</code>.</li>
+<li>Vérifie le dossier de travail annoncé par OpenCode.</li>
+<li>Vérifie les permissions avant d’envoyer ta demande.</li>
+</ol>
+<p>Pendant l’essai préparé, la modification des fichiers était autorisée. L’exécution de commandes et l’accès au Web étaient désactivés.</p>
+<h3 id="demande-une-petite-page">Demande une petite page</h3>
+<p>Envoie cette demande :</p>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 28" aria-describedby="code-28-status" data-copy="code-28">Copier</button><span id="code-28-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 28"><code id="code-28">Crée un fichier index.html dans le dossier de travail actuel.
+
+La page présente un club de lecture fictif.
+Elle contient trois cartes de livres inventés.
+Elle contient un bouton qui affiche un message quand on clique dessus.
+
+Écris la page en français.
+Place le style et le script dans le même fichier.
+N’utilise aucune ressource externe.
+Crée le fichier avec les outils disponibles.
+</code></pre></div>
+<h3 id="vérifie-le-résultat">Vérifie le résultat</h3>
+<ol>
+<li>Repère le fichier <code>index.html</code> dans le dossier.</li>
+<li>Ouvre-le dans ton navigateur.</li>
+<li>Vérifie la présence des trois cartes.</li>
+<li>Clique sur le bouton.</li>
+<li>Vérifie qu’un message apparaît.</li>
+</ol>
+<p><strong>C’est réussi si le fichier existe, si la page s’ouvre et si le bouton fonctionne.</strong></p>
+</details>
+<details>
+<summary>Et Claude Code ?</summary>
+<p>Le bonus présenté ici utilise OpenCode avec un modèle local. Claude Code est un autre assistant de programmation.</p>
+</details>
+<p><strong>C’est réussi si tu as vu le fichier se créer.</strong></p>
+<p><a href="#etape-8">Étape précédente</a> · <a href="#sommaire">Retour au sommaire</a> · <a href="#avant-de-partir">Étape suivante</a></p>
+<p><a id="avant-de-partir"></a></p>
+<h2 id="avant-de-partir-1">Avant de partir</h2>
+<ol>
+<li>Rétablis ton Wi-Fi si tu l’as coupé.</li>
+<li>Garde l’adresse de cette page.</li>
+<li>Note le modèle avec lequel tu as travaillé.</li>
+<li>Note l’étape à reprendre si ton installation bloque encore.</li>
+<li>Conserve le message d’erreur exact si tu demandes de l’aide.</li>
+<li>Si tu veux arrêter Ollama, tape <code>/bye</code>, puis :</li>
+</ol>
+<div class="code-block"><div class="code-tools"><button type="button" class="copy-button" aria-label="Copier le bloc 29" aria-describedby="code-29-status" data-copy="code-29">Copier</button><span id="code-29-status" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Bloc à copier 29"><code id="code-29">sudo systemctl stop ollama
+</code></pre></div>
+<p>Pour qu’Ollama démarre ensuite avec ton ordinateur : <code>sudo systemctl enable ollama</code>.</p>
+<p><strong>C’est réussi si tu sais quelle étape reprendre et où retrouver les consignes.</strong></p>
+<p>Pour garder le contact, retrouve <a href="https://www.linkedin.com/in/marianosanfilippo/">Mariano Sanfilippo</a> et <a href="https://www.linkedin.com/in/vincent-daron-35757a2ab/">Vincent Daron</a> sur LinkedIn.</p>
+<p><a href="./">Page Linux</a> · <a href="../">Page de l’atelier</a> · <a href="../../">Dépôt d’installation</a></p>
+<p><a href="#etape-9">Étape précédente</a> · <a href="#sommaire">Retour au sommaire</a></p>
+</article></main>
+</body>
+</html>

@@ -21,6 +21,7 @@ for (const os of ['mac', 'windows', 'linux']) {
   }
 }
 pages.push({ source: resolve(project, 'depot-jour-j/README.md'), route: 'jour-j/' })
+pages.push({ source: resolve(project, 'depot-jour-j/linux/README.md'), route: 'jour-j/linux/' })
 const sourceRoutes = new Map(pages.map(page => [page.source, page.route]))
 const toRelative = (from, to) => {
   const path = posix.relative(from || '.', to || '.')

@@ -23,6 +23,7 @@ for (const system of ['mac', 'windows', 'linux']) {
   }
 }
 pages.push({ route: 'jour-j/', source: 'depot-jour-j/README.md' })
+pages.push({ route: 'jour-j/linux/', source: 'depot-jour-j/linux/README.md' })
 await mkdir(resolve(output, 'tmp'), { recursive: true })
 process.env.TMPDIR = resolve(output, 'tmp')
 const report = {

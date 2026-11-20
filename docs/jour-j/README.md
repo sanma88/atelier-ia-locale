@@ -12,6 +12,9 @@ Avec [Mariano Sanfilippo](https://www.linkedin.com/in/marianosanfilippo/) et [Vi
 <p>Sophie peut-elle se faire aider par une IA sans que son mail quitte son ordinateur ? Tu vas l’essayer avec un mail entièrement fictif.</p>
 </aside>
 
+> [!NOTE]
+> **Tu es sous Linux ?** Ollama n’y a pas d’application de bureau. Suis la [page Linux de l’atelier](linux/README.md) : mêmes exercices, dans le terminal.
+
 Garde cette page à côté d’Ollama pour suivre les gestes. Les exemples utilisent **`ministral-3:3b`**. Si tu as téléchargé un modèle plus gros, tu peux l’essayer à la place. Tu pourras reprendre les étapes chez toi.
 
 <a id="sommaire"></a>
